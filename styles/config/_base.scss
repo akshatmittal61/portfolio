@@ -27,6 +27,12 @@ body {
 	font-family: var(--font-raleway);
 	overflow-x: hidden;
 	min-height: 100vh;
+	background-image: url("/images/poster.webp");
+	background-attachment: fixed;
+	background-position-x: center;
+	background-position-y: bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .dispn {

@@ -60,10 +60,10 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 @mixin typography($type: body, $variant: normal, $format: regular) {
 	@if $type ==heading {
 		font-family: var(--font-raleway);
-		color: var(--color-black);
+		color: var(--color-white);
 
 		@include theme(light) {
-			color: var(--color-black);
+			color: var(--color-white);
 		}
 
 		@include theme(dark) {
@@ -278,10 +278,10 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 		}
 	} @else if $type ==body {
 		font-family: var(--font-raleway);
-		color: var(--color-black);
+		color: var(--color-white);
 
 		@include theme(light) {
-			color: var(--color-black);
+			color: var(--color-white);
 		}
 
 		@include theme(dark) {
