@@ -1,11 +1,11 @@
 import GlobalContext from "@/context/GlobalContext";
 import useContextData from "@/context/useContext";
-import Layout from "@/layouts";
-import Overlay from "@/layouts/Overlay";
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 import useLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import Layout from "@/layouts";
+import Overlay from "@/layouts/Overlay";
 
 export default function App({ Component, pageProps }: AppProps) {
 	const context = useContextData();

@@ -1,0 +1,21 @@
+.home-hero {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column;
+	text-align: center;
+
+	&-title {
+		font-size: 125px;
+		line-height: 150%;
+		color: var(--color-theme-lightest-slate);
+		letter-spacing: 4px;
+	}
+
+	&-subtitle {
+		font-size: 40px;
+		line-height: 120%;
+	}
+}

@@ -62,14 +62,6 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 		font-family: var(--font-raleway);
 		color: var(--color-white);
 
-		@include theme(light) {
-			color: var(--color-white);
-		}
-
-		@include theme(dark) {
-			color: var(--color-white);
-		}
-
 		@if $variant ==display {
 			font-size: 42px;
 			font-weight: 700;
@@ -279,14 +271,6 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 	} @else if $type ==body {
 		font-family: var(--font-raleway);
 		color: var(--color-white);
-
-		@include theme(light) {
-			color: var(--color-white);
-		}
-
-		@include theme(dark) {
-			color: var(--color-white);
-		}
 
 		@if $variant ==extra-large {
 			font-size: 18px;

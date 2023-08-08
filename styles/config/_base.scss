@@ -33,8 +33,15 @@ body {
 	background-position-y: bottom;
 	background-size: cover;
 	background-repeat: no-repeat;
+	font-feature-settings: "liga" on, "calt" on;
+	touch-action: pan-x pan-y;
 }
 
 .dispn {
 	display: none !important;
+}
+
+::selection {
+	background-color: var(--color-theme-green);
+	color: var(--color-theme-dark-navy);
 }
