@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@/library/Typography";
-import styles from "@/styles/Home.module.scss";
+import styles from "@/styles/pages/Home.module.scss";
 import { stylesConfig } from "@/utils/functions";
 
 const classes = stylesConfig(styles, "home");
