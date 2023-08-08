@@ -49,6 +49,8 @@ const Navbar: React.FC = () => {
 								<a
 									href={item.href}
 									className={classes("-nav-list-item-link")}
+									target="_blank"
+									rel="noreferrer noopener"
 								>
 									{item.label}
 								</a>
