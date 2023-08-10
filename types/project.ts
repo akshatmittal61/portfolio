@@ -1,10 +1,10 @@
 export interface IProject {
 	id: number;
 	title: string;
-	description: any;
+	description: string;
 	github?: string;
 	deployment?: string;
-	image?: string;
+	image: string;
 	logo?: string;
 	tags: string[];
 }

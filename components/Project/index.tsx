@@ -28,15 +28,55 @@ const Project: React.FC<ProjectProps> = ({
 		variant === "showcase" ? "project-showcase" : "project-card"
 	);
 	return variant === "showcase" ? (
-		<div className={classes("")} style={style}></div>
+		<div className={classes("")}>
+			<div className={classes("-poster")}>
+				<Image src={image} alt={title} width={1360} height={768} />
+			</div>
+			<Typography
+				type="heading"
+				variant="display"
+				className={classes("-title")}
+			>
+				{title}
+			</Typography>
+			<Typography
+				type="body"
+				variant="extra-large"
+				className={classes("-description")}
+			>
+				{description}
+			</Typography>
+			<div className={classes("-tags")}>
+				{tags.map((tag, index) => (
+					<Typography
+						type="body"
+						variant="small"
+						key={index}
+						className={classes("-tags-tag")}
+					>
+						{tag}
+					</Typography>
+				))}
+			</div>
+			<div className={classes("-links")}>
+				{github ? (
+					<a href={github} target="_blank" rel="noopener noreferrer">
+						<GitHub />
+					</a>
+				) : null}
+				{deployment ? (
+					<a
+						href={deployment}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Link />
+					</a>
+				) : null}
+			</div>
+		</div>
 	) : variant === "card" ? (
-		<a
-			className={classes("")}
-			style={style}
-			href={deployment ?? github}
-			target="_blank"
-			rel="noopener noreferrer"
-		>
+		<div className={classes("")} style={style}>
 			<div className={classes("-header")}>
 				<Image
 					src={logoImg ?? "/images/logo.svg"}
@@ -81,7 +121,9 @@ const Project: React.FC<ProjectProps> = ({
 					variant="medium"
 					className={classes("-content-description")}
 				>
-					{description}
+					{description.length > 80
+						? description.slice(0, 80) + "..."
+						: description}
 				</Typography>
 			</div>
 			<div className={classes("-tags")}>
@@ -102,7 +144,7 @@ const Project: React.FC<ProjectProps> = ({
 				}}
 				className={classes("-image")}
 			/>
-		</a>
+		</div>
 	) : null;
 };
 
