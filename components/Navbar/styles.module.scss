@@ -35,7 +35,16 @@
 		gap: 45px;
 
 		a {
-			padding: 24px 4px;
+			padding: 6px 4px;
+			color: var(--color-theme-lightest-slate);
+
+			&:hover {
+				color: var(--color-theme-green);
+			}
+
+			&::after {
+				bottom: 0;
+			}
 		}
 	}
 }
