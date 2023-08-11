@@ -2,6 +2,7 @@ import React from "react";
 import Seo from "./Seo";
 import { frontendBaseUrl } from "@/constants/variables";
 import Navbar from "@/components/Navbar";
+import SocialsBar from "@/components/Socials";
 
 const Layout: React.FC<any> = ({ children }) => {
 	return (
@@ -50,6 +51,7 @@ const Layout: React.FC<any> = ({ children }) => {
 				themeColor="#011627"
 			/>
 			<Navbar />
+			<SocialsBar />
 			{children}
 		</>
 	);

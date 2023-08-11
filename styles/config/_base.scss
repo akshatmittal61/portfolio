@@ -4,14 +4,14 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	transition: all 0.2s ease-in-out;
+	transition: all var(--transition-time) ease-in-out;
 	scroll-behavior: smooth;
 }
 
 :root,
 :root::before,
 :root::after {
-	--transition-time: 0.2s;
+	--transition-time: 0.1s;
 	--font-red-hat-display: "Red Hat Display", sans-serif;
 	--font-red-hat-text: "Red Hat Text", sans-serif;
 	--font-raleway: "Raleway", sans-serif;
