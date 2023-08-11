@@ -11,7 +11,7 @@
 :root,
 :root::before,
 :root::after {
-	--transition-time: 0.1s;
+	--transition-time: 0.2s;
 	--font-red-hat-display: "Red Hat Display", sans-serif;
 	--font-red-hat-text: "Red Hat Text", sans-serif;
 	--font-raleway: "Raleway", sans-serif;
@@ -45,7 +45,6 @@ a {
 	font-weight: 500;
 	letter-spacing: 0.1rem;
 	position: relative;
-	transition: all 0.3s ease-in-out;
 
 	&:hover {
 		color: var(--color-theme-green);
