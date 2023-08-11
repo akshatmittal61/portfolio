@@ -4,26 +4,15 @@ import React, { useEffect, useState } from "react";
 import { ChevronRight, X } from "react-feather";
 import Link from "next/link";
 import socials from "@/constants/socials";
+import useDevice from "@/hooks/device";
+import navLinks, { mobileNavLinks } from "@/constants/menu";
 
 const classes = stylesConfig(styles, "menu");
 
 const Menu: React.FC = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isClosing, setIsClosing] = useState(false);
-	const navLinks = [
-		{
-			name: "Projects",
-			link: "/projects",
-		},
-		{
-			name: "Blog",
-			link: "/blog",
-		},
-		{
-			name: "Resume",
-			link: "/resume",
-		},
-	];
+	const { type: device } = useDevice();
 
 	const handleClose = () => {
 		setIsClosing(() => true);
@@ -54,16 +43,18 @@ const Menu: React.FC = () => {
 					data-aos="fade-right"
 				>
 					<ul className={classes("-links")}>
-						{navLinks.map((obj, id) => (
-							<li
-								key={id}
-								data-index={`0${id + 1}`}
-								data-aos="fade-right"
-							>
-								<Link href={obj.link}>{obj.name}</Link>
-								<span className={classes("-arrow")} />
-							</li>
-						))}
+						{(device === "mobile" ? mobileNavLinks : navLinks).map(
+							(obj, id) => (
+								<li
+									key={id}
+									data-index={`0${id + 1}`}
+									data-aos="fade-right"
+								>
+									<Link href={obj.link}>{obj.name}</Link>
+									<span className={classes("-arrow")} />
+								</li>
+							)
+						)}
 					</ul>
 					<ul className={classes("-socials")}>
 						{socials.map((social, id) => (
@@ -89,10 +80,22 @@ const Menu: React.FC = () => {
 			) : null}
 			<button
 				id="menu-button-open"
-				className={classes("-button", "-button--open")}
+				className={classes("-button", "-button--open", {
+					"-button--open__desktop": device === "desktop",
+					"-button--open__tablet": device === "tablet",
+					"-button--open__mobile": device === "mobile",
+				})}
 				onClick={() => setIsMenuOpen((p) => !p)}
 			>
-				<ChevronRight />
+				{device === "mobile" ? (
+					<span
+						className={classes("-button--open__arrow", {
+							"-button--open__arrow--active": isMenuOpen,
+						})}
+					/>
+				) : (
+					<ChevronRight />
+				)}
 			</button>
 		</>
 	);

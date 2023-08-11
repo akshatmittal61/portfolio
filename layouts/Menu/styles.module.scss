@@ -16,6 +16,10 @@
 	padding: 0 15%;
 	animation: fade-right-in 0.5s ease-in-out 0s forwards;
 
+	@include responsive(phone) {
+		padding: 32px;
+	}
+
 	&-links {
 		height: 100%;
 		display: flex;
@@ -23,6 +27,11 @@
 		align-items: flex-start;
 		flex-flow: column;
 		list-style: none;
+
+		@include responsive(phone) {
+			justify-content: center;
+			gap: 40px;
+		}
 
 		li {
 			$s: 50px;
@@ -35,6 +44,11 @@
 			position: relative;
 			font-family: var(--font-gilroy-regular);
 
+			@include responsive(phone) {
+				font-size: 42px;
+				padding-left: 20px;
+			}
+
 			&::before {
 				content: attr(data-index);
 				position: absolute;
@@ -42,6 +56,10 @@
 				top: 50%;
 				transform: translateY(-50%) rotate(-90deg);
 				font-size: 16px;
+
+				@include responsive(phone) {
+					left: -24px;
+				}
 			}
 
 			span {
@@ -105,6 +123,14 @@
 		margin: 0 24px;
 		gap: 16px;
 
+		@include responsive(phone) {
+			width: 100%;
+			margin: unset;
+			left: 50%;
+			right: unset;
+			transform: translateX(-50%);
+		}
+
 		a {
 			width: 48px;
 			height: 48px;
@@ -113,9 +139,19 @@
 			align-items: center;
 			color: var(--color-theme-light-slate);
 
+			@include responsive(phone) {
+				width: 36px;
+				height: 36px;
+			}
+
 			svg {
 				width: 24px;
 				height: 24px;
+
+				@include responsive(phone) {
+					width: 20px;
+					height: 20px;
+				}
 			}
 
 			&:hover {
@@ -142,16 +178,75 @@
 		}
 
 		&--open {
-			top: 50%;
-			left: 32px;
-			transform: translateY(-50%);
 			z-index: 160;
+
+			&__desktop,
+			&__tablet {
+				top: 50%;
+				left: 32px;
+				transform: translateY(-50%);
+			}
+
+			&__mobile {
+				top: 32px;
+				right: 32px;
+			}
+
+			&__arrow {
+				width: 16px;
+				height: 2px;
+				position: relative;
+				background-color: var(--color-theme-green);
+				border-radius: 500px;
+
+				&::before,
+				&::after {
+					content: "";
+					position: absolute;
+					right: 0;
+					height: 2px;
+					background-color: var(--color-theme-green);
+					border-radius: 500px;
+				}
+
+				&::before {
+					width: 150%;
+					top: -8px;
+				}
+
+				&::after {
+					width: 50%;
+					bottom: -8px;
+				}
+
+				&--active {
+					background-color: transparent;
+					transform: rotate(90deg);
+
+					&::before {
+						width: 150%;
+						top: 0;
+						transform: rotate(45deg);
+					}
+
+					&::after {
+						width: 150%;
+						bottom: 0;
+						transform: rotate(-45deg);
+					}
+				}
+			}
 		}
 
 		&--close {
 			top: 32px;
 			right: 56px;
 			z-index: 210;
+
+			@include responsive(phone) {
+				top: 32px;
+				right: 32px;
+			}
 		}
 	}
 

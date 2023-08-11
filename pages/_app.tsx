@@ -3,7 +3,7 @@ import useContextData from "@/context/useContext";
 import "@/styles/globals.scss";
 import type { AppProps } from "next/app";
 import { useState } from "react";
-import useLayoutEffect from "@/hooks/useIsomorphicLayoutEffect";
+import useLayoutEffect from "@/hooks/isomorphic-layout-effect";
 import Layout from "@/layouts";
 import Overlay from "@/layouts/Overlay";
 

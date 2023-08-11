@@ -1,3 +1,5 @@
+@import "@/styles/config/mixins";
+
 .footer {
 	width: 100%;
 	background-size: contain;
@@ -13,12 +15,23 @@
 	position: relative;
 	z-index: 50;
 
+	@include responsive(phone) {
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 10vh 2.5% 0 2.5%;
+		background-size: cover;
+	}
+
 	&-graphic {
 		object-fit: cover;
 		max-width: 40%;
 		height: auto;
 		cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAAACYktHRACr64lZUgAAAAd0SU1FB+cICwwPFlqyHaAAAAHOSURBVEjH7dPNb0xRGMfxz8zcvqqKlZU0RSRIo6ErqbJiR1LrbixI7LqgaYg/wEa9xEYiFuw6EitiQSxEoq1U2iLS6AZBX6JkJNXOHYvOTO9t5w620ucszj3PeZ7vfc7vOYd1W7f/wlJJGycqerN/Cyimb9OsUHZO+b4WEVSprt1Vu6TLPxlwxfzqoHSVw/XqcEve5uI4Z9/asGQAgQbdmiPrdKWg6rYjFpv6dwDMGhHKyJtLBJSaFtG4ICwD7lsybEy+WgWHzJiIdL9LG5j2SKu0txYrC1WyY8ZMFL8bndZjL/jkQql52QqAzPK0myOOG/EF7S45paUYUWuPLYYqp8dFPOC6M7imM+KdM6lNKnIjEwBpdBrEzljEDzeS06OAD3I2rEpeBud8k2grGowK7Fe7an/eRS+FWW/+CFjyXI2OGCI06LKfEtNJxd59gz5nNRZXeXf1+ZxcfhaBnohnwU2hfvWeoNNtc7o1xSQMFWSkDHu9LOJDBOotWFQw455eQ3oxIPDL09gbLNiuybhQrtSFabQ67EXxHtYa1+8V3tuEWdRZKCM2yvm6UlPgpI8euyMv46BReS2OeialznmjJtVo9U6oy1YPTK2cH34DJ0F5EfC6nuoAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDgtMTFUMTI6MTU6MTcrMDA6MDDGcvJMAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA4LTExVDEyOjE1OjE3KzAwOjAwty9K8AAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wOC0xMVQxMjoxNToyMiswMDowMDyNQ2sAAAAASUVORK5CYII="),
 			auto;
+
+		@include responsive(phone) {
+			max-width: 50%;
+		}
 	}
 
 	&-content {
@@ -29,6 +42,12 @@
 		align-items: flex-end;
 		flex-direction: column;
 		gap: 32px;
+
+		@include responsive(phone) {
+			width: 100%;
+			align-items: center;
+			text-align: center;
+		}
 	}
 
 	&-socials {

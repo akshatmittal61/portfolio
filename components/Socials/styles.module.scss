@@ -1,3 +1,5 @@
+@import "@/styles/config/mixins";
+
 .socials-bar {
 	width: 128px;
 	display: flex;
@@ -7,6 +9,10 @@
 	position: fixed;
 	bottom: 0;
 	right: 0;
+
+	@include responsive(phone) {
+		display: none;
+	}
 
 	&-list {
 		display: flex;
