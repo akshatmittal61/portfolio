@@ -4,6 +4,7 @@ import { frontendBaseUrl } from "@/constants/variables";
 import Navbar from "@/components/Navbar";
 import SocialsBar from "@/components/Socials";
 import Menu from "./Menu";
+import Footer from "@/components/Footer";
 
 const Layout: React.FC<any> = ({ children }) => {
 	return (
@@ -55,6 +56,7 @@ const Layout: React.FC<any> = ({ children }) => {
 			<SocialsBar />
 			<Menu />
 			{children}
+			<Footer />
 		</>
 	);
 };

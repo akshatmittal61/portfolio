@@ -30,6 +30,11 @@
         - Small
     
     Font Format
+    - Heading
+        - Uppercase
+        - Lowercase
+        - Capitalize
+        - Gradient
     - Body
         - Regular
         - Medium
@@ -37,6 +42,7 @@
         - Underlined
         - Italic
         - Bold Italic
+        - Gradient
  */
 
 $types: (heading, body);
@@ -55,9 +61,23 @@ $variants: (
 	small
 );
 
-$formats: (regular, medium, bold, underlined, italic, bold-italic);
+$formats: (
+	regular,
+	medium,
+	bold,
+	underlined,
+	italic,
+	bold-italic,
+	gradient,
+	uppercase,
+	lowercase,
+	capitalize
+);
 
 @mixin typography($type: body, $variant: normal, $format: regular) {
+	$gradient-color-1: --color-theme-blue;
+	$gradient-color-2: --color-theme-slate;
+
 	@if $type ==heading {
 		font-family: var(--font-raleway);
 		color: var(--color-theme-lightest-slate);
@@ -88,7 +108,7 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 			}
 		} @else if $variant ==subtitle {
 			font-size: 32px;
-			font-weight: 400;
+			font-weight: 500;
 
 			@include responsive(phone) {
 				font-size: 24px;
@@ -227,6 +247,23 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 				font-size: 14px;
 			}
 		}
+
+		@if $format ==uppercase {
+			text-transform: uppercase;
+		} @else if $format ==lowercase {
+			text-transform: lowercase;
+		} @else if $format ==capitalize {
+			text-transform: capitalize;
+		} @else if $format ==gradient {
+			background: linear-gradient(
+				144.89deg,
+				var($gradient-color-1) 3.37%,
+				var($gradient-color-2) 91.11%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
 	} @else if $type ==body {
 		font-family: var(--font-raleway);
 		color: var(--color-white);
@@ -337,6 +374,15 @@ $formats: (regular, medium, bold, underlined, italic, bold-italic);
 		} @else if $format ==bold-italic {
 			font-weight: 700;
 			font-style: italic;
+		} @else if $format ==gradient {
+			background: linear-gradient(
+				144.89deg,
+				var($gradient-color-1) 3.37%,
+				var($gradient-color-2) 91.11%
+			);
+			background-clip: text;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
 		}
 	}
 }

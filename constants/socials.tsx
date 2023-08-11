@@ -1,12 +1,22 @@
-import { GitHub, Linkedin, Mail, Codepen, Code, Twitter } from "react-feather";
+import {
+	GitHub,
+	Linkedin,
+	Mail,
+	Codepen,
+	Code,
+	Twitter,
+	Phone,
+} from "react-feather";
 
-const socials: {
+interface ISocial {
 	icon: any;
 	username: string;
 	link: string;
 	color: string;
 	platform: string;
-}[] = [
+}
+
+const socials: ISocial[] = [
 	{
 		icon: <GitHub />,
 		username: "@akshatmittal61",
@@ -50,5 +60,17 @@ const socials: {
 		platform: "Twitter (X)",
 	},
 ];
+
+export const footerSocials: ISocial[] = socials.map((social) => {
+	if (social.platform === "Email")
+		return {
+			icon: <Phone />,
+			username: "+91-94568-49466",
+			link: "tel:919456849466",
+			color: "var(--indigo-500)",
+			platform: "Phone",
+		};
+	return social;
+});
 
 export default socials;

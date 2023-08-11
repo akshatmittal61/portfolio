@@ -19,6 +19,11 @@
         - Small
     
     Font Format
+    - Heading
+        - Uppercase
+        - Lowercase
+        - Capitalize
+        - Gradient
     - Body
         - Regular
         - Medium
@@ -26,6 +31,7 @@
         - Underlined
         - Italic
         - Bold Italic
+        - Gradient
  */
 
 import React from "react";
@@ -42,8 +48,15 @@ export type FontVariant<T extends FontType> = T extends "heading"
 			| "eyebrow"
 	: "extra-large" | "large" | "medium" | "small";
 export type FontFormat<T extends FontType> = T extends "heading"
-	? never
-	: "regular" | "medium" | "bold" | "underlined" | "italic" | "bold-italic";
+	? "uppercase" | "lowercase" | "capitalize" | "gradient"
+	:
+			| "regular"
+			| "medium"
+			| "bold"
+			| "underlined"
+			| "italic"
+			| "bold-italic"
+			| "gradient";
 
 export interface FontHeading {
 	type: "heading";
