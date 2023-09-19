@@ -1,16 +1,17 @@
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
 import React, { useEffect, useState } from "react";
-import { ChevronRight, X } from "react-feather";
+import { X } from "react-feather";
 import Link from "next/link";
 import socials from "@/constants/socials";
 import useDevice from "@/hooks/device";
 import navLinks, { mobileNavLinks } from "@/constants/menu";
+import useStore from "@/hooks/store";
 
 const classes = stylesConfig(styles, "menu");
 
 const Menu: React.FC = () => {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
+	const { isMenuOpen, setIsMenuOpen } = useStore();
 	const [isClosing, setIsClosing] = useState(false);
 	const { type: device } = useDevice();
 
@@ -18,7 +19,7 @@ const Menu: React.FC = () => {
 		setIsClosing(() => true);
 		setTimeout(() => {
 			setIsClosing(() => false);
-			setIsMenuOpen(() => false);
+			setIsMenuOpen(false);
 		}, 500);
 	};
 
@@ -30,6 +31,7 @@ const Menu: React.FC = () => {
 			document.removeEventListener("keydown", (e) => {
 				if (e.key === "Escape") handleClose();
 			});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	return (
@@ -78,25 +80,6 @@ const Menu: React.FC = () => {
 					</button>
 				</nav>
 			) : null}
-			<button
-				id="menu-button-open"
-				className={classes("-button", "-button--open", {
-					"-button--open__desktop": device === "desktop",
-					"-button--open__tablet": device === "tablet",
-					"-button--open__mobile": device === "mobile",
-				})}
-				onClick={() => setIsMenuOpen((p) => !p)}
-			>
-				{device === "mobile" ? (
-					<span
-						className={classes("-button--open__arrow", {
-							"-button--open__arrow--active": isMenuOpen,
-						})}
-					/>
-				) : (
-					<ChevronRight />
-				)}
-			</button>
 		</>
 	);
 };

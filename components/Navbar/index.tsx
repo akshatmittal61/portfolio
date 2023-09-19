@@ -4,10 +4,12 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { navLinks } from "@/constants/navbar";
 import Link from "next/link";
+import useStore from "@/hooks/store";
 
 const classes = stylesConfig(styles, "navbar");
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
+	const { isMenuOpen, setIsMenuOpen } = useStore();
 	const lastScrollTop = useRef<any>(0);
 	const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 	const handleScroll = () => {
@@ -71,6 +73,15 @@ const Navbar: React.FC = () => {
 						</li>
 					))}
 				</ul>
+				<button
+					className={classes("-hamburger", {
+						"-hamburger--open": isMenuOpen,
+						"-hamburger--close": !isMenuOpen,
+					})}
+					onClick={() => setIsMenuOpen(!isMenuOpen)}
+				>
+					<span className={classes("-hamburger__arrow")} />
+				</button>
 			</nav>
 		</header>
 	);
