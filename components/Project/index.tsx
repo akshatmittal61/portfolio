@@ -83,6 +83,7 @@ const Project: React.FC<ProjectProps> = ({
 					alt={title}
 					width={32}
 					height={32}
+					className={classes("-header-logo")}
 					onError={() => {
 						setLogoImg("/images/logo.svg");
 					}}
@@ -118,7 +119,7 @@ const Project: React.FC<ProjectProps> = ({
 				</Typography>
 				<Typography
 					type="body"
-					variant="medium"
+					variant="small"
 					className={classes("-content-description")}
 				>
 					{description.length > 80

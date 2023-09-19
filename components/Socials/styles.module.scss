@@ -1,7 +1,7 @@
 @import "@/styles/config/mixins";
 
 .socials-bar {
-	width: 128px;
+	width: var(--socials-bar-width);
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;

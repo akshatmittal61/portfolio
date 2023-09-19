@@ -1,16 +1,18 @@
 .project {
 	&-card {
-		width: 350px;
+		width: 33%;
 		aspect-ratio: 5/4;
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-start;
+		align-items: stretch;
 		flex-direction: column;
 		flex: 0 0 auto;
+		gap: 24px;
 		background-color: var(--color-theme-navy);
 		padding: 32px 24px;
 		border-radius: 8px;
-		box-shadow: 0 10px 30px -15px var(--navy-shadow);
+		box-shadow: 0 10px 30px -15px transparent;
 		position: relative;
 		z-index: 5;
 		overflow: hidden;
@@ -36,9 +38,10 @@
 		&-content {
 			width: 100%;
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: flex-start;
 			flex-direction: column;
+			flex: 1;
 			gap: 8px;
 			letter-spacing: 0.6px;
 		}
@@ -55,7 +58,7 @@
 				display: inline-flex;
 				justify-content: center;
 				align-items: center;
-				padding: 4px 8px;
+				padding: 4px 10px;
 				border-radius: 500px;
 				background-color: var(--color-theme-light-navy);
 				font-size: 12px;
@@ -78,6 +81,10 @@
 			border-radius: 4px;
 			transition: all 0.25s ease-in-out;
 			background-color: rgba(0, 0, 0, 0.9);
+		}
+
+		&:hover {
+			box-shadow: 0 10px 30px -15px var(--color-theme-navy);
 		}
 
 		&:hover &-image {

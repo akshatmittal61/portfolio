@@ -7,7 +7,7 @@ const classes = stylesConfig(styles, "home-hero");
 
 const HomeHero: React.FC = () => {
 	return (
-		<section className={classes("")} id="">
+		<section className={classes("")} id="hero">
 			<Typography
 				type="heading"
 				variant="display"

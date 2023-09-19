@@ -5,4 +5,8 @@
 	align-items: center;
 	flex-flow: column;
 	gap: 36px;
+
+	section:not(:first-child) {
+		padding-right: var(--socials-bar-width);
+	}
 }
