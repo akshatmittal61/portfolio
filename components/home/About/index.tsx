@@ -16,7 +16,11 @@ const About: React.FC = () => {
 				>
 					About me
 				</Typography>
-				<Typography type="body" variant="large">
+				<Typography
+					type="body"
+					variant="large"
+					className={classes("-text")}
+				>
 					I am Akshat Mittal, a Full Stack Developer diving in MERN
 					stack, TypeScript, and Next.js. I love turning ideas into
 					functional and beautiful web applications.
