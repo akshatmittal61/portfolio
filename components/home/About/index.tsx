@@ -27,9 +27,15 @@ const About: React.FC = () => {
 					<br /> <br />
 					Currently, I am an SDE intern at a thriving growth stage
 					startup called{" "}
-					<a href="https://athenasquare.org">Athenasquare</a>, while
-					also pursuing my graduation in Computer Science from IIIT
-					Una.
+					<a
+						href="https://athenasquare.org"
+						target="_blank"
+						rel="noreferrer"
+					>
+						Athenasquare
+					</a>
+					, while also pursuing my graduation in Computer Science from
+					IIIT Una.
 				</Typography>
 			</div>
 			<div className={classes("-graphic")}></div>

@@ -34,7 +34,6 @@ const Footer: React.FC = () => {
 					<Typography
 						type="heading"
 						variant="subtitle"
-						format="gradient"
 						className={classes("-email")}
 					>
 						akshatmittal2506@gmail.com
