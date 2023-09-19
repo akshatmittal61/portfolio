@@ -14,7 +14,7 @@ const About: React.FC = () => {
 					variant="display"
 					className={classes("-title")}
 				>
-					About me
+					Who am I?
 				</Typography>
 				<Typography
 					type="body"
