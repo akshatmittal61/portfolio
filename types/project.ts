@@ -4,7 +4,7 @@ export interface IProject {
 	description: string;
 	github?: string;
 	deployment?: string;
+	logo: string;
 	image: string;
-	logo?: string;
 	tags: string[];
 }
