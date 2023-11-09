@@ -198,3 +198,35 @@ $colors: "blue", "red", "yellow", "green", "white", "black", "purple", "indigo",
 	--color-danger-800: #991b1b;
 	--color-danger-900: #7f1d1d;
 }
+
+:root,
+:root::before,
+:root::after {
+	--theme-white: #ffffff;
+	--theme-ghost-white: #f9f6ff;
+	--theme-lavender-savor: #e9d7ff;
+	--theme-bashful: #e5ecec;
+	--theme-cascading-white: #f6f6f6;
+	--theme-bleached-silk: #f3f3f3;
+
+	--theme-downpour: #8a8983;
+	--theme-dim-grey: #69696a;
+	--theme-lead: #202020;
+	--theme-dark-void: #141417;
+
+	--theme-shalimar: #f8f6a9;
+	--theme-raw-umber: #a86608;
+
+	--theme-minty-fresh: #d3f2e4;
+	--theme-spring-kiss: #def2b1;
+	--theme-marys-garden: #6d963d;
+	--theme-leprechaun: #298b68;
+
+	--theme-blue-nude: #295188;
+	--theme-deep-sea-nightmare: #001d64;
+
+	--theme-dusky-grape: #887e94;
+	--theme-purple-statice: #a987b8;
+	--theme-honey-flower: #5c3f73;
+	--theme-obsidian-shell: #470961;
+}
