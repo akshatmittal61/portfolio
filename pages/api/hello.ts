@@ -12,11 +12,7 @@ const handler = async (req: ApiRequest, res: ApiResponse) => {
 				return res.status(200).json({
 					name: "Akshat Mittal",
 					catchline: "Building the web, one line at a time",
-					about: `
-					I am Akshat Mittal, a Full Stack Developer diving in MERN stack, TypeScript, and Next.js. I love turning ideas into functional and beautiful web applications.
-					When I'm not immersed in lines of code, you'll find me in the pages of books and scribbling my thoughts into poems.
-					Currently, I am an SDE intern at a thriving growth stage startup called Athenasquare, while also pursuing my graduation in Computer Science from IIIT Una.
-					`,
+					about: "I am Akshat Mittal, a Full Stack Developer diving in MERN stack, TypeScript, and Next.js. I love turning ideas into functional and beautiful web applications. When I'm not immersed in lines of code, you'll find me in the pages of books and scribbling my thoughts into poems. Currently, I am an SDE intern at a thriving growth stage startup called Athenasquare, while also pursuing my graduation in Computer Science from IIIT Una.",
 					projects,
 					work,
 					socials: socials.map(({ username, link, platform }) => ({
