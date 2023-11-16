@@ -1,12 +1,2 @@
 .home {
-	width: 100vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: column;
-	gap: 36px;
-
-	section:not(:first-child) {
-		padding-right: var(--socials-bar-width);
-	}
 }

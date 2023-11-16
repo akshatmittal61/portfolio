@@ -1,9 +1,6 @@
 import React from "react";
 import Seo from "./Seo";
 import { frontendBaseUrl } from "@/constants/variables";
-import Navbar from "@/components/Navbar";
-import SocialsBar from "@/components/Socials";
-import Menu from "./Menu";
 import Footer from "@/components/Footer";
 
 const Layout: React.FC<any> = ({ children }) => {
@@ -78,9 +75,6 @@ const Layout: React.FC<any> = ({ children }) => {
 				canonical={frontendBaseUrl}
 				siteName="Akshat Mittal - Full Stack Developer"
 			/>
-			<Navbar />
-			<SocialsBar />
-			<Menu />
 			{children}
 			<Footer />
 		</>

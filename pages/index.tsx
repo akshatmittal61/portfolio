@@ -1,19 +1,11 @@
 import React from "react";
-import styles from "@/styles/pages/Home.module.scss";
 import { stylesConfig } from "@/utils/functions";
-import { About, Hero, Projects, Work } from "@/components/home";
+import styles from "@/styles/pages/Home.module.scss";
 
 const classes = stylesConfig(styles, "home");
 
 const HomePage: React.FC = () => {
-	return (
-		<main className={classes("")}>
-			<Hero />
-			<About />
-			<Work />
-			<Projects />
-		</main>
-	);
+	return <main className={classes("")}></main>;
 };
 
 export default HomePage;
