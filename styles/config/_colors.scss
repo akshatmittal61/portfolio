@@ -203,6 +203,8 @@ $colors: "blue", "red", "yellow", "green", "white", "black", "purple", "indigo",
 :root::before,
 :root::after {
 	--theme-white: #ffffff;
+	--theme-black: #000000;
+
 	--theme-ghost-white: #f9f6ff;
 	--theme-lavender-savor: #e9d7ff;
 	--theme-bashful: #e5ecec;

@@ -1,2 +1,10 @@
 .home {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	border-radius: 32px 32px 0 0;
+	background-color: var(--theme-ghost-white);
+	box-shadow: 0px -4px 15px -3px rgba(0, 0, 0, 0.1);
 }

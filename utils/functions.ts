@@ -94,3 +94,10 @@ export const omitKeys = (obj: any, keys: string[]) => {
 // function to round off a number to given decimal places
 export const roundOff = (num: number, decimalPlaces: number) =>
 	Math.round(num * 10 ** decimalPlaces) / 10 ** decimalPlaces;
+
+export const isValidURL = (url: string) => {
+	var res = url.match(
+		/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&//=]*)/g
+	);
+	return res !== null;
+};
