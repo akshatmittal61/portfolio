@@ -18,7 +18,7 @@ const HomeAbout: React.FC = () => {
 						<Typography as="h1" size="head-3" weight="medium">
 							Software Developer
 						</Typography>
-						<Typography as="p" size="lg">
+						<Typography as="p" size="md">
 							A Full Stack Developer diving in MERN stack,
 							TypeScript, and Next.js. I love turning ideas into
 							functional and beautiful web applications.
