@@ -4,10 +4,24 @@
 	justify-content: center;
 	align-items: center;
 	gap: 24px;
+	padding: 0 24px;
 
 	&-box {
-		width: calc(100% - 20px);
-		height: 500px;
-		outline: 1px solid red;
+		width: calc(100% - 24px);
+		padding: 24px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 16px;
+		border-radius: 24px;
+	}
+
+	&-desc {
+		background-color: var(--theme-bashful);
+	}
+
+	&-skills {
+		background-color: var(--theme-white);
 	}
 }

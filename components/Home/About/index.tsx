@@ -2,6 +2,7 @@ import React from "react";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
 import Responsive from "@/layouts/Responsive";
+import Typography from "@/library/Typography";
 
 const classes = stylesConfig(styles, "home-about");
 
@@ -10,10 +11,26 @@ const HomeAbout: React.FC = () => {
 		<section className={classes("")}>
 			<Responsive.Row>
 				<Responsive.Col xlg={60} lg={60} md={60} sm={100} xsm={100}>
-					<div className={classes("-box")} />
+					<div className={classes("-box", "-desc")}>
+						<Typography size="head-3" weight="medium">
+							👋
+						</Typography>
+						<Typography as="h1" size="head-3" weight="medium">
+							Software Developer
+						</Typography>
+						<Typography as="p" size="lg">
+							A Full Stack Developer diving in MERN stack,
+							TypeScript, and Next.js. I love turning ideas into
+							functional and beautiful web applications.
+						</Typography>
+					</div>
 				</Responsive.Col>
 				<Responsive.Col xlg={40} lg={40} md={40} sm={100} xsm={100}>
-					<div className={classes("-box")} />
+					<div className={classes("-box", "-skills")}>
+						<Typography as="h1" size="head-3" weight="medium">
+							My Skills
+						</Typography>
+					</div>
 				</Responsive.Col>
 			</Responsive.Row>
 		</section>
