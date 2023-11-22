@@ -5,7 +5,6 @@ import Responsive from "@/layouts/Responsive";
 import Typography from "@/library/Typography";
 import skills from "@/data/skills";
 import Chip from "@/library/Chip";
-import Image from "next/image";
 
 const classes = stylesConfig(styles, "home-about");
 
@@ -26,6 +25,11 @@ const HomeAbout: React.FC = () => {
 							TypeScript, and Next.js. I love turning ideas into
 							functional and beautiful web applications.
 						</Typography>
+						<Typography as="p" size="md">
+							When I&apos;m not immersed in lines of code,
+							you&apos;ll find me in the pages of books and
+							scribbling my thoughts into poems.
+						</Typography>
 					</div>
 				</Responsive.Col>
 				<Responsive.Col xlg={40} lg={40} md={40} sm={100} xsm={100}>
@@ -35,13 +39,11 @@ const HomeAbout: React.FC = () => {
 						</Typography>
 						<div className={classes("-skills-list")}>
 							{skills.map((skill) => (
-								<Chip key={skill.id}>
-									<Image
-										src={skill.logo}
-										alt={skill.name}
-										width={24}
-										height={24}
-									/>
+								<Chip
+									key={skill.id}
+									className={classes("-skills-skill")}
+								>
+									{skill.logo}
 									{skill.name}
 								</Chip>
 							))}
