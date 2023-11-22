@@ -3,6 +3,9 @@ import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
 import Responsive from "@/layouts/Responsive";
 import Typography from "@/library/Typography";
+import skills from "@/data/skills";
+import Chip from "@/library/Chip";
+import Image from "next/image";
 
 const classes = stylesConfig(styles, "home-about");
 
@@ -30,6 +33,19 @@ const HomeAbout: React.FC = () => {
 						<Typography as="h1" size="head-3" weight="medium">
 							My Skills
 						</Typography>
+						<div className={classes("-skills-list")}>
+							{skills.map((skill) => (
+								<Chip key={skill.id}>
+									<Image
+										src={skill.logo}
+										alt={skill.name}
+										width={24}
+										height={24}
+									/>
+									{skill.name}
+								</Chip>
+							))}
+						</div>
 					</div>
 				</Responsive.Col>
 			</Responsive.Row>
