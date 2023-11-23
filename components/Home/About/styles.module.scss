@@ -7,7 +7,7 @@
 	padding: 0 24px;
 
 	&-box {
-		width: calc(100% - 24px);
+		width: calc(100% - 12px);
 		padding: 24px;
 		display: flex;
 		justify-content: center;
@@ -19,10 +19,12 @@
 
 	&-desc {
 		background-color: var(--theme-bashful);
+		margin-right: auto;
 	}
 
 	&-skills {
 		background-color: var(--theme-white);
+		margin-left: auto;
 
 		&-list {
 			width: 100%;
