@@ -16,7 +16,7 @@ const workExperience: IWork[] = [
 • Tech Stack: ReactJS, NextJS, TypeScript, Redux, SASS, Jest
         `,
 		startDate: "2022-10-24T00:00:00.000Z",
-		tags: ["reactjs", "nodejs", "nextjs", "typescript", "jest", "sass"],
+		tags: ["reactjs", "nextjs", "typescript", "jest", "sass"],
 	},
 ];
 

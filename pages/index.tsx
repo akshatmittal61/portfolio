@@ -12,10 +12,10 @@ const HomePage: React.FC = () => {
 			<Basic />
 			<About />
 			<Responsive.Row>
-				<Responsive.Col xlg={40} lg={40} md={40} sm={0} xsm={0}>
+				<Responsive.Col xlg={30} lg={30} md={30} sm={0} xsm={0}>
 					Empty for now
 				</Responsive.Col>
-				<Responsive.Col xlg={60} lg={60} md={60} sm={100} xsm={100}>
+				<Responsive.Col xlg={70} lg={70} md={70} sm={100} xsm={100}>
 					<Work />
 				</Responsive.Col>
 			</Responsive.Row>

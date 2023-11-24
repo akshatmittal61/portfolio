@@ -66,7 +66,7 @@ const Avatar: React.FC<IAvatarProps> = ({
 				/>
 			) : (
 				<div className={classes("avatar-placeholder")}>
-					<Typography weight="semi-bold" size="md">
+					<Typography weight="medium" size="md">
 						{alt ? alt[0] : "A"}
 					</Typography>
 				</div>
