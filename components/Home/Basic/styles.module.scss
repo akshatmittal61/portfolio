@@ -32,11 +32,18 @@
 				color: var(--theme-black);
 				border-radius: 500px;
 				border: 1px solid var(--theme-black);
+				transition: none;
 
 				svg {
 					width: 20px;
 					height: 20px;
 					flex: 0 0 auto;
+					transition: none;
+				}
+
+				&:hover {
+					background-color: var(--theme-black);
+					color: var(--theme-ghost-white);
 				}
 			}
 		}
