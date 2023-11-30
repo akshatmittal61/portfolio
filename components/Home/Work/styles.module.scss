@@ -64,10 +64,6 @@
 			border-radius: 500%;
 			flex: 0 0 auto;
 			background-color: var(--theme-bashful);
-
-			&:focus {
-				outline: 1px solid var(--theme-minty-fresh);
-			}
 		}
 
 		&-meta {

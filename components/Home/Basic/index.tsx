@@ -15,11 +15,8 @@ const HomeBasic: React.FC = () => {
 			<Avatar
 				src="/images/akshat-dec.jpg"
 				alt="Akshat Mittal"
-				size={
-					platform === "client"
-						? (window.innerHeight / 100) * 25
-						: 360
-				}
+				size={platform === "client" ? 200 : 360}
+				className={classes("-avatar")}
 			/>
 			<div className={classes("-content")}>
 				<Typography size="head-1" weight="medium" as="h1">

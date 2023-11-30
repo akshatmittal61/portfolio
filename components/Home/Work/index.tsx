@@ -10,7 +10,7 @@ import moment from "moment";
 const classes = stylesConfig(styles, "home-work");
 
 const HomeWork: React.FC = () => {
-	const [active, setActive] = useState(workExperience[0].id);
+	const [active, setActive] = useState(-1);
 
 	return (
 		<div className={classes("")}>

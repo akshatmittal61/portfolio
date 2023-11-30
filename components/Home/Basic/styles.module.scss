@@ -5,7 +5,10 @@
 	align-items: center;
 	padding: 0 5%;
 	gap: 40px;
-	transform: translateY(-40%);
+
+	&-avatar {
+		margin-top: -40px;
+	}
 
 	&-content {
 		display: flex;

@@ -1,6 +1,6 @@
 .cover {
 	width: 100%;
-	height: 25vh;
+	height: clamp(80px, 30px + 8vw, 148px);
 	background-image: url("/images/head-banner.svg");
 	background-attachment: fixed;
 	background-position: center;
