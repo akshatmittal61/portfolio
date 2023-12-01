@@ -1,3 +1,5 @@
+@import "@/styles/config/typography";
+
 .home-basic {
 	width: 100%;
 	display: flex;
@@ -24,18 +26,35 @@
 			align-items: center;
 			gap: 8px;
 
-			a {
-				width: 36px;
-				height: 36px;
+			a:first-child {
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				flex: 0 0 auto;
+				gap: 12px;
+				text-decoration: none;
+				border-radius: 500px;
+				margin-right: 8px;
+				@include typography($size: lg);
+
+				svg {
+					width: 24px;
+					height: 24px;
+					flex: 0 0 auto;
+				}
+			}
+
+			a:not(:first-child) {
+				width: 42px;
+				height: 42px;
 				display: inline-flex;
 				justify-content: center;
 				align-items: center;
 				flex: 0 0 auto;
 				text-decoration: none;
+				background-color: var(--theme-bleached-silk);
 				color: var(--theme-black);
 				border-radius: 500px;
-				border: 1px solid var(--theme-black);
-				transition: none;
 
 				svg {
 					width: 20px;
@@ -45,8 +64,7 @@
 				}
 
 				&:hover {
-					background-color: var(--theme-black);
-					color: var(--theme-ghost-white);
+					background-color: var(--theme-bashful);
 				}
 			}
 		}

@@ -5,6 +5,7 @@ import Avatar from "@/components/Avatar";
 import useDevice from "@/hooks/device";
 import Typography from "@/library/Typography";
 import socials from "@/constants/socials";
+import { Briefcase } from "react-feather";
 
 const classes = stylesConfig(styles, "home-basic");
 
@@ -23,6 +24,16 @@ const HomeBasic: React.FC = () => {
 					Akshat Mittal
 				</Typography>
 				<div className={classes("-content-socials")}>
+					<a
+						href="https://bit.ly/akshat_mittal"
+						target="_blank"
+						rel="noreferrer"
+						title="Resume"
+						className={classes("-content-socials-resume")}
+					>
+						<Briefcase />
+						Resume
+					</a>
 					{socials.map((social, index) => (
 						<a
 							href={social.link}
