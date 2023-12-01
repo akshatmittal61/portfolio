@@ -11,9 +11,9 @@ const HomePage: React.FC = () => {
 		<main className={classes("")}>
 			<Basic />
 			<About />
-			<Responsive.Row>
+			<Responsive.Row className={classes("-blogs-and-work")}>
 				<Responsive.Col xlg={30} lg={30} md={30} sm={0} xsm={0}>
-					Empty for now
+					<div className={classes("-empty")}>Coming Soon</div>
 				</Responsive.Col>
 				<Responsive.Col xlg={70} lg={70} md={70} sm={100} xsm={100}>
 					<Work />
