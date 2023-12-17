@@ -1,8 +1,8 @@
 import React from "react";
 import Seo from "./Seo";
-import { frontendBaseUrl } from "@/constants/variables";
 import Footer from "@/components/Footer";
 import Cover from "@/components/Cover";
+import { frontendBaseUrl } from "@/constants/variables";
 
 const Layout: React.FC<any> = ({ children }) => {
 	return (
