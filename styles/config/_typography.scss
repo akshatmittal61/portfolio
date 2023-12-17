@@ -1,8 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-// $name: name of the font family var(--font-josefin-sans)
-// $size: size of the font (xxs, xs, sm, md, lg, xl, xxl, xxxl, head-1, head-2, head-3)
-// $weight: weight of the font (light, regular, medium, bold)
+// $name: name of the font family (var(--font-poppins), var(--font-montserrat))
+// $size: size of the font (xxs, xs, sm, md, lg, xl, xxl, xxxl)
+// $weight: weight of the font (light, regular, medium, semi-bold, bold)
 
 $font-families: ("poppins", "montserrat");
 
@@ -18,65 +16,80 @@ $font-sizes: (
 	"xxxl",
 	"head-1",
 	"head-2",
-	"head-3"
+	"head-3",
+	"head-4"
 );
 
-$font-weights: ("light", "regular", "medium", "bold");
+$font-weights: (
+	"extra-light",
+	"light",
+	"regular",
+	"medium",
+	"semi-bold",
+	"bold",
+	"extra-bold"
+);
 
-@mixin typography($size: "md", $weight: "regular", $name: "poppins") {
+@mixin typography($family: "Poppins", $size: "md", $weight: "regular") {
 	// font families
 
-	@if $name == "poppins" {
-		font-family: "Poppins", sans-serif;
-	} @else if $name == "montserrat" {
-		font-family: "Montserrat", sans-serif;
+	@if $family == "Montserrat" or $family == "montserrat" or $family == "m" {
+		font-family: var(--font-montserrat);
+	} @else if $family == "Poppins" or $family == "poppins" or $family == "p" {
+		font-family: var(--font-poppins);
 	} @else {
-		font-family: "Poppins", sans-serif;
+		font-family: var(--font-poppins);
 	}
 
-	line-height: 125%;
+	line-height: 120%;
 	vertical-align: middle;
 
 	// font sizes
 
 	@if $size == "xxs" {
-		font-size: 8px;
+		font-size: 0.5rem;
 	} @else if $size == "xs" {
-		font-size: 10px;
+		font-size: 0.625rem;
 	} @else if $size == "sm" {
-		font-size: 12px;
+		font-size: 0.75rem;
 	} @else if $size == "s" {
-		font-size: 14px;
+		font-size: 0.875rem;
 	} @else if $size == "md" {
-		font-size: 16px;
+		font-size: 1rem;
 	} @else if $size == "lg" {
-		font-size: 18px;
+		font-size: 1.125rem;
 	} @else if $size == "xl" {
-		font-size: 20px;
+		font-size: 1.25rem;
 	} @else if $size == "xxl" {
-		font-size: 24px;
+		font-size: 1.5rem;
 	} @else if $size == "xxxl" {
-		font-size: 28px;
+		font-size: 1.75rem;
 	} @else if $size == "head-1" {
-		font-size: 64px;
+		font-size: 4rem;
 	} @else if $size == "head-2" {
-		font-size: 40px;
+		font-size: 3rem;
 	} @else if $size == "head-3" {
-		font-size: 32px;
+		font-size: 2.5rem;
+	} @else if $size == "head-4" {
+		font-size: 2rem;
 	} @else {
-		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	// font weights
 
-	@if $weight == "light" {
+	@if $weight == "extra-light" {
+		font-weight: 200;
+	} @else if $weight == "light" {
 		font-weight: 300;
 	} @else if $weight == "regular" {
 		font-weight: 400;
 	} @else if $weight == "medium" {
 		font-weight: 500;
-	} @else if $weight == "bold" {
+	} @else if $weight == "semi-bold" {
 		font-weight: 600;
+	} @else if $weight == "bold" {
+		font-weight: 700;
 	} @else {
 		font-weight: 400;
 	}

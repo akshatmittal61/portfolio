@@ -1,7 +1,5 @@
 import React from "react";
 import Seo from "./Seo";
-import Footer from "@/components/Footer";
-import Cover from "@/components/Cover";
 import { frontendBaseUrl } from "@/constants/variables";
 
 const Layout: React.FC<any> = ({ children }) => {
@@ -76,9 +74,7 @@ const Layout: React.FC<any> = ({ children }) => {
 				canonical={frontendBaseUrl}
 				siteName="Akshat Mittal - Full Stack Developer"
 			/>
-			<Cover />
 			{children}
-			<Footer />
 		</>
 	);
 };
