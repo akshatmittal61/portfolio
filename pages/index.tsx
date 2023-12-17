@@ -1,7 +1,7 @@
 import React from "react";
 import { stylesConfig } from "@/utils/functions";
 import styles from "@/styles/pages/Home.module.scss";
-import { About, Basic, Work } from "@/components/Home";
+import { About, Basic, Projects, Work } from "@/components/Home";
 import Responsive from "@/layouts/Responsive";
 
 const classes = stylesConfig(styles, "home");
@@ -19,6 +19,7 @@ const HomePage: React.FC = () => {
 					<Work />
 				</Responsive.Col>
 			</Responsive.Row>
+			<Projects />
 		</main>
 	);
 };

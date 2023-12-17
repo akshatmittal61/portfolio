@@ -2,7 +2,7 @@
 @import "@/styles/config/typography";
 
 .home-work {
-	width: calc(100% - 36px);
+	width: calc(100% - 24px);
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
@@ -12,6 +12,10 @@
 	padding: 24px;
 	border-radius: 24px;
 	background-color: var(--theme-white);
+
+	@include responsive(phone) {
+		margin: 24px 0;
+	}
 
 	&-work {
 		width: 100%;

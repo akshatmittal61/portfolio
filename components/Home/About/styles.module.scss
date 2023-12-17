@@ -1,3 +1,5 @@
+@import "@/styles/config/mixins";
+
 .home-about {
 	width: 100%;
 	display: flex;
@@ -20,11 +22,19 @@
 	&-desc {
 		background-color: var(--theme-bashful);
 		margin-right: auto;
+
+		@include responsive(phone) {
+			margin: 12px 0;
+		}
 	}
 
 	&-skills {
 		background-color: var(--theme-white);
 		margin-left: auto;
+
+		@include responsive(phone) {
+			margin: 12px 0;
+		}
 
 		&-list {
 			width: 100%;
