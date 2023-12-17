@@ -25,45 +25,17 @@ html {
 }
 
 body {
+	background-color: var(--theme-ghost-white);
 	font-family: var(--font-raleway);
 	overflow-x: hidden;
-	min-height: 100vh;
-	background-image: url("/images/poster.webp");
-	background-attachment: fixed;
-	background-position-x: center;
-	background-position-y: bottom;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-blend-mode: darken;
-	background-color: rgba(0, 0, 0, 0.25);
 	font-feature-settings: "liga" on, "calt" on;
 	touch-action: pan-x pan-y;
+	padding-top: 17.5vh;
 }
 
 a {
 	text-decoration: none;
-	color: var(--color-theme-green);
-	font-weight: 500;
-	letter-spacing: 0.1rem;
-	position: relative;
-
-	&:hover {
-		color: var(--color-theme-green);
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: -2px;
-		left: 0;
-		width: 0;
-		height: 1px;
-		background-color: var(--color-theme-green);
-	}
-
-	&:hover::after {
-		width: 100%;
-	}
+	color: inherit;
 }
 
 .dispn {
@@ -71,6 +43,6 @@ a {
 }
 
 ::selection {
-	background-color: var(--color-theme-green);
-	color: var(--color-theme-dark-navy);
+	background-color: var(--theme-leprechaun);
+	color: var(--theme-minty-fresh);
 }

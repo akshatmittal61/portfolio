@@ -1,7 +1,7 @@
-import Typography from "@/library/Typography";
 import React from "react";
 import Image from "next/image";
 import { footerSocials } from "@/constants/socials";
+import Typography from "@/library/Typography";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
 
@@ -24,18 +24,12 @@ const Footer: React.FC = () => {
 				title="Apart from coding and reading, I have a secret talent - an unbeatable Chrome Dino game score of 21000! If you dare challenge me, prepare for an epic gaming showdown."
 			/>
 			<div className={classes("-content")}>
-				<Typography type="body" variant="large">
-					Let&apos;s connect
-				</Typography>
+				<Typography size="xl">Let&apos;s connect</Typography>
 				<a
 					href="mailto:akshatmittal2506@gmail.com"
 					className={classes("-email")}
 				>
-					<Typography
-						type="heading"
-						variant="subtitle"
-						className={classes("-email")}
-					>
+					<Typography className={classes("-email")} size="head-3">
 						akshatmittal2506@gmail.com
 					</Typography>
 				</a>

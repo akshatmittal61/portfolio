@@ -1,0 +1,55 @@
+@import "@/styles/config/mixins";
+
+.home-about {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 24px;
+	padding: 0 24px;
+
+	&-box {
+		width: calc(100% - 12px);
+		padding: 24px;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 16px;
+		border-radius: 24px;
+	}
+
+	&-desc {
+		background-color: var(--theme-bashful);
+		margin-right: auto;
+
+		@include responsive(phone) {
+			margin: 12px 0;
+		}
+	}
+
+	&-skills {
+		background-color: var(--theme-white);
+		margin-left: auto;
+
+		@include responsive(phone) {
+			margin: 12px 0;
+		}
+
+		&-list {
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			flex-flow: row wrap;
+			gap: 8px;
+		}
+
+		&-skill {
+			svg {
+				width: 24px;
+				height: 24px;
+			}
+		}
+	}
+}

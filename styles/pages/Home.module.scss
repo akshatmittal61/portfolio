@@ -1,12 +1,26 @@
 .home {
-	width: 100vw;
+	width: 100%;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-flow: column;
-	gap: 36px;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 24px;
+	border-radius: 32px 32px 0 0;
+	background-color: var(--theme-ghost-white);
+	box-shadow: 0px -4px 15px -3px rgba(0, 0, 0, 0.1);
 
-	section:not(:first-child) {
-		padding-right: var(--socials-bar-width);
+	&-empty {
+		width: 100%;
+		height: 400px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 24px;
+		background-color: var(--theme-bashful);
+	}
+
+	&-blogs-and-work,
+	&-projects {
+		padding: 0 24px;
 	}
 }

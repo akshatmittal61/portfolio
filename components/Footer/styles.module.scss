@@ -42,6 +42,7 @@
 		align-items: flex-end;
 		flex-direction: column;
 		gap: 32px;
+		color: var(--theme-white);
 
 		@include responsive(phone) {
 			width: 100%;

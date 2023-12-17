@@ -26,10 +26,10 @@ const PageNotFound: React.FC = () => {
 
 	return (
 		<main className={classes("")}>
-			<Typography type="heading" variant="display">
+			<Typography size="head-1" weight="medium">
 				Ooops... Radar not found
 			</Typography>
-			<Typography type="body" variant="extra-large">
+			<Typography size="lg">
 				Landed on the wrong planet?
 				<br />
 				Let&apos;s get you back to the right realm...
