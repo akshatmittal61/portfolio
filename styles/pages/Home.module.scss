@@ -1,11 +1,17 @@
 .home {
 	width: 100%;
+	min-height: 100vh;
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-direction: column;
 	gap: 24px;
-	border-radius: 32px 32px 0 0;
-	background-color: var(--theme-ghost-white);
 	box-shadow: 0px -4px 15px -3px rgba(0, 0, 0, 0.1);
+	background: radial-gradient(
+		ellipse 80% 80% at 50% -20%,
+		rgba(44, 93, 242, 0.5),
+		transparent
+	);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
