@@ -1,0 +1,49 @@
+@import "@/styles/config/mixins";
+
+.navigation {
+	width: fit-content;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	gap: 12px;
+	position: fixed;
+	top: 16px;
+	left: 20px;
+	padding: 8px 4px;
+	border-radius: 500px;
+	background-color: var(--semantic-primary-background-weak);
+	box-shadow: var(--shadow-m);
+
+	a,
+	button {
+		@include init-button;
+		width: 48px;
+		height: 48px;
+		border-radius: 500px;
+		padding: 8px;
+
+		&:hover {
+			background-color: var(--base-neutral-500-10);
+		}
+
+		svg {
+			stroke: var(--semantic-primary-text-medium);
+		}
+	}
+
+	&-item {
+		display: flex;
+
+		&--active svg {
+			transform: rotateZ(-180deg);
+		}
+	}
+
+	&-divider {
+		width: calc(100% - 12px);
+		height: 1px;
+		background-color: var(--semantic-neutral-alpha-strong);
+		opacity: 0.35;
+	}
+}

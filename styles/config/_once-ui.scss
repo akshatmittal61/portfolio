@@ -82,7 +82,11 @@
 	--base-green-500-10: rgba(4, 134, 65, 0.102);
 	--base-green-500-30: rgba(4, 134, 65, 0.302);
 	--base-green-500-50: rgba(4, 134, 65, 0.502);
+}
 
+:root,
+:root::after,
+:root::before {
 	--semantic-primary-background-strong: var(--base-primary-200);
 	--semantic-primary-background-medium: var(--base-primary-100);
 	--semantic-primary-background-weak: var(--base-primary-50);
@@ -185,7 +189,11 @@
 	--semantic-green-border-strong: var(--base-green-400);
 	--semantic-green-border-medium: var(--base-green-300);
 	--semantic-green-border-weak: var(--base-green-200);
+}
 
+:root,
+:root::after,
+:root::before {
 	--radius-xs: 0.25rem;
 	--radius-s: 0.5rem;
 	--radius-m: 0.75rem;
@@ -208,7 +216,11 @@
 	--size-120: 7.5rem;
 	--size-160: 10rem;
 	--size-200: 12.5rem;
+}
 
+:root,
+:root::after,
+:root::before {
 	--focus-primary: 0 0 0 0.2rem var(--base-primary-500-30);
 	--focus-secondary: 0 0 0 0.2rem var(--base-secondary-500-30);
 	--focus-yellow: 0 0 0 0.2rem var(--base-yellow-500-30);

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { footerSocials } from "@/constants/socials";
+import socials from "@/constants/socials";
 import Typography from "@/library/Typography";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
 					</Typography>
 				</a>
 				<ul className={classes("-socials")}>
-					{footerSocials.map((social, index) => (
+					{socials.map((social, index) => (
 						<li key={index}>
 							<a
 								href={social.link}

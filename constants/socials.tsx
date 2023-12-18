@@ -18,6 +18,13 @@ interface ISocial {
 
 const socials: ISocial[] = [
 	{
+		icon: <Mail />,
+		username: "akshatmittal2506@gmail.com",
+		link: "mailto:akshatmittal2506@gmail.com",
+		color: "var(--red-700)",
+		platform: "Email",
+	},
+	{
 		icon: <GitHub />,
 		username: "@akshatmittal61",
 		link: "https://github.com/akshatmittal61",
@@ -39,13 +46,6 @@ const socials: ISocial[] = [
 		platform: "LeetCode",
 	},
 	{
-		icon: <Mail />,
-		username: "akshatmittal2506@gmail.com",
-		link: "mailto:akshatmittal2506@gmail.com",
-		color: "var(--red-700)",
-		platform: "Email",
-	},
-	{
 		icon: <Codepen />,
 		username: "akshatmittal61",
 		link: "https://codepen.io/akshatmittal61",
@@ -59,18 +59,13 @@ const socials: ISocial[] = [
 		color: "var(--blue-500)",
 		platform: "Twitter (X)",
 	},
+	{
+		icon: <Phone />,
+		username: "+91-94568-49466",
+		link: "tel:919456849466",
+		color: "var(--indigo-500)",
+		platform: "Phone",
+	},
 ];
-
-export const footerSocials: ISocial[] = socials.map((social) => {
-	if (social.platform === "Email")
-		return {
-			icon: <Phone />,
-			username: "+91-94568-49466",
-			link: "tel:919456849466",
-			color: "var(--indigo-500)",
-			platform: "Phone",
-		};
-	return social;
-});
 
 export default socials;

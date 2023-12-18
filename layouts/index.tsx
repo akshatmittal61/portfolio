@@ -1,6 +1,7 @@
 import React from "react";
 import Seo from "./Seo";
 import { frontendBaseUrl } from "@/constants/variables";
+import Navigation from "@/components/Navigation";
 
 const Layout: React.FC<any> = ({ children }) => {
 	return (
@@ -74,6 +75,7 @@ const Layout: React.FC<any> = ({ children }) => {
 				canonical={frontendBaseUrl}
 				siteName="Akshat Mittal - Full Stack Developer"
 			/>
+			<Navigation />
 			{children}
 		</>
 	);
