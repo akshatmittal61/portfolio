@@ -21,7 +21,9 @@ const Navigation: React.FC<INavigationProps> = () => {
 						key={`navigation-${index}`}
 						className={classes("-item")}
 					>
-						<Link href={item.path}>{item.icon}</Link>
+						<Link title={item.title} href={item.path}>
+							{item.icon}
+						</Link>
 					</li>
 				))}
 			</ul>
@@ -38,6 +40,7 @@ const Navigation: React.FC<INavigationProps> = () => {
 						>
 							<a
 								href={item.link}
+								title={item.platform}
 								target="_blank"
 								rel="noopener noreferrer"
 								style={{ color: item.color }}
