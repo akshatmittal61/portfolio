@@ -4,6 +4,7 @@ import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
 import { Typography } from "@/library";
 import moment from "moment";
+import Image from "next/image";
 
 interface IHomeWorkCardProps extends IWork {}
 
@@ -16,7 +17,7 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 	theme,
 	startDate,
 	endDate,
-	description,
+	tags,
 }) => {
 	return (
 		<div
@@ -26,39 +27,53 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 				color: theme,
 			}}
 		>
-			<Typography
-				as="h3"
-				size="head-4"
-				weight="medium"
-				className={classes("-title")}
-				title={`${company.name} - ${position}`}
-				style={{
-					WebkitTextStroke: `1px ${theme}`,
-				}}
-			>
-				<a
-					href={company.link}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					{company.name}
-				</a>{" "}
-				&middot; {position}
-			</Typography>
-			<Typography as="span">
-				{moment(startDate).format("MMM YYYY")}
-				{endDate
-					? ` - ${moment(endDate).format("MMM YYYY")}`
-					: " - Present"}
-			</Typography>
-			<Typography
-				as="p"
-				size="lg"
-				weight="regular"
-				className={classes("-description")}
-			>
-				{description}
-			</Typography>
+			<div className={classes("-header")}>
+				<Image
+					src={company.logo}
+					alt={company.name}
+					width={50}
+					height={50}
+					layout="fixed"
+					className={classes("-logo")}
+				/>
+				<div className={classes("-header-content")}>
+					<Typography
+						as="h4"
+						size="head-4"
+						weight="medium"
+						className={classes("-title")}
+						title={`${company.name} - ${position}`}
+					>
+						<a
+							href={company.link}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							{company.name}
+						</a>
+					</Typography>
+					<Typography as="span" size="lg">
+						{position} &middot;{" "}
+						{moment(startDate).format("MMM YYYY")}
+						{endDate
+							? ` - ${moment(endDate).format("MMM YYYY")}`
+							: " - Present"}
+					</Typography>
+				</div>
+			</div>
+			<div className={classes("-skills")}>
+				{tags.map((tag, index) => (
+					<Typography
+						as="span"
+						size="sm"
+						weight="regular"
+						className={classes("-skill")}
+						key={`${company.name}-skill-${index + 1}`}
+					>
+						{tag}
+					</Typography>
+				))}
+			</div>
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				width="565"

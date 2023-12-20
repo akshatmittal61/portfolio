@@ -10,9 +10,24 @@
 	align-items: center;
 	width: 100%;
 	height: 100%;
-	background-color: var(--color-theme-navy);
+	background-color: var(--semantic-primary-background-weak);
 	--loader-size: 184px;
 	animation: fade-out 0.25s ease-in 2.5s forwards;
+
+	&-cover {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		box-shadow: 0px -4px 15px -3px rgba(0, 0, 0, 0.1);
+		background: radial-gradient(
+			ellipse 80% 80% at 50% -20%,
+			var(--semantic-primary-alpha-strong),
+			transparent
+		);
+		z-index: 1001;
+	}
 
 	&-logo {
 		width: var(--loader-size);

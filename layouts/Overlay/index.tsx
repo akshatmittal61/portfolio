@@ -7,6 +7,7 @@ const classes = stylesConfig(styles, "overlay");
 const Overlay: React.FC = () => {
 	return (
 		<main id="overlay" className={classes("")}>
+			<div className={classes("-cover")} />
 			<div className={classes("-logo")}>
 				<span className={classes("-logo-left")}></span>
 				<span className={classes("-logo-right")}></span>
