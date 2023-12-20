@@ -1,0 +1,17 @@
+.home-work {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: column;
+	gap: 24px;
+	padding: 48px 0 48px 5%;
+
+	&-description {
+		width: 80%;
+
+		a {
+			text-decoration: underline;
+		}
+	}
+}

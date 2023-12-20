@@ -7,6 +7,13 @@
 	gap: 24px;
 	padding: 48px 0 48px 5%;
 
+	&-description {
+		width: 80%;
+		a {
+			text-decoration: underline;
+		}
+	}
+
 	&-container {
 		width: 100%;
 		display: flex;

@@ -1,4 +1,5 @@
 import Intro from "./Intro";
 import Projects from "./Projects";
+import Work from "./Work";
 
-export { Intro, Projects };
+export { Intro, Projects, Work };
