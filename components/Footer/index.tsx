@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
 					href="mailto:akshatmittal2506@gmail.com"
 					className={classes("-email")}
 				>
-					<Typography className={classes("-email")} size="head-3">
+					<Typography className={classes("-email")}>
 						akshatmittal2506@gmail.com
 					</Typography>
 				</a>
