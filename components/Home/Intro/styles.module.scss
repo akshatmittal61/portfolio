@@ -1,8 +1,16 @@
+@import "@/styles/config/mixins";
+@import "@/styles/config/typography";
+
 .home-intro {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	position: relative;
+
+	@include responsive(phone) {
+		flex-direction: column;
+	}
 
 	&-left {
 		width: 50%;
@@ -13,6 +21,29 @@
 		gap: 24px;
 		padding: 48px 5%;
 		color: var(--base-neutral-900);
+
+		@include responsive(phone) {
+			width: 100%;
+			align-items: center;
+			text-align: center;
+			padding: 25vw 16px;
+		}
+
+		&-title {
+			@include typography($size: head-1, $weight: semi-bold);
+
+			@include responsive(phone) {
+				@include typography($size: head-2, $weight: semi-bold);
+			}
+		}
+
+		&-subtitle {
+			@include typography($size: lg, $weight: regular);
+
+			@include responsive(phone) {
+				@include typography($size: md, $weight: regular);
+			}
+		}
 	}
 
 	&-right {
@@ -20,6 +51,16 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		@include responsive(phone) {
+			width: 100%;
+			position: absolute;
+			opacity: 0.2;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: -1;
+		}
 	}
 
 	&-grid {

@@ -10,6 +10,12 @@
 	gap: 24px;
 	padding: 48px 5%;
 
+	@include responsive(phone) {
+		padding: 16px 0;
+		align-items: center;
+		text-align: center;
+	}
+
 	&-description {
 		width: 80%;
 
@@ -24,6 +30,11 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-areas: "a1 a2" "a1 a3";
 		gap: 24px;
+
+		@include responsive(phone) {
+			grid-template-columns: 1fr;
+			grid-template-areas: "a1" "a2" "a3";
+		}
 	}
 
 	&-card {
@@ -69,9 +80,22 @@
 			color: inherit;
 			user-select: none;
 			text-align: left;
+			@include typography($size: head-4, $weight: medium);
+
+			@include responsive(phone) {
+				@include typography($size: xxxl, $weight: medium);
+			}
 
 			a:hover {
 				text-decoration: underline;
+			}
+		}
+
+		&-subtitle {
+			@include typography($size: lg, $weight: regular);
+
+			@include responsive(phone) {
+				@include typography($size: md, $weight: regular);
 			}
 		}
 

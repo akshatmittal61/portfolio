@@ -12,12 +12,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 	return (
 		<section className={classes("")}>
 			<div className={classes("-left")}>
-				<Typography
-					as="h1"
-					size="head-1"
-					weight="semi-bold"
-					className={classes("-left-title")}
-				>
+				<Typography as="h1" className={classes("-left-title")}>
 					Akshat Mittal
 				</Typography>
 				<Typography
@@ -28,6 +23,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 				>
 					A full stack developer turning ideas into functional and
 					interactive web applications
+					<br />
 					<br />
 					When I&apos;m not immersed in lines of code, you&apos;ll
 					find me in the pages of books and scribbling my thoughts

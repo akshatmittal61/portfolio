@@ -39,8 +39,6 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 				<div className={classes("-header-content")}>
 					<Typography
 						as="h4"
-						size="head-4"
-						weight="medium"
 						className={classes("-title")}
 						title={`${company.name} - ${position}`}
 					>
@@ -52,7 +50,11 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 							{company.name}
 						</a>
 					</Typography>
-					<Typography as="span" size="lg">
+					<Typography
+						as="span"
+						size="lg"
+						className={classes("-subtitle")}
+					>
 						{position} &middot;{" "}
 						{moment(startDate).format("MMM YYYY")}
 						{endDate
