@@ -34,6 +34,7 @@
 
 			@include responsive(phone) {
 				@include typography($size: head-2, $weight: semi-bold);
+				white-space: nowrap;
 			}
 		}
 

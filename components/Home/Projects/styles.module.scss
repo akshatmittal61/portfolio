@@ -53,6 +53,8 @@
 		@include responsive(phone) {
 			max-width: unset;
 			width: 100%;
+			padding: 4px;
+			gap: 4px;
 		}
 
 		&-graphic {
@@ -86,6 +88,11 @@
 			align-items: center;
 			overflow: hidden;
 			padding: 16px;
+
+			@include responsive(phone) {
+				height: 48px;
+				padding: 8px 12px;
+			}
 		}
 
 		&-left {

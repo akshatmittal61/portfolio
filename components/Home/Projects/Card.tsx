@@ -29,7 +29,7 @@ const HomeProjectsCard: React.FC<IHomeProjectsCardProps> = ({
 					<Image src={logo} alt={title} width={100} height={100} />
 					<Typography
 						as="h3"
-						size="xxl"
+						size="xl"
 						weight="medium"
 						className={classes("-title")}
 					>

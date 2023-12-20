@@ -1,7 +1,7 @@
 @import "@/styles/config/mixins";
 
 .navigation {
-	width: fit-content;
+	width: 56px;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -10,10 +10,33 @@
 	position: fixed;
 	top: 24px;
 	left: 20px;
+	z-index: 20;
 	padding: 8px 4px;
 	border-radius: 500px;
 	background-color: var(--semantic-primary-background-weak);
 	box-shadow: var(--shadow-m);
+
+	@include responsive(phone) {
+		width: calc(100% - 32px);
+		height: 56px;
+		top: unset;
+		bottom: 12px;
+		left: 50%;
+		transform: translateX(-50%);
+		overflow: hidden;
+		flex-direction: row;
+		overflow-x: auto;
+	}
+
+	ul {
+		@include responsive(phone) {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: row;
+			gap: 12px;
+		}
+	}
 
 	a,
 	button {
@@ -45,5 +68,10 @@
 		height: 1px;
 		background-color: var(--semantic-neutral-alpha-strong);
 		opacity: 0.35;
+
+		@include responsive(phone) {
+			width: 1px;
+			height: calc(100% - 12px);
+		}
 	}
 }

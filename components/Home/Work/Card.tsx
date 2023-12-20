@@ -56,10 +56,12 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 						className={classes("-subtitle")}
 					>
 						{position} &middot;{" "}
-						{moment(startDate).format("MMM YYYY")}
-						{endDate
-							? ` - ${moment(endDate).format("MMM YYYY")}`
-							: " - Present"}
+						<Typography size="s">
+							{moment(startDate).format("MMM YYYY")}
+							{endDate
+								? ` - ${moment(endDate).format("MMM YYYY")}`
+								: " - Present"}
+						</Typography>
 					</Typography>
 				</div>
 			</div>

@@ -71,6 +71,11 @@
 			width: 64px;
 			height: 64px;
 			object-fit: contain;
+
+			@include responsive(phone) {
+				width: 56px;
+				height: 56px;
+			}
 		}
 
 		&-title {
@@ -122,6 +127,10 @@
 			background-color: rgba(255, 255, 255, 0.1);
 			color: var(--theme-white);
 			@include typography($size: md);
+
+			@include responsive(phone) {
+				@include typography($size: sm);
+			}
 		}
 
 		&-blob {

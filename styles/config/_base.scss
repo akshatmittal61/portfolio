@@ -35,6 +35,10 @@ body {
 		"calt" on;
 	touch-action: pan-x pan-y;
 	background-color: var(--semantic-primary-background-weak);
+
+	@include responsive(phone) {
+		padding-bottom: 80px;
+	}
 }
 
 a {

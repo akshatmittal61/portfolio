@@ -1,8 +1,8 @@
 import React from "react";
+import Image from "next/image";
+import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
-import { Typography } from "@/library";
-import Image from "next/image";
 
 interface IHomeIntroProps {}
 

@@ -5,6 +5,7 @@ import navigation from "@/constants/navigation";
 import Link from "next/link";
 import socials from "@/constants/socials";
 import { ChevronDown } from "react-feather";
+import useDevice from "@/hooks/device";
 
 interface INavigationProps {}
 
@@ -12,6 +13,7 @@ const classes = stylesConfig(styles, "navigation");
 
 const Navigation: React.FC<INavigationProps> = () => {
 	const [openAllSocialsMenu, setOpenAllSocialsMenu] = useState(false);
+	const { type: device } = useDevice();
 
 	return (
 		<nav className={classes("")}>
@@ -31,7 +33,9 @@ const Navigation: React.FC<INavigationProps> = () => {
 			<ul>
 				{socials
 					.filter((_, index) =>
-						openAllSocialsMenu ? true : index < 3
+						openAllSocialsMenu || device === "mobile"
+							? true
+							: index < 3
 					)
 					.map((item, index) => (
 						<li
@@ -49,17 +53,21 @@ const Navigation: React.FC<INavigationProps> = () => {
 							</a>
 						</li>
 					))}
-				<li
-					className={classes("-item", {
-						"-item--active": openAllSocialsMenu,
-					})}
-				>
-					<button
-						onClick={() => setOpenAllSocialsMenu((prev) => !prev)}
+				{device !== "mobile" ? (
+					<li
+						className={classes("-item", {
+							"-item--active": openAllSocialsMenu,
+						})}
 					>
-						<ChevronDown />
-					</button>
-				</li>
+						<button
+							onClick={() =>
+								setOpenAllSocialsMenu((prev) => !prev)
+							}
+						>
+							<ChevronDown />
+						</button>
+					</li>
+				) : null}
 			</ul>
 		</nav>
 	);
