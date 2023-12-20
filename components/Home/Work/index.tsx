@@ -1,7 +1,9 @@
 import React from "react";
+import Card from "./Card";
+import workExperience from "@/data/experience";
+import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
-import { Typography } from "@/library";
 
 interface IHomeWorkProps {}
 
@@ -31,10 +33,15 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					Athenasquare
+					AthenaSquare
 				</a>
 				.
 			</Typography>
+			<div className={classes("-container")}>
+				{workExperience.map((work, index) => (
+					<Card key={`work-${index + 1}`} {...work} />
+				))}
+			</div>
 		</section>
 	);
 };

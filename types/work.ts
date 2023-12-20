@@ -10,4 +10,6 @@ export interface IWork {
 	startDate: string;
 	endDate?: string;
 	tags: string[];
+	background: string;
+	theme: string;
 }

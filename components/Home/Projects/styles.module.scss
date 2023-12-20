@@ -1,3 +1,5 @@
+@import "@/styles/config/mixins";
+
 .home-projects {
 	width: 100%;
 	display: flex;
@@ -21,6 +23,7 @@
 		align-items: center;
 		gap: 24px;
 		overflow-x: auto;
+		@include hide-scrollbar();
 	}
 
 	&-card {
