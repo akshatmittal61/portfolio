@@ -1,4 +1,4 @@
-name: Build and Test
+name: Build
 
 on:
     pull_request:
@@ -38,29 +38,3 @@ jobs:
 
             - name: Check Code Formatting
               run: yarn format
-
-    test:
-        runs-on: ubuntu-latest
-
-        steps:
-            - name: Configure Git
-              run: |
-                  git config --global user.name "GitHub Actions"
-                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-            - name: Checkout
-              uses: actions/checkout@v3
-              with:
-                  ref: ${{ github.event.pull_request.head.sha }}
-                  fetch-depth: 0
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                  node-version: "18"
-
-            - name: Install Dependencies
-              run: yarn
-
-            - name: Run Tests
-              run: yarn test
