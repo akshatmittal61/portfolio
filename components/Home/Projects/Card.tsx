@@ -4,7 +4,7 @@ import styles from "./styles.module.scss";
 import { IProject } from "@/types/project";
 import Image from "next/image";
 import { Typography } from "@/library";
-import { ExternalLink, GitHub } from "react-feather";
+import { Code, ExternalLink } from "react-feather";
 
 interface IHomeProjectsCardProps extends IProject {}
 
@@ -38,7 +38,7 @@ const HomeProjectsCard: React.FC<IHomeProjectsCardProps> = ({
 				</div>
 				<div className={classes("-right")}>
 					<a href={github} target="_blank" rel="noreferrer">
-						<GitHub />
+						<Code />
 					</a>
 					<a href={deployment} target="_blank" rel="noreferrer">
 						<ExternalLink />
