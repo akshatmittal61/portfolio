@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
+import { ArrowUpRight } from "react-feather";
 
 interface IHomeIntroProps {}
 
@@ -29,6 +30,13 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 					find me in the pages of books and scribbling my thoughts
 					into poems.
 				</Typography>
+				<button
+					onClick={() => window.open("/resume", "_blank")}
+					className={classes("-left-button")}
+				>
+					<ArrowUpRight />
+					Resume
+				</button>
 			</div>
 			<div className={classes("-right")}>
 				<div className={classes("-grid")}>

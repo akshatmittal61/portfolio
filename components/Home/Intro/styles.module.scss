@@ -45,6 +45,35 @@
 				@include typography($size: md, $weight: regular);
 			}
 		}
+
+		&-button {
+			@include init-button;
+			@include typography($size: md, $weight: semi-bold);
+			padding: 12px 20px;
+			gap: 8px;
+			border-radius: 8px;
+			background: var(--semantic-primary-alpha-medium);
+			color: var(--base-neutral-900);
+			transition: all 0.2s ease-in-out;
+
+			&:hover {
+				background: var(--semantic-primary-alpha-strong);
+			}
+
+			@include responsive(phone) {
+				@include typography($size: sm, $weight: semi-bold);
+				padding: 8px 16px;
+			}
+
+			&-icon {
+				margin-left: 8px;
+				transition: all 0.2s ease-in-out;
+
+				&:hover {
+					transform: translateX(4px);
+				}
+			}
+		}
 	}
 
 	&-right {
