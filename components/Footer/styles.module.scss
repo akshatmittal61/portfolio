@@ -18,8 +18,8 @@
 
 	@include responsive(phone) {
 		flex-direction: column;
-		justify-content: flex-start;
-		padding: 15vh 2.5% 0 2.5%;
+		justify-content: center;
+		padding: 10vh 2.5% 0 2.5%;
 		background-size: cover;
 	}
 
@@ -47,6 +47,7 @@
 
 		@include responsive(phone) {
 			width: 100%;
+			height: auto;
 			align-items: center;
 			text-align: center;
 		}
@@ -59,6 +60,11 @@
 		gap: 32px;
 		list-style: none;
 
+		@include responsive(phone) {
+			justify-content: center;
+			gap: 16px;
+		}
+
 		a {
 			width: 30px;
 			height: 30px;
@@ -67,9 +73,19 @@
 			align-items: center;
 			color: var(--color-theme-light-slate);
 
+			@include responsive(phone) {
+				width: 24px;
+				height: 24px;
+			}
+
 			svg {
 				width: 30px;
 				height: 30px;
+
+				@include responsive(phone) {
+					width: 24px;
+					height: 24px;
+				}
 			}
 
 			&:hover {
@@ -116,7 +132,7 @@
 		}
 
 		@include responsive(phone) {
-			@include typography($size: xxl, $weight: semi-bold);
+			@include typography($size: xl, $weight: semi-bold);
 		}
 	}
 

@@ -26,14 +26,13 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 				weight="regular"
 				className={classes("-description")}
 			>
-				Right now, I am an SDE intern at a thriving growth stage B2B
-				SaaS startup{" "}
+				Right now, I am working as an Associate SDE at{" "}
 				<a
-					href="https://athenasquare.org/"
+					href="https://growthjockey.com"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
-					AthenaSquare
+					GrowthJockey
 				</a>
 				.
 			</Typography>

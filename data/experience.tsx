@@ -2,6 +2,21 @@ import { IWork } from "@/types/work";
 
 const workExperience: IWork[] = [
 	{
+		id: 4,
+		company: {
+			name: "GrowthJockey",
+			logo: "/images/work/growthjockey.png",
+			link: "https://growthjockey.com",
+		},
+		position: "Associate SDE",
+		description:
+			"At GrowthJockey I am working on their internal product for all the data management by a custom in-house build dashboards.",
+		startDate: "2022-01-03T00:00:00.000Z",
+		tags: ["reactjs", "remix", "typescript", "tailwindcss", "figma"],
+		background: "rgba(179, 99, 199, 0.15)",
+		theme: "#1f40cb",
+	},
+	{
 		id: 3,
 		company: {
 			name: "AthenaSquare",
@@ -18,7 +33,6 @@ const workExperience: IWork[] = [
 			"typescript",
 			"jest",
 			"sass",
-			"figma",
 			"figma",
 			"java",
 			"springboot",
