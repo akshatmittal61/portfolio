@@ -33,7 +33,6 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 					alt={company.name}
 					width={50}
 					height={50}
-					layout="fixed"
 					className={classes("-logo")}
 				/>
 				<div className={classes("-header-content")}>
