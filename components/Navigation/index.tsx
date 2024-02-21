@@ -17,7 +17,7 @@ const Navigation: React.FC<INavigationProps> = () => {
 
 	return (
 		<nav className={classes("")}>
-			<ul>
+			<ul className={classes("-list")}>
 				{navigation.map((item, index) => (
 					<li
 						key={`navigation-${index}`}
@@ -30,33 +30,31 @@ const Navigation: React.FC<INavigationProps> = () => {
 				))}
 			</ul>
 			<hr className={classes("-divider")} />
-			<ul>
-				{socials
-					.filter((_, index) =>
-						openAllSocialsMenu || device === "mobile"
-							? true
-							: index < 3
-					)
-					.map((item, index) => (
-						<li
-							key={`socials-${index}`}
-							className={classes("-item")}
+			<ul
+				className={classes("-list", {
+					"-list--expanded": openAllSocialsMenu,
+				})}
+			>
+				{socials.map((item, index) => (
+					<li
+						key={`socials-${index}`}
+						className={classes("-list-item")}
+					>
+						<a
+							href={item.link}
+							title={item.platform}
+							target="_blank"
+							rel="noopener noreferrer"
+							style={{ color: item.color }}
 						>
-							<a
-								href={item.link}
-								title={item.platform}
-								target="_blank"
-								rel="noopener noreferrer"
-								style={{ color: item.color }}
-							>
-								{item.icon}
-							</a>
-						</li>
-					))}
+							{item.icon}
+						</a>
+					</li>
+				))}
 				{device !== "mobile" ? (
 					<li
-						className={classes("-item", {
-							"-item--active": openAllSocialsMenu,
+						className={classes("-list-item", {
+							"-list-item--active": openAllSocialsMenu,
 						})}
 					>
 						<button

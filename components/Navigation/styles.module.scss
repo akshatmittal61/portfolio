@@ -28,10 +28,42 @@
 		overflow-x: auto;
 	}
 
-	ul {
+	&-list {
+		&-item {
+			display: flex;
+
+			&:nth-child(n + 4) {
+				display: none;
+
+				@include responsive(phone) {
+					display: flex;
+				}
+			}
+
+			&:last-child {
+				display: flex;
+			}
+
+			&--active {
+				svg {
+					transform: rotateZ(-180deg);
+				}
+			}
+		}
+
+		&--expanded &-item {
+			display: flex;
+
+			&:last-child {
+				@include responsive(phone) {
+					display: none;
+				}
+			}
+		}
+
 		@include responsive(phone) {
 			display: flex;
-			justify-content: center;
+			justify-content: flex-start;
 			align-items: center;
 			flex-direction: row;
 			gap: 12px;
@@ -52,14 +84,6 @@
 
 		svg {
 			stroke: var(--semantic-primary-text-medium);
-		}
-	}
-
-	&-item {
-		display: flex;
-
-		&--active svg {
-			transform: rotateZ(-180deg);
 		}
 	}
 
