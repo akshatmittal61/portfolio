@@ -6,6 +6,7 @@ import {
 	Code,
 	Twitter,
 	Phone,
+	Rss,
 } from "react-feather";
 
 interface ISocial {
@@ -58,6 +59,13 @@ const socials: ISocial[] = [
 		link: "https://twitter.com/akshatmittal61",
 		color: "var(--blue-500)",
 		platform: "Twitter (X)",
+	},
+	{
+		icon: <Rss />,
+		username: "@akshatmittal61",
+		link: "https://akshatmittal61.hashnode.dev",
+		color: "var(--blue-500)",
+		platform: "Hashnode Blog",
 	},
 	{
 		icon: <Phone />,

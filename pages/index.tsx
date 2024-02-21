@@ -9,8 +9,8 @@ const HomePage: React.FC = () => {
 	return (
 		<main className={classes("")}>
 			<Intro />
-			<Projects />
 			<Work />
+			<Projects />
 		</main>
 	);
 };
