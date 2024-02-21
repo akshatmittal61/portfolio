@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
 import projects from "@/data/projects";
+import Responsive from "@/layouts/Responsive";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
@@ -20,11 +21,20 @@ const HomeProjects: React.FC<IHomeProjectsProps> = () => {
 			>
 				What I build
 			</Typography>
-			<div className={classes("-container")}>
+			<Responsive.Row className={classes("-container")}>
 				{projects.map((project, index) => (
-					<Card key={`project-${index + 1}`} {...project} />
+					<Responsive.Col
+						xlg={50}
+						lg={50}
+						md={50}
+						sm={100}
+						xsm={100}
+						key={`project-${index + 1}`}
+					>
+						<Card {...project} />
+					</Responsive.Col>
 				))}
-			</div>
+			</Responsive.Row>
 		</section>
 	);
 };
