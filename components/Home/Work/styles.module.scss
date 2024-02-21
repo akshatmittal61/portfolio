@@ -73,6 +73,8 @@
 		flex-direction: column;
 		gap: 24px;
 		padding: 24px;
+		position: relative;
+		z-index: 1;
 
 		&-header {
 			width: 100%;
@@ -128,6 +130,21 @@
 				justify-content: space-evenly;
 				gap: 12px;
 			}
+		}
+
+		&-blob {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			width: 100%;
+			object-fit: cover;
+			opacity: 0.1;
+			color: #8888da;
+		}
+
+		&:hover &-blob {
+			opacity: 1;
 		}
 	}
 }

@@ -88,6 +88,48 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 									/>
 								))}
 							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="565"
+								height="360"
+								viewBox="0 0 565 360"
+								fill="none"
+								className={classes("-card-blob")}
+							>
+								<g filter={`url(#filter-${work.company.name})`}>
+									<path
+										d="M305 303.5C305 371.707 249.707 427 181.5 427C113.293 427 -33 352.707 -33 284.5C-33 216.293 217.793 175 286 175C354.207 175 305 235.293 305 303.5Z"
+										fill={work.theme}
+										fill-opacity="0.7"
+									/>
+								</g>
+								<defs>
+									<filter
+										id={`filter-${work.company.name}`}
+										x="-433"
+										y="-225"
+										width="1155.17"
+										height="1052"
+										filterUnits="userSpaceOnUse"
+										color-interpolation-filters="sRGB"
+									>
+										<feFlood
+											flood-opacity="0"
+											result="BackgroundImageFix"
+										/>
+										<feBlend
+											mode="normal"
+											in="SourceGraphic"
+											in2="BackgroundImageFix"
+											result="shape"
+										/>
+										<feGaussianBlur
+											stdDeviation="200"
+											result={`effect1_foregroundBlur-${work.company.name}`}
+										/>
+									</filter>
+								</defs>
+							</svg>
 						</div>
 					))}
 			</div>
