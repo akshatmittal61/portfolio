@@ -26,9 +26,16 @@
 		overflow: hidden;
 		flex-direction: row;
 		overflow-x: auto;
+		padding: 8px;
 	}
 
 	&-list {
+		list-style: none;
+
+		&:first-child {
+			display: none;
+		}
+
 		&-item {
 			display: flex;
 
@@ -96,6 +103,7 @@
 		@include responsive(phone) {
 			width: 1px;
 			height: calc(100% - 12px);
+			display: none;
 		}
 	}
 }

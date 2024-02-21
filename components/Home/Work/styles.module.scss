@@ -46,7 +46,7 @@
 		flex-direction: column;
 		gap: 24px;
 		padding: 24px;
-		border-radius: 24px;
+		border-radius: var(--border-radius);
 		box-shadow: 4px 4px 20px -8px rgba(58, 62, 111, 0.25) inset;
 		overflow: hidden;
 		position: relative;

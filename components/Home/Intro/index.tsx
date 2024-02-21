@@ -39,26 +39,20 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 				</button>
 			</div>
 			<div className={classes("-right")}>
-				<div className={classes("-grid")}>
-					{Array(5)
-						.fill(0)
-						.map((_, i) => (
-							<div
-								key={`intro-grid-tile-${i}`}
-								className={classes(
-									"-grid-item",
-									`-grid-item-${i + 1}`
-								)}
-							>
-								<Image
-									src={`/images/grid-${i + 1}.png`}
-									alt={`Intro grid image ${i + 1}`}
-									width={300}
-									height={300}
-								/>
-							</div>
-						))}
-				</div>
+				<Image
+					src="/images/grid-2.png"
+					alt="Intro grid image 2"
+					width={1920}
+					height={1080}
+					className={classes("-right-image-1")}
+				/>
+				<Image
+					src="/images/grid-4.png"
+					alt="Intro grid image 4"
+					width={1920}
+					height={1080}
+					className={classes("-right-image-2")}
+				/>
 			</div>
 		</section>
 	);
