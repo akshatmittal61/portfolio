@@ -116,22 +116,6 @@
 			gap: 16px;
 		}
 
-		&-skill {
-			display: inline-flex;
-			justify-content: center;
-			align-items: center;
-			gap: 6px;
-			padding: 6px 12px;
-			border-radius: 500px 500px 2px 500px;
-			background-color: rgba(255, 255, 255, 0.1);
-			color: var(--theme-white);
-			@include typography($size: md);
-
-			@include responsive(phone) {
-				@include typography($size: sm);
-			}
-		}
-
 		&-blob {
 			position: absolute;
 			top: 0;

@@ -33,7 +33,9 @@
 		list-style: none;
 
 		&:first-child {
-			display: none;
+			@include responsive(phone) {
+				display: none;
+			}
 		}
 
 		&-item {

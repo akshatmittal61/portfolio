@@ -124,4 +124,20 @@
 			opacity: 0;
 		}
 	}
+
+	&-skills {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 16px;
+		padding-right: 48px;
+
+		@include responsive(phone) {
+			padding-right: 0;
+			justify-content: space-evenly;
+			gap: 12px;
+		}
+	}
 }

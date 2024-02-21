@@ -1,9 +1,11 @@
 import React from "react";
+import { ArrowUpRight } from "react-feather";
 import Image from "next/image";
+import { SkillPill } from "@/components/Skill";
+import { mySkills as skills } from "@/data/skills";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
-import { ArrowUpRight } from "react-feather";
 
 interface IHomeIntroProps {}
 
@@ -37,6 +39,15 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 					<ArrowUpRight />
 					Resume
 				</button>
+				<div className={classes("-skills")}>
+					{skills.map((skill) => (
+						<SkillPill
+							key={`my-skills-${skill.id}`}
+							name={skill.name}
+							logo={skill.logo}
+						/>
+					))}
+				</div>
 			</div>
 			<div className={classes("-right")}>
 				<Image
