@@ -68,7 +68,9 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 											"MMM YYYY"
 										)}
 										{work.endDate
-											? ` - ${moment(work.endDate).format("MMM YYYY")}`
+											? ` - ${moment(work.endDate).format(
+													"MMM YYYY"
+												)}`
 											: " - Present"}
 									</Typography>
 								</div>
