@@ -13,6 +13,12 @@
 	overflow: hidden;
 	box-shadow: 4px 4px 20px -8px rgba(58, 62, 111, 0.25) inset;
 
+	@include responsive(tablet) {
+		width: 100%;
+		align-items: center;
+		text-align: center;
+	}
+
 	@include responsive(phone) {
 		width: 100%;
 		align-items: center;

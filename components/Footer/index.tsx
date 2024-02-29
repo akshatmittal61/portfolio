@@ -4,6 +4,7 @@ import socials from "@/constants/socials";
 import Typography from "@/library/Typography";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
+import { Dinasour, Waves } from "@/assets";
 
 const classes = stylesConfig(styles, "footer");
 
@@ -11,20 +12,8 @@ const Footer: React.FC = () => {
 	const dinasourAltText =
 		"Apart from coding and reading, I have a secret talent - an unbeatable Chrome Dino game score of 21000! If you dare challenge me, prepare for an epic gaming showdown.";
 	return (
-		<footer
-			className={classes("")}
-			style={{
-				backgroundImage: "url('/vectors/waves.svg/')",
-			}}
-		>
-			<Image
-				src="/vectors/dinasour.svg"
-				alt="dinasour"
-				width={400}
-				height={400}
-				className={classes("-graphic")}
-				title={dinasourAltText}
-			/>
+		<footer className={classes("")}>
+			<Dinasour className={classes("-graphic")} />
 			<a
 				href="chrome://dino"
 				target="_blank"
@@ -68,6 +57,7 @@ const Footer: React.FC = () => {
 					className={classes("-logo")}
 				/>
 			</div>
+			<Waves className={classes("-waves")} />
 		</footer>
 	);
 };

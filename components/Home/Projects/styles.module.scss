@@ -9,6 +9,12 @@
 	gap: 24px;
 	padding: 48px 5%;
 
+	@include responsive(tablet) {
+		padding: 16px 0;
+		align-items: center;
+		text-align: center;
+	}
+
 	@include responsive(phone) {
 		padding: 16px 0;
 		align-items: center;
