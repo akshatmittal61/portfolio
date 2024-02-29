@@ -45,9 +45,11 @@ const HomeProjectsCard: React.FC<IHomeProjectsCardProps> = ({
 					<div className={classes("-right")}>
 						<a href={github} target="_blank" rel="noreferrer">
 							<Code />
+							<span className="dispn">{github}</span>
 						</a>
 						<a href={deployment} target="_blank" rel="noreferrer">
 							<ExternalLink />
+							<span className="dispn">{deployment}</span>
 						</a>
 					</div>
 				</div>

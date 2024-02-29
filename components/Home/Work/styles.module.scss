@@ -76,6 +76,10 @@
 		position: relative;
 		z-index: 1;
 
+		&--hide {
+			display: none;
+		}
+
 		&-header {
 			width: 100%;
 			display: flex;

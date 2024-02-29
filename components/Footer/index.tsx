@@ -8,6 +8,8 @@ import styles from "./styles.module.scss";
 const classes = stylesConfig(styles, "footer");
 
 const Footer: React.FC = () => {
+	const dinasourAltText =
+		"Apart from coding and reading, I have a secret talent - an unbeatable Chrome Dino game score of 21000! If you dare challenge me, prepare for an epic gaming showdown.";
 	return (
 		<footer
 			className={classes("")}
@@ -21,8 +23,16 @@ const Footer: React.FC = () => {
 				width={400}
 				height={400}
 				className={classes("-graphic")}
-				title="Apart from coding and reading, I have a secret talent - an unbeatable Chrome Dino game score of 21000! If you dare challenge me, prepare for an epic gaming showdown."
+				title={dinasourAltText}
 			/>
+			<a
+				href="chrome://dino"
+				target="_blank"
+				rel="noreferrer"
+				className="dispn"
+			>
+				{dinasourAltText}
+			</a>
 			<div className={classes("-content")}>
 				<Typography size="xl">Let&apos;s connect</Typography>
 				<a
@@ -42,6 +52,10 @@ const Footer: React.FC = () => {
 								rel="noreferrer"
 							>
 								{social.icon}
+								<span className="dispn">
+									{social.platform}
+									{social.link}
+								</span>
 							</a>
 						</li>
 					))}

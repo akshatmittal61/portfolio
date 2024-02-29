@@ -33,11 +33,13 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 			</div>
 			<div className={classes("-body")}>
 				{workExperience
-					.filter((work) => work.id === activeTab)
+					// .filter((work) => work.id === activeTab)
 					.map((work, index) => (
 						<div
 							key={`work-body-${index + 1}`}
-							className={classes("-card")}
+							className={classes("-card", {
+								"-card--hide": work.id !== activeTab,
+							})}
 						>
 							<div className={classes("-card-header")}>
 								<Image

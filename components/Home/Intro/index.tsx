@@ -6,6 +6,7 @@ import { mySkills as skills } from "@/data/skills";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
+import { resumeUrl } from "@/constants/variables";
 
 interface IHomeIntroProps {}
 
@@ -38,6 +39,15 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 				>
 					<ArrowUpRight />
 					Resume
+					<a
+						href={resumeUrl}
+						target="_blank"
+						rel="noreferrer"
+						title="Resume"
+						className="dispn"
+					>
+						{resumeUrl}
+					</a>
 				</button>
 				<div className={classes("-skills")}>
 					{skills.map((skill) => (

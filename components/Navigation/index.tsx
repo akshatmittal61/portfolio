@@ -48,6 +48,10 @@ const Navigation: React.FC<INavigationProps> = () => {
 							style={{ color: item.color }}
 						>
 							{item.icon}
+							<span className="dispn">
+								{item.platform}
+								{item.link}
+							</span>
 						</a>
 					</li>
 				))}
