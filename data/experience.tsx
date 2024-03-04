@@ -10,9 +10,16 @@ const workExperience: IWork[] = [
 		},
 		position: "Associate SDE",
 		description:
-			"At GrowthJockey I am working on their internal product for all the data management by a custom in-house build dashboards.",
+			"<ul><li>Working on their internal product for all the data management by a custom in-house build dashboards.</li><li>Working on building services for admin panel</li></ul>",
 		startDate: "2022-01-03T00:00:00.000Z",
-		tags: ["reactjs", "remix", "typescript", "tailwindcss", "figma"],
+		tags: [
+			"reactjs",
+			"remix",
+			"typescript",
+			"tailwindcss",
+			"figma",
+			"fuzzy-search",
+		],
 		background: "rgba(179, 99, 199, 0.15)",
 		theme: "#1f40cb",
 	},
@@ -25,7 +32,7 @@ const workExperience: IWork[] = [
 		},
 		position: "SDE Intern",
 		description:
-			"At AthenaSquare I have built a Screening Dashboard & real-time Application Tracking System for hiring automation. I have also built an Auth workflow using Google OAuth and candidate assessment workflow with proctoring. One of my major contributions was migrating the entire product from ReactJS project to NextJS resulting into SEO increase by 55%. I worked closely with the design team, and the backend team in a feedback-driven environment, continuously refining my way of working with code and in a team. Having worked close to the founding teams, I have great experience in managing things solely.",
+			"<ul><li>Set up Screening Dashboard and real-time Application Tracking System for hiring automation.</li><li>Migrated entire product from ReactJS project to NextJS for SEO optimization by 55%.</li><li>Built a Personalized Candidate Assessment coupled with proctoring and Unit testing with Jest.</li><li>Built an Auth workflow using Google OAuth and candidate assessment workflow with proctoring.</li><li>Developed a chrome extension to streamline migration for 10 clients from platforms like LinkedIn.</li></ul>",
 		startDate: "2022-10-24T00:00:00.000Z",
 		tags: [
 			"reactjs",
@@ -52,7 +59,7 @@ const workExperience: IWork[] = [
 		},
 		position: "Frontend Developer Intern",
 		description:
-			"I worked with the frontend team on an interface for liquid staking protocol, blockchain platform using ReactJS for user-engaging interface development.",
+			"<ul><li>Built 2 services for a liquid staking protocol in a Blockchain platform.</li><li>Used ReactJS for responsive user interface development.</li></ul>",
 		startDate: "2022-05-23T00:00:00.000Z",
 		endDate: "2022-07-18T00:00:00.000Z",
 		tags: ["reactjs", "sass", "typescript"],
@@ -68,7 +75,7 @@ const workExperience: IWork[] = [
 		},
 		position: "Frontend Developer Intern",
 		description:
-			"At Techsnap, I worked on the main website of the company bhulding their initial product. I worked on the frontend of the website using HTML, CSS, and JavaScript. With the help of the design team, I was able to implement the design of the website in a responsive manner and also improved the SEO of the website.",
+			"<ul><li>Designed Figma prototype and mock-ups with user design fine-tuned with UX principles.</li><li>Created and delivered 8 responsive pages with improved SEO optimization.</li></ul>",
 		startDate: "2021-01-01T00:00:00.000Z",
 		endDate: "2021-02-01T00:00:00.000Z",
 		tags: ["figma", "html", "css", "javascript"],

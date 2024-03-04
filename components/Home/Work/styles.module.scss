@@ -25,6 +25,16 @@
 		text-align: center;
 	}
 
+	&-title {
+		width: 100%;
+		padding: 0 5%;
+
+		@include responsive(phone) {
+			padding: 16px 0;
+			text-align: center;
+		}
+	}
+
 	&-tabs {
 		width: 100%;
 		display: flex;
@@ -117,6 +127,7 @@
 		}
 
 		&-description {
+			@include markdown-styles;
 			@include typography($size: md, $weight: regular);
 
 			@include responsive(phone) {

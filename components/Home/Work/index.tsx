@@ -17,24 +17,31 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 			?.id ?? 3
 	);
 	return (
-		<section className={classes("")} id="work">
-			<div className={classes("-tabs")}>
-				{workExperience.map((work, index) => (
-					<button
-						key={`work-tab-${index + 1}`}
-						className={classes("-tabs-tab", {
-							"-tabs-tab--active": activeTab === work.id,
-						})}
-						onClick={() => setActiveTab(work.id)}
-					>
-						{work.company.name}
-					</button>
-				))}
-			</div>
-			<div className={classes("-body")}>
-				{workExperience
-					// .filter((work) => work.id === activeTab)
-					.map((work, index) => (
+		<>
+			<Typography
+				as="h2"
+				size="head-3"
+				weight="medium"
+				className={classes("-title")}
+			>
+				Where I Work
+			</Typography>
+			<section className={classes("")} id="work">
+				<div className={classes("-tabs")}>
+					{workExperience.map((work, index) => (
+						<button
+							key={`work-tab-${index + 1}`}
+							className={classes("-tabs-tab", {
+								"-tabs-tab--active": activeTab === work.id,
+							})}
+							onClick={() => setActiveTab(work.id)}
+						>
+							{work.company.name}
+						</button>
+					))}
+				</div>
+				<div className={classes("-body")}>
+					{workExperience.map((work, index) => (
 						<div
 							key={`work-body-${index + 1}`}
 							className={classes("-card", {
@@ -77,13 +84,12 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 									</Typography>
 								</div>
 							</div>
-							<Typography
-								as="p"
-								weight="regular"
+							<p
 								className={classes("-card-description")}
-							>
-								{work.description}
-							</Typography>
+								dangerouslySetInnerHTML={{
+									__html: work.description,
+								}}
+							/>
 							<div className={classes("-card-tags")}>
 								{work.tags.map((tag, index) => (
 									<SkillPill
@@ -136,8 +142,9 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 							</svg>
 						</div>
 					))}
-			</div>
-		</section>
+				</div>
+			</section>
+		</>
 	);
 };
 
