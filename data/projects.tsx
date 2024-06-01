@@ -10,9 +10,9 @@ const projects: IProject[] = [
 • Attained a remarkable Google ranking of 95% through effective SEO strategies
 		`,
 		github: "https://github.com/akshatmittal61/city-tales",
-		deployment: "https://citytales.org/",
-		image: "https://www.citytales.org/images/og-image.png",
-		logo: "https://www.citytales.org/images/primary-logo-1.png",
+		deployment: "https://city-tales.vercel.app/",
+		image: "https://city-tales.vercel.app/images/og-image.png",
+		logo: "https://city-tales.vercel.app/images/primary-logo-1.png",
 		tags: ["nestjs", "typescript", "javascript", "sass"],
 	},
 	{
