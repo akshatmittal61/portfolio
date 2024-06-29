@@ -2,7 +2,34 @@ import { IProject } from "@/types/project";
 
 const projects: IProject[] = [
 	{
-		id: 1,
+		id: 5,
+		title: "Settle It",
+		description: `
+• Built an application for maintaining track of expenses
+• OTP based authentication model
+• Just add the expenses and let us handle the calculations
+• Optimized API response by 150% by MongoDB lookup queries and database normalization
+		`,
+		github: "https://github.com/akshatmittal61/settle-it",
+		deployment: "https://settleit.vercel.app/",
+		image: "https://settleit.vercel.app/og-image.png",
+		logo: "https://settleit.vercel.app/favicon.png",
+		tags: ["nextjs", "typescript", "sass", "flutter"],
+	},
+	{
+		id: 4,
+		title: "Screen Recorder",
+		description: `
+• Built by native media recorder element
+		`,
+		github: "https://github.com/akshatmittal61/screen-recorder",
+		deployment: "https://akshatmittal61.github.io/screen-recorder/",
+		image: "https://akshatmittal61.github.io/screen-recorder/images/og-image.png",
+		logo: "https://akshatmittal61.github.io/screen-recorder/favicon.png",
+		tags: ["javascript", "media"],
+	},
+	{
+		id: 3,
 		title: "City Tales",
 		description: `
 • Incorporated features such as past walks, blogs, reviews, quizzes, and merchandise to enhance user engagement.
@@ -30,7 +57,7 @@ const projects: IProject[] = [
 		tags: ["nextjs", "typescript", "javascript", "google-apis", "sass"],
 	},
 	{
-		id: 3,
+		id: 1,
 		title: "Flavorsome",
 		description: `
 • Built a MERN Stack recipe blogging platform in 4 days as a frontend challenge
@@ -41,18 +68,6 @@ const projects: IProject[] = [
 		image: "https://flavorsome.netlify.app/images/og-image.png",
 		logo: "https://flavorsome.netlify.app/images/favicon.png",
 		tags: ["reactjs", "javascript", "mongodb", "express", "sass"],
-	},
-	{
-		id: 4,
-		title: "Screen Recorder",
-		description: `
-• Built by native media recorder element
-		`,
-		github: "https://github.com/akshatmittal61/screen-recorder",
-		deployment: "https://akshatmittal61.github.io/screen-recorder/",
-		image: "https://akshatmittal61.github.io/screen-recorder/images/og-image.png",
-		logo: "https://akshatmittal61.github.io/screen-recorder/favicon.png",
-		tags: ["javascript", "media"],
 	},
 ];
 
