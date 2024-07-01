@@ -1,8 +1,9 @@
+import { frontendBaseUrl } from "@/constants/variables";
 import { IProject } from "@/types/project";
 
 const projects: IProject[] = [
 	{
-		id: 5,
+		id: 6,
 		title: "Settle It",
 		description: `
 • Built an application for maintaining track of expenses
@@ -17,7 +18,7 @@ const projects: IProject[] = [
 		tags: ["nextjs", "typescript", "sass", "flutter"],
 	},
 	{
-		id: 4,
+		id: 5,
 		title: "Screen Recorder",
 		description: `
 • Built by native media recorder element
@@ -26,6 +27,18 @@ const projects: IProject[] = [
 		deployment: "https://akshatmittal61.github.io/screen-recorder/",
 		image: "https://akshatmittal61.github.io/screen-recorder/images/og-image.png",
 		logo: "https://akshatmittal61.github.io/screen-recorder/favicon.png",
+		tags: ["javascript", "media"],
+	},
+	{
+		id: 4,
+		title: "Pure Python Server",
+		description: `
+• Built by native media recorder element
+		`,
+		github: "https://github.com/akshatmittal61/pure-python-server",
+		deployment: "",
+		image: `${frontendBaseUrl}/images/projects/python-server-og.png`,
+		logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
 		tags: ["javascript", "media"],
 	},
 	{

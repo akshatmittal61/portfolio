@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import { Code, ExternalLink } from "react-feather";
 import { Typography } from "@/library";
 import { IProject } from "@/types/project";
 import { stylesConfig } from "@/utils/functions";
+import Image from "next/image";
+import React from "react";
+import { Code, ExternalLink } from "react-feather";
 import styles from "./styles.module.scss";
 
 interface IHomeProjectsCardProps extends IProject {}
@@ -43,14 +43,22 @@ const HomeProjectsCard: React.FC<IHomeProjectsCardProps> = ({
 						</Typography>
 					</div>
 					<div className={classes("-right")}>
-						<a href={github} target="_blank" rel="noreferrer">
-							<Code />
-							<span className="dispn">{github}</span>
-						</a>
-						<a href={deployment} target="_blank" rel="noreferrer">
-							<ExternalLink />
-							<span className="dispn">{deployment}</span>
-						</a>
+						{github ? (
+							<a href={github} target="_blank" rel="noreferrer">
+								<Code />
+								<span className="dispn">{github}</span>
+							</a>
+						) : null}
+						{deployment ? (
+							<a
+								href={deployment}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<ExternalLink />
+								<span className="dispn">{deployment}</span>
+							</a>
+						) : null}
 					</div>
 				</div>
 			</div>
