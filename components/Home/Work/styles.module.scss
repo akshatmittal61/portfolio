@@ -8,15 +8,11 @@
 	align-items: flex-start;
 	flex-direction: column;
 	margin: 0 auto;
-	background-color: var(--semantic-primary-background-medium);
 	border-radius: var(--border-radius);
 	overflow: hidden;
-	box-shadow: 4px 4px 20px -8px rgba(58, 62, 111, 0.25) inset;
 
 	@include responsive(tablet) {
 		width: 100%;
-		align-items: center;
-		text-align: center;
 	}
 
 	@include responsive(phone) {
@@ -28,101 +24,142 @@
 	&-title {
 		width: 100%;
 		padding: 0 5%;
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 16px;
+
+		svg {
+			width: 32px;
+			height: 32px;
+		}
 
 		@include responsive(phone) {
 			padding: 16px 0;
+			justify-content: center;
 			text-align: center;
 		}
 	}
 
-	&-tabs {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-
-		@include responsive(phone) {
-			overflow-x: auto;
-			@include hide-scrollbar();
-		}
-
-		&-tab {
-			@include init-button;
-			width: 100%;
-			padding: 24px;
-			@include typography($size: md, $weight: semi-bold);
-			opacity: 0.5;
-			border-bottom: 2px solid var(--semantic-primary-border-weak);
-			overflow: hidden;
-
-			&:hover {
-				opacity: 0.75;
-			}
-
-			&--active {
-				opacity: 1;
-				border-color: var(--semantic-primary-border-strong);
-
-				&:hover {
-					opacity: 1;
-				}
-			}
-
-			@include responsive(phone) {
-				width: fit-content;
-				flex: 0 0 auto;
-				padding: 12px 24px;
-				@include typography($size: sm, $weight: semi-bold);
-			}
-		}
-	}
-
-	&-body {
-		width: 100%;
-	}
-
-	&-card {
+	&-item {
 		width: 100%;
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-start;
 		flex-direction: column;
-		gap: 24px;
-		padding: 24px;
+		gap: 12px;
 		position: relative;
-		z-index: 1;
-
-		&--hide {
-			display: none;
-		}
+		padding-bottom: 48px;
 
 		&-header {
-			width: 100%;
 			display: flex;
 			justify-content: flex-start;
-			align-items: center;
-			gap: 24px;
-			text-align: left;
+			align-items: flex-start;
 
-			&-logo {
-				width: 56px;
-				height: 56px;
-			}
+			&__button {
+				@include init-button;
+				width: 36px;
+				height: 36px;
+				border-radius: var(--border-radius);
+				flex: 0 0 auto;
+				padding: 4px;
 
-			&__title {
-				@include typography($size: head-4, $weight: medium);
+				svg {
+					width: 100%;
+					height: 100%;
+				}
 
 				@include responsive(phone) {
-					@include typography($size: xxxl, $weight: medium);
+					width: 24px;
+					height: 24px;
+					padding: 0;
+				}
+
+				&:hover {
+					background-color: rgba(58, 62, 111, 0.25);
+				}
+
+				&--active svg {
+					transform: rotate(90deg);
 				}
 			}
 
-			&__subtitle {
-				@include typography($size: lg, $weight: regular);
+			&__content {
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+				gap: 12px;
+				text-align: left;
+			}
+
+			&__dot {
+				background-color: var(--theme-white);
+				width: 12px;
+				height: 12px;
+				border-radius: 50%;
+				margin: 12px;
+				margin: 12px 18px 12px 12px;
+				flex: 0 0 auto;
 
 				@include responsive(phone) {
-					@include typography($size: md, $weight: regular);
+					width: 8px;
+					height: 8px;
+					margin: 8px 12px 8px 8px;
 				}
+			}
+		}
+
+		&__icon {
+			width: 56px;
+			height: 56px;
+
+			img {
+				width: 100%;
+				object-fit: contain;
+			}
+
+			@include responsive(phone) {
+				width: 48px;
+				height: 48px;
+			}
+		}
+
+		&__title {
+			@include typography($size: head-4, $weight: medium);
+
+			@include responsive(phone) {
+				@include typography($size: xl);
+			}
+		}
+
+		&__subtitle {
+			@include typography($size: lg, $weight: regular);
+
+			@include responsive(phone) {
+				@include typography($size: md, $weight: regular);
+			}
+		}
+
+		&:not(:last-child)::before {
+			content: "";
+			position: absolute;
+			width: 2px;
+			top: 1rem;
+			left: 36px;
+			height: 100%;
+			background-color: var(--theme-white);
+			transform: translateX(17px);
+
+			@include responsive(phone) {
+				transform: translateX(-50%);
+			}
+		}
+
+		&-content {
+			padding-left: 78px;
+
+			@include responsive(phone) {
+				padding-left: 52px;
 			}
 		}
 
@@ -137,7 +174,7 @@
 			}
 		}
 
-		&-tags {
+		&-skills {
 			width: 100%;
 			display: flex;
 			justify-content: flex-start;
@@ -148,24 +185,8 @@
 
 			@include responsive(phone) {
 				padding-right: 0;
-				justify-content: space-evenly;
 				gap: 12px;
 			}
-		}
-
-		&-blob {
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: 2;
-			width: 100%;
-			object-fit: cover;
-			opacity: 0.1;
-			color: #8888da;
-		}
-
-		&:hover &-blob {
-			opacity: 1;
 		}
 	}
 }

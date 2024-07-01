@@ -5,6 +5,7 @@ import Responsive from "@/layouts/Responsive";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
 import styles from "./styles.module.scss";
+import { Command } from "react-feather";
 
 interface IHomeProjectsProps {}
 
@@ -19,7 +20,7 @@ const HomeProjects: React.FC<IHomeProjectsProps> = () => {
 				weight="medium"
 				className={classes("-title")}
 			>
-				What I build
+				<Command /> What I build
 			</Typography>
 			<Responsive.Row className={classes("-container")}>
 				{projects.map((project, index) => (

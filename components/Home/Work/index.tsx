@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import moment from "moment";
-import Image from "next/image";
 import { SkillPill } from "@/components/Skill";
 import workExperience from "@/data/experience";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
+import moment from "moment";
+import Image from "next/image";
+import React, { useState } from "react";
+import { Briefcase, ChevronRight } from "react-feather";
 import styles from "./styles.module.scss";
 
 interface IHomeWorkProps {}
@@ -12,10 +13,7 @@ interface IHomeWorkProps {}
 const classes = stylesConfig(styles, "home-work");
 
 const HomeWork: React.FC<IHomeWorkProps> = () => {
-	const [activeTab, setActiveTab] = useState(
-		workExperience.find((work) => work.company.name === "AthenaSquare")
-			?.id ?? 3
-	);
+	const [activeTab, setActiveTab] = useState(-1);
 	return (
 		<>
 			<Typography
@@ -23,126 +21,99 @@ const HomeWork: React.FC<IHomeWorkProps> = () => {
 				size="head-3"
 				weight="medium"
 				className={classes("-title")}
+				id="work"
 			>
-				Where I Work
+				<Briefcase /> Where I Work
 			</Typography>
 			<section className={classes("")} id="work">
-				<div className={classes("-tabs")}>
-					{workExperience.map((work, index) => (
-						<button
-							key={`work-tab-${index + 1}`}
-							className={classes("-tabs-tab", {
-								"-tabs-tab--active": activeTab === work.id,
-							})}
-							onClick={() => setActiveTab(work.id)}
-						>
-							{work.company.name}
-						</button>
-					))}
-				</div>
-				<div className={classes("-body")}>
-					{workExperience.map((work, index) => (
-						<div
-							key={`work-body-${index + 1}`}
-							className={classes("-card", {
-								"-card--hide": work.id !== activeTab,
-							})}
-						>
-							<div className={classes("-card-header")}>
-								<Image
-									src={work.company.logo}
-									alt={work.company.name}
-									width={100}
-									height={100}
-									className={classes("-card-header-logo")}
-								/>
-								<div
-									className={classes("-card-header-details")}
-								>
+				{workExperience.map((work) => (
+					<div
+						className={classes("-item")}
+						key={`work-exp-${work.id}`}
+					>
+						<div className={classes("-item-header")}>
+							<button
+								onClick={() =>
+									setActiveTab((prev) =>
+										prev === work.id ? -1 : work.id
+									)
+								}
+								className={classes("-item-header__button", {
+									"-item-header__button--active":
+										activeTab === work.id,
+								})}
+							>
+								<ChevronRight />
+							</button>
+							<span className={classes("-item-header__dot")} />
+							<div className={classes("-item-header__content")}>
+								<div className={classes("-item__icon")}>
+									<Image
+										src={work.company.logo}
+										alt={work.company.name}
+										width={50}
+										height={50}
+									/>
+								</div>
+								<div className={classes("-item__info")}>
 									<Typography
-										as="h3"
-										size="head-3"
-										className={classes(
-											"-card-header__title"
-										)}
+										as="h4"
+										size="head-4"
+										weight="medium"
+										title={work.company.name}
+										className={classes("-item__title")}
 									>
-										{work.position}
+										<a
+											href={work.company.link}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											{work.position} ·{" "}
+											{work.company.name}
+										</a>
 									</Typography>
 									<Typography
-										className={classes(
-											"-card-header__subtitle"
+										as="span"
+										size="s"
+										weight="medium"
+										title={moment(work.startDate).format(
+											"MMM YYYY"
 										)}
+										className={classes("-item__subtitle")}
 									>
 										{moment(work.startDate).format(
 											"MMM YYYY"
-										)}
+										)}{" "}
+										-{" "}
 										{work.endDate
-											? ` - ${moment(work.endDate).format(
+											? moment(work.endDate).format(
 													"MMM YYYY"
-												)}`
-											: " - Present"}
+												)
+											: "Present"}
 									</Typography>
 								</div>
 							</div>
-							<p
-								className={classes("-card-description")}
-								dangerouslySetInnerHTML={{
-									__html: work.description,
-								}}
-							/>
-							<div className={classes("-card-tags")}>
-								{work.tags.map((tag, index) => (
-									<SkillPill
-										key={`work-tag-${index + 1}`}
-										name={tag}
-									/>
-								))}
-							</div>
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="565"
-								height="360"
-								viewBox="0 0 565 360"
-								fill="none"
-								className={classes("-card-blob")}
-							>
-								<g filter={`url(#filter-${work.company.name})`}>
-									<path
-										d="M305 303.5C305 371.707 249.707 427 181.5 427C113.293 427 -33 352.707 -33 284.5C-33 216.293 217.793 175 286 175C354.207 175 305 235.293 305 303.5Z"
-										fill={work.theme}
-										fill-opacity="0.7"
-									/>
-								</g>
-								<defs>
-									<filter
-										id={`filter-${work.company.name}`}
-										x="-433"
-										y="-225"
-										width="1155.17"
-										height="1052"
-										filterUnits="userSpaceOnUse"
-										color-interpolation-filters="sRGB"
-									>
-										<feFlood
-											flood-opacity="0"
-											result="BackgroundImageFix"
-										/>
-										<feBlend
-											mode="normal"
-											in="SourceGraphic"
-											in2="BackgroundImageFix"
-											result="shape"
-										/>
-										<feGaussianBlur
-											stdDeviation="200"
-											result={`effect1_foregroundBlur-${work.company.name}`}
-										/>
-									</filter>
-								</defs>
-							</svg>
 						</div>
-					))}
-				</div>
+						{activeTab === work.id ? (
+							<div className={classes("-item-content")}>
+								<p
+									className={classes("-item-description")}
+									dangerouslySetInnerHTML={{
+										__html: work.description,
+									}}
+								/>
+								<div className={classes("-item-skills")}>
+									{work.tags.map((tag, index) => (
+										<SkillPill
+											key={`${work.company.name}-skill-${index + 1}`}
+											name={tag}
+										/>
+									))}
+								</div>
+							</div>
+						) : null}
+					</div>
+				))}
 			</section>
 		</>
 	);

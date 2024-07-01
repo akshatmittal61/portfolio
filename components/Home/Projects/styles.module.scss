@@ -21,6 +21,18 @@
 		text-align: center;
 	}
 
+	&-title {
+		display: inline-flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 16px;
+
+		svg {
+			width: 32px;
+			height: 32px;
+		}
+	}
+
 	&-description {
 		width: 80%;
 
