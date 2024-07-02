@@ -1,6 +1,6 @@
 import { SkillPill } from "@/components/Skill";
-import workExperience from "@/data/experience";
 import { Typography } from "@/library";
+import { IWork } from "@/types/work";
 import { stylesConfig } from "@/utils/functions";
 import moment from "moment";
 import Image from "next/image";
@@ -8,11 +8,13 @@ import React, { useState } from "react";
 import { Briefcase, ChevronRight } from "react-feather";
 import styles from "./styles.module.scss";
 
-interface IHomeWorkProps {}
+interface IHomeWorkProps {
+	workExperience: Array<IWork>;
+}
 
 const classes = stylesConfig(styles, "home-work");
 
-const HomeWork: React.FC<IHomeWorkProps> = () => {
+const HomeWork: React.FC<IHomeWorkProps> = ({ workExperience }) => {
 	const [activeTab, setActiveTab] = useState(-1);
 	return (
 		<>

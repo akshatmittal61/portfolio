@@ -20,7 +20,7 @@ const HomeProjectsCard: React.FC<IHomeProjectsCardProps> = ({
 	return (
 		<div className={classes("")}>
 			<div className={classes("-graphic")}>
-				<a href={deployment} target="_blank" rel="noreferrer">
+				<a href={deployment || github} target="_blank" rel="noreferrer">
 					<Image src={image} alt={title} width={1200} height={630} />
 				</a>
 			</div>

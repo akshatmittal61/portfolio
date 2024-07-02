@@ -1,17 +1,19 @@
-import React from "react";
-import Card from "./Card";
-import projects from "@/data/projects";
 import Responsive from "@/layouts/Responsive";
 import { Typography } from "@/library";
+import { IProject } from "@/types/project";
 import { stylesConfig } from "@/utils/functions";
-import styles from "./styles.module.scss";
+import React from "react";
 import { Command } from "react-feather";
+import Card from "./Card";
+import styles from "./styles.module.scss";
 
-interface IHomeProjectsProps {}
+interface IHomeProjectsProps {
+	projects: Array<IProject>;
+}
 
 const classes = stylesConfig(styles, "home-projects");
 
-const HomeProjects: React.FC<IHomeProjectsProps> = () => {
+const HomeProjects: React.FC<IHomeProjectsProps> = ({ projects }) => {
 	return (
 		<section className={classes("")} id="projects">
 			<Typography
