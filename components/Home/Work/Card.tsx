@@ -29,13 +29,19 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 			}}
 		>
 			<div className={classes("-header")}>
-				<Image
-					src={company.logo}
-					alt={company.name}
-					width={50}
-					height={50}
+				<a
+					href={company.link}
+					target="_blank"
+					rel="noopener noreferrer"
 					className={classes("-logo")}
-				/>
+				>
+					<Image
+						src={company.logo}
+						alt={company.name}
+						width={50}
+						height={50}
+					/>
+				</a>
 				<div className={classes("-header-content")}>
 					<Typography
 						as="h4"

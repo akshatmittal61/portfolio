@@ -49,14 +49,19 @@ const HomeWork: React.FC<IHomeWorkProps> = ({ workExperience }) => {
 							</button>
 							<span className={classes("-item-header__dot")} />
 							<div className={classes("-item-header__content")}>
-								<div className={classes("-item__icon")}>
+								<a
+									href={work.company.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className={classes("-item__icon")}
+								>
 									<Image
 										src={work.company.logo}
 										alt={work.company.name}
 										width={50}
 										height={50}
 									/>
-								</div>
+								</a>
 								<div className={classes("-item__info")}>
 									<Typography
 										as="h4"
