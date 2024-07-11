@@ -19,10 +19,10 @@ const BlogCard: React.FC<IBlogCardProps> = ({
 	author,
 }) => {
 	return (
-		<a href={link} target="_blank" className={classes("")}>
-			<div className={classes("-graphic")}>
+		<div className={classes("")}>
+			<a href={link} target="_blank" className={classes("-graphic")}>
 				<Image src={image} alt={title} width={1200} height={630} />
-			</div>
+			</a>
 			<div className={classes("-content")}>
 				<Typography
 					as="h3"
@@ -66,7 +66,7 @@ const BlogCard: React.FC<IBlogCardProps> = ({
 					</div>
 				</a>
 			</div>
-		</a>
+		</div>
 	);
 };
 

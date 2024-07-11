@@ -33,6 +33,11 @@ const HomeBlogs: React.FC<IHomeBlogsProps> = ({ blogs }) => {
 						sm={100}
 						xsm={100}
 						key={`blog-${index + 1}`}
+						style={{
+							height: "unset",
+							flex: "0 1 auto",
+							margin: "12px 0",
+						}}
 					>
 						<Card {...blog} />
 					</Responsive.Col>
