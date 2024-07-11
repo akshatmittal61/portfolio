@@ -40,7 +40,19 @@ export const getServerSideProps = async (): Promise<{
 			props: {
 				workExperience: workExperience,
 				projects: projects,
-				blogs: blogs,
+				blogs: blogs.map((blog: any) => ({
+					id: blog.id,
+					title: blog.title,
+					description: blog.description,
+					date: blog.readable_publish_date,
+					image: blog.cover_image,
+					link: blog.url,
+					author: {
+						name: blog.user.name,
+						image: blog.user.profile_image,
+						profile: `https://dev.to/${blog.user.username}`,
+					},
+				})),
 			},
 		};
 	} catch (error) {

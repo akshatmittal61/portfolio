@@ -32,4 +32,80 @@
 			height: 32px;
 		}
 	}
+
+	&-card {
+		width: calc(100% - 24px);
+		height: 100%;
+		background-color: var(--semantic-primary-background-medium);
+		flex: 0 0 auto;
+		display: flex;
+		justify-content: flex-start;
+		align-items: stretch;
+		flex-direction: column;
+		padding: 8px;
+		gap: 12px;
+		margin: 12px;
+		border-radius: var(--border-radius);
+		position: relative;
+		overflow: hidden;
+
+		@include responsive(phone) {
+			max-width: unset;
+			width: 100%;
+			padding: 4px;
+			gap: 4px;
+		}
+
+		&-graphic {
+			width: 100%;
+			aspect-ratio: 1200 / 630;
+			flex: 0 1 auto;
+			border-radius: inherit;
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				width: 100%;
+				height: 100%;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		&:hover &-graphic {
+			img {
+				transform: scale(1.05);
+			}
+		}
+
+		&-content {
+			width: 100%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 24px;
+			padding: 8px 16px;
+		}
+
+		&-user {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 12px;
+			&-info {
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				flex-direction: column;
+				gap: 4px;
+			}
+		}
+	}
 }

@@ -1,10 +1,11 @@
-import React from "react";
-import { stylesConfig } from "@/utils/functions";
-import styles from "./styles.module.scss";
-import { Typography } from "@/library";
-import { Edit3 } from "react-feather";
 import Responsive from "@/layouts/Responsive";
+import { Typography } from "@/library";
 import { Blog } from "@/types/blog";
+import { stylesConfig } from "@/utils/functions";
+import React from "react";
+import { Edit3 } from "react-feather";
+import Card from "./Card";
+import styles from "./styles.module.scss";
 
 interface IHomeBlogsProps {
 	blogs: Array<Blog>;
@@ -33,7 +34,7 @@ const HomeBlogs: React.FC<IHomeBlogsProps> = ({ blogs }) => {
 						xsm={100}
 						key={`blog-${index + 1}`}
 					>
-						{blog.title}
+						<Card {...blog} />
 					</Responsive.Col>
 				))}
 			</Responsive.Row>
