@@ -2,6 +2,20 @@ import { IWork } from "@/types/work";
 
 const workExperience: IWork[] = [
 	{
+		id: 7,
+		company: {
+			name: "Flipkart",
+			logo: "https://seeklogo.com/images/F/flipkart-logo-C9E637A758-seeklogo.com.png",
+			link: "https://flipkart.com",
+		},
+		position: "Software Development Engineer",
+		description: "",
+		startDate: "2024-10-14T00:00:00.000Z",
+		tags: ["java", "dropwizard"],
+		background: "rgba(40, 127, 240, 0.15)",
+		theme: "#FFE11B",
+	},
+	{
 		id: 6,
 		company: {
 			name: "MPL Gaming",
@@ -9,8 +23,10 @@ const workExperience: IWork[] = [
 			link: "https://mpl.live",
 		},
 		position: "NodeJS Developer",
-		description: "",
+		description:
+			"<ul><li>Enhanced Kafka Instrumentations for better application and user analytics.<li>Created an Automation test suite with 15+ test cases for Cards Game - Rummy</li><li>Implemented Acknowledgement based Socket Programming for Card game - Gin Rummy</li></ul>",
 		startDate: "2024-04-12T00:00:00.000Z",
+		endDate: "2024-10-11T00:00:00.000Z",
 		tags: ["nodejs", "kafka", "gcp", "grafana", "kibana"],
 		background: "rgba(179, 99, 199, 0.15)",
 		theme: "#1f40cb",
