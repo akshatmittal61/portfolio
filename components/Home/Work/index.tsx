@@ -31,6 +31,7 @@ const HomeWork: React.FC<IHomeWorkProps> = ({ workExperience }) => {
 				{workExperience.map((work) => (
 					<div
 						className={classes("-item")}
+						id={`work-exp-${work.id}`}
 						key={`work-exp-${work.id}`}
 					>
 						<div className={classes("-item-header")}>

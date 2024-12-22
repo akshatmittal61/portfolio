@@ -1,12 +1,12 @@
-import React from "react";
-import { ArrowUpRight } from "react-feather";
-import Image from "next/image";
 import { SkillPill } from "@/components/Skill";
+import { resumeUrl } from "@/constants/variables";
 import { mySkills as skills } from "@/data/skills";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils/functions";
+import Image from "next/image";
+import React from "react";
+import { ArrowUpRight } from "react-feather";
 import styles from "./styles.module.scss";
-import { resumeUrl } from "@/constants/variables";
 
 interface IHomeIntroProps {}
 
@@ -16,13 +16,18 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 	return (
 		<section className={classes("")}>
 			<div className={classes("-left")}>
-				<Typography as="h1" className={classes("-left-title")}>
+				<Typography
+					id="intro-name"
+					as="h1"
+					className={classes("-left-title")}
+				>
 					Akshat Mittal
 				</Typography>
 				<Typography
 					as="p"
 					size="lg"
 					weight="regular"
+					id="intro-subtitle"
 					className={classes("-left-subtitle")}
 				>
 					A full stack developer turning ideas into functional and
@@ -34,6 +39,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 					into poems.
 				</Typography>
 				<button
+					id="resume-button"
 					onClick={() => window.open("/resume", "_blank")}
 					className={classes("-left-button")}
 				>
@@ -44,6 +50,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 						target="_blank"
 						rel="noreferrer"
 						title="Resume"
+						id="resume-link"
 						className="dispn"
 					>
 						{resumeUrl}
@@ -55,6 +62,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 							key={`my-skills-${skill.id}`}
 							name={skill.name}
 							logo={skill.logo}
+							id={`my-skills-${skill.id}`}
 						/>
 					))}
 				</div>
@@ -65,6 +73,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 					alt="Intro grid image 2"
 					width={1920}
 					height={1080}
+					id="my-image-1"
 					className={classes("-right-image-1")}
 				/>
 				<Image
@@ -72,6 +81,7 @@ const HomeIntro: React.FC<IHomeIntroProps> = () => {
 					alt="Intro grid image 4"
 					width={1920}
 					height={1080}
+					id="my-image-2"
 					className={classes("-right-image-2")}
 				/>
 			</div>

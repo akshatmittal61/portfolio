@@ -4,15 +4,15 @@
 
 ## Features
 
--   [x] Next.js
--   [x] TypeScript
--   [x] MongoDB
--   [x] Sass
--   [x] ESLint
--   [x] Prettier
--   [x] Husky
--   [x] Commitlint
--   [x] Jest
+- [x] Next.js
+- [x] TypeScript
+- [x] MongoDB
+- [x] Sass
+- [x] ESLint
+- [x] Prettier
+- [x] Husky
+- [x] Commitlint
+- [x] Jest
 
 ## Usage
 
@@ -64,12 +64,12 @@ yarn format
 
 ## Acknowledgements
 
--   [Next.js](https://nextjs.org)
--   [TypeScript](https://www.typescriptlang.org)
--   [MongoDB](https://www.mongodb.com)
--   [Sass](https://sass-lang.com)
--   [ESLint](https://eslint.org)
--   [Prettier](https://prettier.io)
--   [Husky](https://typicode.github.io/husky)
--   [Commitlint](https://commitlint.js.org)
--   [Jest](https://jestjs.io)
+- [Next.js](https://nextjs.org)
+- [TypeScript](https://www.typescriptlang.org)
+- [MongoDB](https://www.mongodb.com)
+- [Sass](https://sass-lang.com)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
+- [Husky](https://typicode.github.io/husky)
+- [Commitlint](https://commitlint.js.org)
+- [Jest](https://jestjs.io)

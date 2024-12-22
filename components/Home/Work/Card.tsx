@@ -12,6 +12,7 @@ interface IHomeWorkCardProps extends IWork {}
 const classes = stylesConfig(styles, "home-work-card");
 
 const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
+	id,
 	company,
 	position,
 	background,
@@ -22,6 +23,7 @@ const HomeWorkCard: React.FC<IHomeWorkCardProps> = ({
 }) => {
 	return (
 		<div
+			id={`work-exp-${id}`}
 			className={classes("")}
 			style={{
 				backgroundColor: background,

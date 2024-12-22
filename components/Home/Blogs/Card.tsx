@@ -11,6 +11,7 @@ type IBlogCardProps = Blog & {};
 const classes = stylesConfig(styles, "home-blogs-card");
 
 const BlogCard: React.FC<IBlogCardProps> = ({
+	id,
 	title,
 	description,
 	date,
@@ -19,7 +20,7 @@ const BlogCard: React.FC<IBlogCardProps> = ({
 	author,
 }) => {
 	return (
-		<div className={classes("")}>
+		<div id={`blog-${id}`} className={classes("")}>
 			<a href={link} target="_blank" className={classes("-graphic")}>
 				<Image src={image} alt={title} width={1200} height={630} />
 			</a>
