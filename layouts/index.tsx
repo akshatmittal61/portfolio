@@ -1,10 +1,20 @@
-import React from "react";
-import Seo from "./Seo";
+import { Footer, Navigation } from "@/components";
 import { frontendBaseUrl } from "@/constants/variables";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import useLayoutEffect from "@/hooks/isomorphic-layout-effect";
+import Overlay from "@/layouts/Overlay";
+import { useRouter } from "next/router";
+import React, { useState } from "react";
+import Seo from "./Seo";
 
 const Layout: React.FC<any> = ({ children }) => {
+	const router = useRouter();
+	const [showOverlay, setShowOverlay] = useState(router.pathname === "/");
+	useLayoutEffect(() => {
+		const timer = setTimeout(() => {
+			setShowOverlay(false);
+		}, 3750);
+		return () => clearTimeout(timer);
+	}, []);
 	return (
 		<>
 			<Seo
@@ -76,6 +86,7 @@ const Layout: React.FC<any> = ({ children }) => {
 				canonical={frontendBaseUrl}
 				siteName="Akshat Mittal - Full Stack Developer"
 			/>
+			{showOverlay ? <Overlay /> : null}
 			<Navigation />
 			{children}
 			<Footer />
