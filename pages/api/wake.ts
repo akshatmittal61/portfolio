@@ -11,7 +11,8 @@ const handler = async (req: ApiRequest, res: ApiResponse) => {
 		const service = req.query.service;
 		let healths = {
 			"settle-it": "https://settleit.vercel.app/api/health",
-			"wault-it": "https://wault-it.vercel.app//api/health",
+			"wault-it": "https://wault-it.vercel.app/api/health",
+    "balance-it": "https://balanceit.vercel.app/api/health"
 		};
 		const urls: Array<string> = [];
 		switch (service) {
@@ -20,6 +21,9 @@ const handler = async (req: ApiRequest, res: ApiResponse) => {
 				break;
 			case "wault-it":
 				urls.push(healths["wault-it"]);
+				break;
+    case "balance-it":
+				urls.push(healths["balance-it"]);
 				break;
 			default:
 				urls.push(...Object.values(healths));
