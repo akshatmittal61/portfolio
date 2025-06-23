@@ -1,0 +1,17 @@
+@import "./config/index.scss";
+@import "tailwindcss";
+
+::-webkit-scrollbar {
+	width: 1.5px;
+	height: 1.5px;
+	background: transparent;
+
+	&-thumb {
+		background: transparent;
+		border-radius: 500px;
+	}
+
+	&-track {
+		background: transparent;
+	}
+}
