@@ -13,8 +13,15 @@
 		font-size: 7rem;
 		font-weight: 800;
 		line-height: 120%;
-		color: var(--b-lightest-slate);
 		letter-spacing: 0.25rem;
+
+		@include _theme(light) {
+			color: var(--b-lightest-navy);
+		}
+
+		@include _theme(dark) {
+			color: var(--b-lightest-slate);
+		}
 	}
 
 	&-about {

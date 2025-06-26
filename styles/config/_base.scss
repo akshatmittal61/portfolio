@@ -20,14 +20,12 @@ html {
 body {
 	font-family: var(--font-google-sans);
 	overflow-x: hidden;
+	background-color: var(--theme-bg);
 	color: var(--theme-fg);
 	letter-spacing: 0.0275rem;
 	word-spacing: 0.25rem;
 	line-height: 1.25rem;
 	position: relative;
-	background-color: var(--b-navy);
-	color: var(--b-slate);
-	background-image: url("https://marketplace.canva.com/EAE3Xni-QyQ/1/0/900w/canva-moonlight-blue-landscape-ios-home-screen-Pvnvis33vsc.jpg");
 	background-attachment: fixed;
 	background-position-x: center;
 	background-position-y: bottom;
@@ -37,12 +35,12 @@ body {
 
 	&.light,
 	&[data-theme="light"] {
-		background: var(--accent-color-200);
+		background-image: url("/images/bg-light.png");
 	}
 
 	&.dark,
 	&[data-theme="dark"] {
-		background: var(--bgcolor-400);
+		background-image: url("/images/bg-dark.png");
 	}
 }
 
@@ -70,6 +68,10 @@ body[data-theme="light"] {
 	--back-shadow: rgba(0, 0, 0, 0.15);
 	--back-shadow-dark: rgba(0, 0, 0, 0.2);
 	--back-shadow-light: rgba(0, 0, 0, 0.05);
+
+	// overrides
+	--theme-bg: var(--b-slate);
+	--theme-fg: var(--b-navy);
 }
 
 body.dark,
@@ -96,6 +98,10 @@ body[data-theme="dark"] {
 	--back-shadow: rgba(255, 255, 255, 0.15);
 	--back-shadow-dark: rgba(255, 255, 255, 0.2);
 	--back-shadow-light: rgba(255, 255, 255, 0.05);
+
+	// overrides
+	--theme-bg: var(--b-navy);
+	--theme-fg: var(--b-slate);
 }
 
 .dispn {
