@@ -1,7 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import React, { useEffect } from "react";
-import { Footer } from "..";
+import { Footer, ThemeSwitcher } from "..";
 
 interface WrapperProps {
 	children: React.ReactNode;
@@ -13,6 +13,7 @@ export const Wrapper: React.FC<WrapperProps> = ({ children }) => {
 	}, []);
 	return (
 		<>
+			<ThemeSwitcher />
 			{children}
 			<Footer />
 		</>

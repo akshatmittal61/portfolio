@@ -32,8 +32,12 @@ export const HomeAbout: React.FC = () => {
 					e-commerce companies.
 				</Typography>
 				<Typography as="p" size="xxl" weight="regular">
-					Currently working as an SDE-1 in a leading e-commerce firm,
-					I&apos;ve previously built MVPs and complete systems from
+					Currently working as an SDE-1 in India&apos;s biggest
+					leading e-commerce{" "}
+					<a href="https://flipkart.com" target="_blank">
+						Flipkart
+					</a>
+					, I&apos;ve previously built MVPs and complete systems from
 					scratch for 7+ startups, handling everything from
 					architecture and backend services to pixel-perfect frontend
 					UIs.{" "}

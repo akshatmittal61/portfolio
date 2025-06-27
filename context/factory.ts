@@ -4,10 +4,18 @@ import { GlobalContext } from "./provider";
 
 type StoreOptions = { syncOnMount?: boolean };
 
-export const useStore: (_?: StoreOptions) => GlobalStore = (
+type ExtendedStore = GlobalStore & {
+	switchTheme: () => void;
+};
+
+export const useStore: (_?: StoreOptions) => ExtendedStore = (
 	options: StoreOptions = {}
 ) => {
 	const store = useContext<GlobalStore>(GlobalContext);
+
+	const switchTheme = () => {
+		store.setTheme(store.theme === "light" ? "dark" : "light");
+	};
 
 	useEffect(() => {
 		if (options.syncOnMount) {
@@ -16,5 +24,8 @@ export const useStore: (_?: StoreOptions) => GlobalStore = (
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return store;
+	return {
+		...store,
+		switchTheme,
+	};
 };
