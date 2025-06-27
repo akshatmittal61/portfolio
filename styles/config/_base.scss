@@ -70,8 +70,8 @@ body[data-theme="light"] {
 	--back-shadow-light: rgba(0, 0, 0, 0.05);
 
 	// overrides
-	--theme-bg: var(--b-slate);
-	--theme-fg: var(--b-navy);
+	--theme-bg: var(--b-lightest-brown);
+	--theme-fg: var(--b-dark-brown);
 }
 
 body.dark,
@@ -101,7 +101,7 @@ body[data-theme="dark"] {
 
 	// overrides
 	--theme-bg: var(--b-navy);
-	--theme-fg: var(--b-slate);
+	--theme-fg: var(--b-light-slate);
 }
 
 .dispn {
