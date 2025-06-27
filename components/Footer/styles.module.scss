@@ -16,11 +16,6 @@
 	position: relative;
 	z-index: 50;
 	overflow: visible;
-	background: linear-gradient(
-		135deg,
-		var(--semantic-primary-background-weak) 0%,
-		transparent 20%
-	);
 
 	@include responsive(tablet) {
 		padding: 0 5%;

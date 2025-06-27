@@ -1,0 +1,24 @@
+@import "@/styles/config/mixins";
+@import "@/styles/config/typography";
+
+.skill-pill {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	padding: 6px 12px;
+	border-radius: 500px 500px 2px 500px;
+	// background-color: rgba(255, 255, 255, 0.1);
+	background-color: var(--back-shadow-light);
+	color: var(--theme-white);
+	@include typography($size: md);
+
+	@include responsive(phone) {
+		@include typography($size: sm);
+	}
+
+	svg {
+		width: auto;
+		height: 24px;
+	}
+}

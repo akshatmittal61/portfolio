@@ -8,6 +8,7 @@
 	align-items: flex-start;
 	flex-flow: column;
 	padding: 0 2rem;
+	scroll-snap-align: start;
 
 	&-name {
 		font-size: 7rem;

@@ -1,0 +1,138 @@
+Personal Details
+
+Name: Akshat Mittal
+DOB: 25/06/2002
+EmailD:
+    -   akshatmittal2506@gmail.com
+    -   akshatmittal61@gmail.com
+    -   20107@iiitu.ac.in
+Contact No.:
+    -   9456849466
+Links:
+    -   Portfolio: https://akshatmittal61.vercel.app
+    -   Resume: https://akshatmittal61.vercel.app/resume
+    -   GitHub: https://github.com/akshatmittal61
+    -   Leetcode: https://leetcode.com/akshatmittal61/
+    -   LinkedIn: https://linkedin.com/in/akshatmittal61/
+Skills:
+    -   CSS, SASS, JavaScript, TypeScript, NodeJS, SQL, MongoDB, Postgres, Python, Java
+    -   Tailwind, React, Next, Redux, Express, Jest, FastAPI, Springboot
+Coursework: Data Structures and Algorithms, OOPS, DBMS, Operating System, C, C++
+Location: Meerut, Uttar Pradesh
+
+Education
+
+College:
+
+    Indian Institute of Information Technology, Una
+    B.Tech. CSE
+    December 2020 - June 2024
+    Registration Number: 20107
+    CGPA: 7.94
+    Location: Una, Himachal Pradesh
+
+10th:
+
+    Meerut City Public School
+    2016-17
+    95
+    Location: Meerut, Uttar Pradesh
+
+12th:
+
+    Meerut City Public School
+    2018-19
+    94.4
+    Location: Meerut, Uttar Pradesh
+
+Experience:
+
+AthenaSquare | Opengig
+
+Software Development Intern<br />October 2022 - Present
+
+Set up Screening Dashboard and real-time Application Tracking System for hiring automation.
+Migrated entire product from ReactJS project to NextJS for SEO optimization by 55%.
+Built a Personalized Candidate Assessment coupled with proctoring and Unit testing with Jest.
+Collaborated with 5 different startups to build MVPs as the Frontend lead in OpenGig team.
+Developed a chrome extension to streamline migration for 10 clients from platforms like LinkedIn.
+
+StakeEasy
+
+Frontend Developer Intern<br />May 2022 - July 2022
+
+Built 2 services for a liquid staking protocol in a Blockchain platform.
+Used ReactJS for responsive user interface development.
+
+Techsnap
+
+Frontend Developer Intern<br />January 2021 - February 2021
+
+Designed Figma prototype and mock-ups with user design fine-tuned with UX principles.
+Created and delivered 8 responsive pages with improved SEO optimization.
+
+Projects
+
+EPMOC
+
+GitHub: https://github.com/akshatmitta61/epmoc-iiitu
+Link: https://epmoc-iiitu.netlify.app
+Skills: ReactJS, ExporessJS, MongoDB, NodeJS, SASS
+Period: July 2022 - October 2022
+
+Developed and maintaining a club management tool for EPMOC(management club of IIIT Una)
+Delivered user-engaging interface with a decreased load time of 35% and SEO optimization
+
+SRM Alumni Portal
+
+GitHub: https://github.com/akshatmittal61/srm
+Link: https://alumnisrm.com
+Skills: MongoDB, Express, React, NodeJS, CSS(SASS), AWS
+Period: November 2021 - July 2022
+
+Worked as frontend developer in team for a full-stack web application for SRM alumni portal
+Optimized workflow in the team and sped up the work pace by 25%
+
+Flavorsome
+
+GitHub: https://github.com/akshatmittal61/flavorsome
+Link: https://flavorsome.netlify.app/
+Skills: MongoDB, Express, React, NodeJS, CSS(SASS)
+Period: September 2022
+
+Developed a MERN Stack recipe blogging platform in 4 days as a frontend challenge.
+Streamlined reading, writing, and saving recipes by decreasing API latency by 15%.
+
+Planner
+
+GitHub: https://github.com/snehasharma1111/planner
+Link: https://planner.netlify.app/
+Skills: ReactJS, ExpressJS, MongoDB, NodeJS
+Period: Sept 2021 - Sept 2022
+
+Built a Responsive Layout optimized for all devices
+Manage, capture and edit your daily events, notes and tasks.
+
+Techtatva
+
+GitHub: https://github.com/akshatmittal61/techtatva
+Link: https://techtatva.netlify.app/
+Skills: ReactJS, CSS, SASS
+Period: December 2021 - January 2022
+
+Developed the complete website for college fest Techtatva from scratch
+Used React JS for client side development and SASS for CSS preprocessor
+
+Screen Recorder
+
+GitHub: https://github.com/akshatmittal61/screen-recorder/
+Link: https://akshatmittal61.github.io/screen-recorder/
+Skills: HTML, CSS, JavaScript
+Period: January 2022 - February 2022
+
+Used Blobs for recording screen.
+
+Achievements
+
+Google hashcode (@team99) : Global Rank 3449
+SIH Finalist

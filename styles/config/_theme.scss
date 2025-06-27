@@ -1,3 +1,5 @@
+@import "./mixins";
+
 :root,
 :root::before,
 :root::after {
@@ -30,4 +32,9 @@
 	--back-shadow: rgba(0, 0, 0, 0.15);
 	--back-shadow-dark: rgba(0, 0, 0, 0.2);
 	--back-shadow-light: rgba(0, 0, 0, 0.05);
+	--border-radius: 24px;
+
+	@include responsive(phone) {
+		--border-radius: 16px;
+	}
 }

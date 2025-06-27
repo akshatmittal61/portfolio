@@ -32,6 +32,10 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	min-height: 100vh;
+	font-feature-settings:
+		"liga" on,
+		"calt" on;
+	touch-action: pan-x pan-y;
 
 	&.light,
 	&[data-theme="light"] {

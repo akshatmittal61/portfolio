@@ -184,3 +184,21 @@
 	animation-fill-mode: forwards;
 	filter: blur(2px);
 }
+
+@mixin rotating-background($color1, $color2, $duration: 5s, $angle: 0deg) {
+	background: linear-gradient($angle, $color1, $color2);
+	background-size: 200% 200%;
+	animation: rotating-background $duration infinite linear;
+
+	@keyframes rotating-background {
+		@for $i from 0 through 100 {
+			#{$i}#{"%"} {
+				background-image: linear-gradient(
+					#{$i * 3.6}deg,
+					$color1,
+					$color2
+				);
+			}
+		}
+	}
+}

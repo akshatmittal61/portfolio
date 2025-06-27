@@ -4,9 +4,7 @@ import styles from "./styles.module.scss";
 
 const classes = stylesConfig(styles, "home-hero");
 
-type HomeHeroProps = {};
-
-export const HomeHero: React.FC<HomeHeroProps> = () => {
+export const HomeHero: React.FC = () => {
 	return (
 		<section id="" className={classes("")}>
 			<h1 data-aos="fade-up" className={classes("-name")}>
