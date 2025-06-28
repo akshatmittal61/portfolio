@@ -1,0 +1,264 @@
+@import "@/styles/config/mixins";
+
+.home-projects {
+	width: 100%;
+
+	&-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+		flex-direction: column;
+		gap: 24px;
+		margin: 48px 0;
+		padding: 96px 56px 96px 50%;
+		border-radius: var(--border-radius);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position-x: right;
+		background-position-y: center;
+		text-align: right;
+	}
+
+	&-skills {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 16px;
+		padding-left: 48px;
+
+		@include responsive(phone) {
+			padding-right: 0;
+			justify-content: space-evenly;
+			gap: 12px;
+		}
+	}
+
+	&-card-container {
+		padding: 16px;
+
+		&:nth-child(4n + 2),
+		&:nth-child(4n + 3) {
+			.project-card {
+				aspect-ratio: 2 / 2;
+			}
+		}
+
+		&:nth-child(4n),
+		&:nth-child(4n + 1) {
+			.project-card {
+				aspect-ratio: 3 / 2;
+			}
+		}
+	}
+}
+
+.project-card {
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: darken;
+	background-color: rgba(0, 0, 0, 0);
+	// color: var(--white);
+	padding: 8px;
+	gap: 8px;
+	border-radius: var(--border-radius);
+	position: relative;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	&-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		width: 100%;
+		font-size: 1rem;
+		padding: 2rem;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 16px;
+
+		p {
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+
+	&-title {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 30%;
+			top: 70%;
+			left: 0;
+			transform: translate(0, -20%) skew(-30deg);
+			z-index: -1;
+
+			@include _theme(light) {
+				background-color: var(--b-light-brown);
+			}
+
+			@include _theme(dark) {
+				background-color: var(--b-dark-slate);
+			}
+		}
+	}
+
+	&-image {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		transition:
+			filter 0.25s ease-in-out,
+			transform 0.25s ease-in-out;
+	}
+
+	&-actions {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&-frame {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		--w: 1px;
+		--l: 40%;
+		--d: 0rem;
+		--c: transparent;
+
+		&--border {
+			position: absolute;
+			width: 7.5rem;
+			height: 7.5rem;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				background-color: var(--c);
+			}
+
+			&::before {
+				width: var(--l);
+				height: var(--w);
+			}
+
+			&::after {
+				width: var(--w);
+				height: var(--l);
+			}
+
+			&_1 {
+				top: var(--d);
+				left: var(--d);
+
+				&::before {
+					top: 0;
+					left: 0;
+				}
+
+				&::after {
+					top: 0;
+					left: 0;
+				}
+			}
+
+			&_2 {
+				top: var(--d);
+				right: var(--d);
+
+				&::before {
+					top: 0;
+					right: 0;
+				}
+
+				&::after {
+					top: 0;
+					right: 0;
+				}
+			}
+
+			&_3 {
+				bottom: var(--d);
+				left: var(--d);
+
+				&::before {
+					bottom: 0;
+					left: 0;
+				}
+
+				&::after {
+					bottom: 0;
+					left: 0;
+				}
+			}
+
+			&_4 {
+				bottom: var(--d);
+				right: var(--d);
+
+				&::before {
+					bottom: 0;
+					right: 0;
+				}
+
+				&::after {
+					bottom: 0;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	&:hover &-frame {
+		--w: 1px;
+		--l: 40%;
+		--d: 1rem;
+		--c: var(--white);
+
+		@include _theme(light) {
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+
+		@include _theme(dark) {
+			background-color: rgba(0, 0, 0, 0.8);
+		}
+	}
+
+	&:hover &-image {
+		filter: grayscale(1) opacity(0.3);
+		transform: scale(0.75);
+	}
+
+	&:hover &-content {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}

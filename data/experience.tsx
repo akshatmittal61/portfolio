@@ -1,6 +1,6 @@
 import { IWork } from "@/types";
 
-const workExperience: IWork[] = [
+export const workExperience: IWork[] = [
 	{
 		id: 7,
 		company: {
@@ -142,5 +142,3 @@ const workExperience: IWork[] = [
 		theme: "#fc00bd",
 	},
 ];
-
-export default workExperience;

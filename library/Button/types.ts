@@ -14,10 +14,6 @@ type BaseButtonProps = React.DetailedHTMLProps<
 	iconPosition?: "left" | "right";
 };
 
-type ButtonProps = BaseButtonProps & {
-	onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
-
 type LinkButtonProps = Omit<BaseButtonProps, "onClick"> & {
 	href: string;
 };
@@ -26,9 +22,11 @@ type RouteButtonProps = Omit<BaseButtonProps, "onClick"> & {
 	route: string;
 };
 
-export type IButtonProps = ButtonProps | LinkButtonProps | RouteButtonProps;
+type ButtonProps = BaseButtonProps & {
+	onClick?: React.MouseEventHandler<HTMLButtonElement>;
+};
 
-export type IconButtonProps = React.DetailedHTMLProps<
+type BaseIconButtonProps = React.DetailedHTMLProps<
 	React.ButtonHTMLAttributes<HTMLButtonElement>,
 	HTMLButtonElement
 > & {
@@ -36,3 +34,18 @@ export type IconButtonProps = React.DetailedHTMLProps<
 	size?: ButtonSize;
 	icon: React.ReactNode;
 };
+
+type LinkIconButtonProps = Omit<BaseIconButtonProps, "onClick"> & {
+	href: string;
+};
+
+type RouteIconButtonProps = Omit<BaseIconButtonProps, "onClick"> & {
+	route: string;
+};
+
+export type IButtonProps = ButtonProps | LinkButtonProps | RouteButtonProps;
+
+export type IconButtonProps =
+	| BaseIconButtonProps
+	| LinkIconButtonProps
+	| RouteIconButtonProps;

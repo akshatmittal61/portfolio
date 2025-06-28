@@ -1,4 +1,4 @@
-import { HomeAbout, HomeHero } from "@/components";
+import { HomeAbout, HomeHero, HomeProjects } from "@/components";
 import { useStore } from "@/context";
 import styles from "@/styles/pages/Home.module.scss";
 import { stylesConfig } from "@/utils";
@@ -12,6 +12,7 @@ const HomePage: React.FC = () => {
 		<main className={classes("")}>
 			<HomeHero />
 			<HomeAbout />
+			<HomeProjects />
 		</main>
 	);
 };

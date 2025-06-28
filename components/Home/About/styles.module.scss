@@ -8,6 +8,7 @@
 	align-items: flex-start;
 	position: relative;
 	gap: 24px;
+	padding: 24px 0;
 
 	@include responsive(tablet) {
 		flex-direction: column-reverse;
@@ -27,7 +28,7 @@
 		justify-content: center;
 		align-items: flex-start;
 		flex-direction: column;
-		gap: 24px;
+		gap: 36px;
 		padding: 48px 36px;
 		padding: 96px 50% 96px 56px;
 		border-radius: var(--border-radius);
@@ -41,8 +42,8 @@
 				linear-gradient(
 					105deg,
 					rgba(255, 255, 255, 0.9) 0%,
-					rgba(255, 255, 255, 0.9) 50%,
-					transparent 50%
+					rgba(255, 255, 255, 0.9) 55%,
+					transparent 55%
 				),
 				url("/images/akshat-athena.png");
 		}
@@ -52,26 +53,10 @@
 				linear-gradient(
 					105deg,
 					rgba(0, 0, 0, 0.9) 0%,
-					rgba(0, 0, 0, 0.9) 50%,
-					transparent 50%
+					rgba(0, 0, 0, 0.9) 55%,
+					transparent 55%
 				),
 				url("/images/akshat-athena.png");
-		}
-	}
-
-	&-skills {
-		width: 100%;
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		flex-flow: row wrap;
-		gap: 16px;
-		padding-right: 48px;
-
-		@include responsive(phone) {
-			padding-right: 0;
-			justify-content: space-evenly;
-			gap: 12px;
 		}
 	}
 

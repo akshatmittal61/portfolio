@@ -5,7 +5,7 @@ export type ISkill = {
 };
 
 export type IProject = {
-	id: number;
+	id: string;
 	title: string;
 	description: string;
 	github: string;
@@ -13,6 +13,8 @@ export type IProject = {
 	image: string;
 	logo: string;
 	tags: string[];
+	showcase?: boolean;
+	theme: string;
 };
 
 export type IWork = {

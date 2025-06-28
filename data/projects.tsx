@@ -1,87 +1,78 @@
 import { frontendBaseUrl } from "@/constants";
 import { IProject } from "@/types";
 
-const projects: IProject[] = [
+export const projects: IProject[] = [
 	{
-		id: 6,
+		id: "settle-it",
 		title: "Settle It",
-		description: `
-• Built an application for maintaining track of expenses
-• OTP based authentication model
-• Just add the expenses and let us handle the calculations
-• Optimized API response by 150% by MongoDB lookup queries and database normalization
-		`,
+		description:
+			"Blend in the fun and let us handle your expenses. An open-source alternative to Splitwise.",
 		github: "https://github.com/akshatmittal61/settle-it",
 		deployment: "https://settleit.vercel.app/",
-		image: "https://settleit.vercel.app/og-image.png",
+		image: "https://settleit.vercel.app/thumbnail.png",
 		logo: "https://settleit.vercel.app/favicon.png",
 		tags: ["nextjs", "typescript", "sass", "flutter"],
+		showcase: true,
+		theme: "#4aa63c",
 	},
 	{
-		id: 5,
-		title: "Screen Recorder",
-		description: `
-• Built by native media recorder element
-		`,
-		github: "https://github.com/akshatmittal61/screen-recorder",
-		deployment: "https://akshatmittal61.github.io/screen-recorder/",
-		image: "https://akshatmittal61.github.io/screen-recorder/images/og-image.png",
-		logo: "https://akshatmittal61.github.io/screen-recorder/favicon.png",
+		id: "kapture",
+		title: "Kapture",
+		description: "An easy screen recorder with 0-setup and no ads.",
+		github: "https://github.com/akshatmittal61/kapture",
+		deployment: "https://akshatmittal61.github.io/kapture/",
+		image: "https://akshatmittal61.github.io/kapture/images/thumbnail.png",
+		logo: "https://akshatmittal61.github.io/kapture/favicon.png",
 		tags: ["javascript", "media"],
+		showcase: true,
+		theme: "#0932ae",
 	},
 	{
-		id: 4,
+		id: "http-python-server",
 		title: "Pure Python Server",
-		description: `
-• Built by native media recorder element
-		`,
+		description: "Python server without any community dependencies.",
 		github: "https://github.com/akshatmittal61/pure-python-server",
 		deployment: "",
 		image: `${frontendBaseUrl}/images/projects/python-server-og.png`,
 		logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
 		tags: ["javascript", "media"],
+		theme: "$458486",
 	},
 	{
-		id: 3,
+		id: "city-tales",
 		title: "City Tales",
-		description: `
-• Incorporated features such as past walks, blogs, reviews, quizzes, and merchandise to enhance user engagement.
-• Reduced API latency by 40% and improved load time by 25%, for seamless user interactions.
-• Attained a remarkable Google ranking of 95% through effective SEO strategies
-		`,
+		description:
+			"Experience the untold stories of vibrant cities with City Tales, where every journey is a tale waiting to be told. Discover the captivating tales of cities around the world.",
 		github: "https://github.com/akshatmittal61/city-tales",
 		deployment: "https://city-tales.vercel.app/",
 		image: "https://city-tales.vercel.app/images/og-image.png",
 		logo: "https://city-tales.vercel.app/images/primary-logo-1.png",
 		tags: ["nestjs", "typescript", "javascript", "sass"],
+		theme: "#1a1a1a",
 	},
 	{
-		id: 2,
+		id: "meraki-iiitu",
 		title: "Meraki IIIT Una",
-		description: `
-• Built OTP based authentication model using Google APIs
-• Delivered user-engaging interface with a decreased load time of 35% and SEO optimization
-• Optimized API response by 150% by MongoDB lookup queries and database normalization
-		`,
+		description: "Meraki - Annual Tech Fest of IIIT Una",
 		github: "https://github.com/meraki-iiitu/meraki-23",
 		deployment: "https://meraki-23.vercel.app/",
-		image: "https://meraki-23.vercel.app/og-image.png",
+		image: "https://meraki-23.vercel.app/favicon.png",
 		logo: "https://meraki-23.vercel.app/favicon.png",
 		tags: ["nextjs", "typescript", "javascript", "google-apis", "sass"],
+		showcase: true,
+		theme: "#111018",
 	},
 	{
-		id: 1,
+		id: "flavorsome",
 		title: "Flavorsome",
-		description: `
-• Built a MERN Stack recipe blogging platform in 4 days as a frontend challenge
-• Facilitated reading, writing, and saving recipes by decreasing API latency by 15%
-		`,
+		description:
+			"Flavorsome - Your one-stop solution for all your food cravings. Explore delicious recipes shared by the users and share your own!",
 		github: "https://github.com/akshatmittal61/flavorsome",
 		deployment: "https://flavorsome.netlify.app/",
-		image: "https://flavorsome.netlify.app/images/og-image.png",
+		image: "https://flavorsome.netlify.app/images/thumbnail.png",
 		logo: "https://flavorsome.netlify.app/images/favicon.png",
 		tags: ["reactjs", "javascript", "mongodb", "express", "sass"],
+		showcase: true,
+		theme: "#f8f7f7",
 	},
 ];
-
-export default projects;

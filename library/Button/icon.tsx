@@ -1,4 +1,5 @@
 import { stylesConfig } from "@/utils";
+import Link from "next/link";
 import React, { forwardRef } from "react";
 import styles from "./styles.module.scss";
 import { IconButtonProps } from "./types";
@@ -22,7 +23,15 @@ const IconButtonComponent: React.ForwardRefRenderFunction<
 			ref={ref}
 			{...props}
 		>
-			{icon}
+			{"href" in props ? (
+				<a href={props.href} target="_blank" rel="noreferrer">
+					{icon}
+				</a>
+			) : "route" in props ? (
+				<Link href={props.route}>{icon}</Link>
+			) : (
+				icon
+			)}
 		</button>
 	);
 };

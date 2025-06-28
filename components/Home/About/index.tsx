@@ -1,5 +1,4 @@
-import { SkillPill } from "@/components";
-import { resumeUrl, skills } from "@/data";
+import { resumeUrl } from "@/data";
 import { Button, Typography } from "@/library";
 import { stylesConfig } from "@/utils";
 import React from "react";
@@ -51,18 +50,6 @@ export const HomeAbout: React.FC = () => {
 				>
 					Resume
 				</Button>
-				<div className={classes("-skills")}>
-					{Object.values(skills)
-						.flat()
-						.map((skill) => (
-							<SkillPill
-								key={`my-skills-${skill.id}`}
-								name={skill.name}
-								logo={skill.logo}
-								id={`my-skills-${skill.id}`}
-							/>
-						))}
-				</div>
 			</div>
 			{/* <div className={classes("-right")}>
 				<div className={classes("-frame")}>
