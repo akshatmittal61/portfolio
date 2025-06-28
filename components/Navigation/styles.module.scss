@@ -17,20 +17,20 @@
 	&-trigger {
 		@include init-button;
 		border-radius: 500px;
-		width: 2.5rem;
-		height: 2.5rem;
+		width: 40px;
+		height: 40px;
 		position: fixed;
-		top: 0.5rem;
-		right: 0.25rem;
+		top: 50%;
+		right: 1rem;
 		z-index: 65;
 		cursor: pointer;
-		padding: 0.5rem;
+		padding: 8px;
+		transform: translateY(-50%);
 
 		span {
 			width: 100%;
 			height: 2px;
 			position: relative;
-			background-color: var(--theme-fg);
 
 			&::before,
 			&::after {
@@ -40,19 +40,36 @@
 				width: 100%;
 				height: 100%;
 				border-radius: 500px;
-				background-color: inherit;
+				background-color: var(--theme-fg);
 			}
 
 			&::before {
-				top: -5.5px;
+				top: -9.3px;
+				transform: rotate(-60deg);
 			}
 
 			&::after {
-				top: 5.5px;
+				top: 9.3px;
+				transform: rotate(60deg);
 			}
 		}
 
-		&--opened {
+		&:hover {
+			span {
+				&::before {
+					top: -8px;
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					top: 8px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		&--opened,
+		&--opened:hover {
 			span {
 				background-color: transparent;
 
