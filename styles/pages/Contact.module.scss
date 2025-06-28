@@ -1,0 +1,138 @@
+@import "@/styles/config/mixins";
+@import "@/styles/config/shadows";
+
+.contact-me {
+	width: 100%;
+	scroll-snap-align: start;
+	background-image: url("/images/contact-bg.jpg");
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+
+	&-banner {
+		width: 100%;
+		height: calc(25vh + 8rem);
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		background-color: var(--theme-bg);
+		padding: 24px 10%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
+	}
+
+	&-card {
+		width: 80%;
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		gap: 24px;
+		padding: 72px;
+		border-radius: var(--border-radius);
+		transform: translateY(calc(12.5vh + 8rem));
+		background-color: var(--theme-bg);
+		@include shadow(4);
+
+		&__content {
+			width: 100%;
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 12px;
+			margin-bottom: auto;
+		}
+
+		&__left,
+		&__right {
+			width: 40%;
+			display: flex;
+			justify-content: flex-start;
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 12rem;
+		}
+
+		&__right {
+			width: 60%;
+			gap: 24px;
+		}
+	}
+
+	&-links {
+		margin-top: auto;
+		display: flex;
+		justify-content: flex-end;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	&-email,
+	&-phone {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 16px;
+
+		a {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 8px;
+		}
+	}
+
+	&-details {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 24px;
+	}
+
+	form {
+		input {
+			width: 50%;
+			padding: 12px;
+			border: 1px solid var(--theme-fg);
+			border-radius: 8px;
+
+			&:focus,
+			&:active {
+				border: 1px solid var(--theme-fg);
+				outline: none;
+			}
+		}
+
+		textarea {
+			width: 100%;
+			padding: 12px;
+			border: 1px solid var(--theme-fg);
+			border-radius: 8px;
+			resize: none;
+
+			&:focus,
+			&:active {
+				border: 1px solid var(--theme-fg);
+				outline: none;
+			}
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+
+	&-socials {
+		width: 100%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 24px;
+	}
+}

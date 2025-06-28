@@ -1,6 +1,7 @@
 import { stylesConfig } from "@/utils";
 import Link from "next/link";
 import React, { forwardRef } from "react";
+import { BUTTON_THEMES } from "./assets";
 import styles from "./styles.module.scss";
 import { IconButtonProps } from "./types";
 
@@ -15,10 +16,10 @@ const BUTON_SIZES: { [key: string]: string } = {
 const IconButtonComponent: React.ForwardRefRenderFunction<
 	HTMLButtonElement,
 	IconButtonProps
-> = ({ className, size = "medium", icon, ...props }, ref) => {
+> = ({ className, theme = "filled", size = "medium", icon, ...props }, ref) => {
 	return (
 		<button
-			className={`${classNames("icon-btn", BUTON_SIZES[size])} ${className}`}
+			className={`${classNames("icon-btn", BUTON_SIZES[size], BUTTON_THEMES[theme])} ${className}`}
 			disabled={props.disabled}
 			ref={ref}
 			{...props}

@@ -1,6 +1,7 @@
 import React from "react";
 
 export type ButtonSize = "small" | "medium" | "large";
+export type ButtonTheme = "filled" | "outlined";
 
 type BaseButtonProps = React.DetailedHTMLProps<
 	React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -8,6 +9,7 @@ type BaseButtonProps = React.DetailedHTMLProps<
 > & {
 	children: React.ReactNode;
 	className?: string;
+	theme?: ButtonTheme;
 	size?: ButtonSize;
 	loading?: boolean;
 	icon?: React.ReactNode;
@@ -31,6 +33,7 @@ type BaseIconButtonProps = React.DetailedHTMLProps<
 	HTMLButtonElement
 > & {
 	className?: string;
+	theme?: ButtonTheme;
 	size?: ButtonSize;
 	icon: React.ReactNode;
 };

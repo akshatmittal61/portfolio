@@ -57,6 +57,10 @@
 	@include _theme(light) {
 		background-color: var(--b-light-brown);
 		color: var(--b-dark-brown);
+
+		&:hover {
+			background-color: var(--b-light-brown);
+		}
 	}
 
 	@include _theme(dark) {
@@ -90,8 +94,8 @@
 			.btn__icon {
 				svg,
 				img {
-					width: 1rem;
-					height: 1rem;
+					width: 1.5rem;
+					height: 1.5rem;
 				}
 			}
 		}
@@ -100,8 +104,8 @@
 			.btn__icon {
 				svg,
 				img {
-					width: 0.75rem;
-					height: 0.75rem;
+					width: 1rem;
+					height: 1rem;
 				}
 			}
 		}
@@ -110,8 +114,8 @@
 			.btn__icon {
 				svg,
 				img {
-					width: 1.25rem;
-					height: 1.25rem;
+					width: 2rem;
+					height: 2rem;
 				}
 			}
 		}
@@ -159,16 +163,34 @@
 	width: 2.5rem;
 	height: 2.5rem;
 	position: relative;
-	// padding: 1rem;
 	border-radius: 500px;
 	--theme: --theme-fg;
 	color: var(--theme);
-	border-style: solid;
-	border-width: 1px;
-	border-color: var(--theme);
 
 	.material-symbols-outlined {
 		font-size: 1.5rem;
+	}
+
+	&.btn--theme--filled {
+		@include _theme(light) {
+			background-color: var(--b-lightest-brown);
+			color: var(--b-dark-brown);
+
+			&:hover {
+				background-color: var(--b-light-brown);
+			}
+		}
+
+		@include _theme(dark) {
+			background-color: var(--b-navy);
+			color: var(--white);
+		}
+	}
+
+	&.btn--theme--outlined {
+		border-style: solid;
+		border-width: 1px;
+		border-color: var(--theme);
 	}
 
 	// if button has a as child, use padding on a, else on button
@@ -221,8 +243,8 @@
 		}
 
 		&--large {
-			width: 3.25rem;
-			height: 3.25rem;
+			width: 4rem;
+			height: 4rem;
 			padding: 1rem;
 
 			&:has(a) {
