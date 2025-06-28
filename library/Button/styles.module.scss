@@ -13,16 +13,40 @@
 		&--small {
 			padding: 8px 16px;
 			@include typography($size: sm, $weight: regular);
+
+			&:has(a) {
+				padding: unset;
+
+				a {
+					padding: 8px 16px;
+				}
+			}
 		}
 
 		&--medium {
 			padding: 12px 20px;
-			@include typography($size: s, $weight: regular);
+			@include typography($size: md, $weight: regular);
+
+			&:has(a) {
+				padding: unset;
+
+				a {
+					padding: 12px 20px;
+				}
+			}
 		}
 
 		&--large {
 			padding: 16px 24px;
-			@include typography($size: md, $weight: regular);
+			@include typography($size: xl, $weight: regular);
+
+			&:has(a) {
+				padding: unset;
+
+				a {
+					padding: 16px 24px;
+				}
+			}
 		}
 	}
 

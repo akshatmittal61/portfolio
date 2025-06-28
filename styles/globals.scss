@@ -17,8 +17,14 @@
 }
 
 ::selection {
-	background-color: var(--b-green);
-	color: var(--b-dark-navy);
+	@include _theme(light) {
+		background-color: var(--b-dark-brown);
+		color: var(--b-lightest-brown);
+	}
+	@include _theme(dark) {
+		background-color: var(--b-green);
+		color: var(--b-dark-navy);
+	}
 }
 
 :root,

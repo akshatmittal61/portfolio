@@ -10,7 +10,7 @@ const nextConfig: NextConfig = {
 		domains: ["localhost"],
 	},
 	sassOptions: {
-		includePaths: [path.join(process.cwd(), "styles")],
+		includePaths: [path.join(__dirname, "styles")],
 		quiteDeps: true,
 		silenceDeprecations: [
 			"legacy-js-api",

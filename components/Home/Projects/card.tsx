@@ -27,7 +27,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
 				<Typography as="h3" size="head-3" className={classes("-title")}>
 					{project.title}
 				</Typography>
-				<Typography as="p" size="xl">
+				<Typography size="xl">
 					<div
 						dangerouslySetInnerHTML={{
 							__html: project.description,

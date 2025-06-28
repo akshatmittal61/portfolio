@@ -108,6 +108,10 @@ body[data-theme="dark"] {
 	--theme-fg: var(--b-light-slate);
 }
 
+body > div#__next > main {
+	min-height: 100vh;
+}
+
 .dispn {
 	display: none !important;
 }
