@@ -1,0 +1,178 @@
+@import "@/styles/config/mixins";
+@import "@/styles/config/animations";
+
+.navigation {
+	min-height: unset;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 20;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--theme-bg);
+
+	&-trigger {
+		@include init-button;
+		border-radius: 500px;
+		width: 2.5rem;
+		height: 2.5rem;
+		position: fixed;
+		top: 0.5rem;
+		right: 0.25rem;
+		z-index: 25;
+		cursor: pointer;
+		padding: 0.5rem;
+
+		span {
+			width: 100%;
+			height: 2px;
+			position: relative;
+			background-color: var(--theme-fg);
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 500px;
+				background-color: inherit;
+			}
+
+			&::before {
+				top: -5.5px;
+			}
+
+			&::after {
+				top: 5.5px;
+			}
+		}
+
+		&--opened {
+			span {
+				background-color: transparent;
+
+				&::before {
+					top: 0;
+					transform: rotate(45deg);
+					background-color: var(--theme-fg);
+				}
+
+				&::after {
+					top: 0;
+					transform: rotate(-45deg);
+					background-color: var(--theme-fg);
+				}
+			}
+		}
+	}
+
+	&--closed {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	&--opened {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&-nav {
+		width: 70%;
+		height: 80%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		&-list {
+			height: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: flex-start;
+			flex-flow: column;
+			list-style: none;
+		}
+
+		&-item {
+			--s: 50px;
+			--x: calc(var(--s) / 3);
+			font-size: 5rem;
+			font-weight: 200;
+			line-height: 120%;
+			letter-spacing: 0.25rem;
+			position: relative;
+
+			&::before {
+				content: attr(data-index);
+				position: absolute;
+				left: -5rem;
+				top: 50%;
+				transform: translateY(-50%) rotate(-90deg);
+				font-size: 1rem;
+			}
+
+			&__arrow {
+				width: calc(var(--x) * 2);
+				height: 1px;
+				background-color: var(--theme-fg);
+				margin-left: 1rem;
+				position: absolute;
+				left: 110%;
+				top: 50%;
+				transform: translateY(-50%);
+
+				&::before,
+				&::after {
+					content: "";
+					width: calc(var(--x) * 1.414);
+					height: 1px;
+					background-color: inherit;
+					position: absolute;
+					right: calc(-1 * var(--x) * 0.236);
+				}
+
+				&::before {
+					// transform: translatey(-$x/2 + 0.5px) rotate(45deg);
+					transform: translateY(calc(-1 * var(--x) / 2 + 0.5px))
+						rotate(45deg);
+				}
+
+				&::after {
+					// transform: translatey($x/2 - 0.5px) rotate(-45deg);
+					transform: translateY(calc(var(--x) / 2 - 0.5px))
+						rotate(-45deg);
+				}
+			}
+
+			&__link {
+				all: unset;
+				display: inline-flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 2rem;
+
+				svg {
+					font-size: 2.5rem;
+					stroke-width: 1px;
+				}
+			}
+
+			a:hover + span {
+				// width: $x*4;
+				width: calc(var(--x) * 4);
+
+				@include _theme(light) {
+					background-color: var(--b-dark-brown);
+				}
+
+				@include _theme(dark) {
+					background-color: var(--b-light-slate);
+				}
+			}
+		}
+	}
+}
