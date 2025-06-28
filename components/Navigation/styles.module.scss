@@ -113,6 +113,11 @@
 			align-items: flex-start;
 			flex-flow: column;
 			list-style: none;
+
+			@include responsive(phone) {
+				justify-content: flex-start;
+				gap: 24px;
+			}
 		}
 
 		&-item {
@@ -124,6 +129,10 @@
 			letter-spacing: 0.25rem;
 			position: relative;
 
+			@include responsive(phone) {
+				font-size: 3rem;
+			}
+
 			&::before {
 				content: attr(data-index);
 				position: absolute;
@@ -131,6 +140,10 @@
 				top: 50%;
 				transform: translateY(-50%) rotate(-90deg);
 				font-size: 1rem;
+
+				@include responsive(phone) {
+					left: -3rem;
+				}
 			}
 
 			&__arrow {
@@ -142,6 +155,10 @@
 				left: 110%;
 				top: 50%;
 				transform: translateY(-50%);
+
+				@include responsive(phone) {
+					left: 100%;
+				}
 
 				&::before,
 				&::after {
@@ -211,6 +228,8 @@
 		@include responsive(phone) {
 			justify-content: center;
 			gap: 16px;
+			right: 50%;
+			transform: translateX(50%);
 		}
 
 		a {

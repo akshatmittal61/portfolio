@@ -3,7 +3,7 @@ import { Button, IconButton, Typography } from "@/library";
 import styles from "@/styles/pages/Contact.module.scss";
 import { stylesConfig } from "@/utils";
 import React, { useState } from "react";
-import { FiChevronLeft, FiMail, FiPhone } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
 
 const classes = stylesConfig(styles, "contact-me");
 
@@ -26,11 +26,7 @@ const ContactMe: React.FC = () => {
 	};
 	return (
 		<main className={classes("")}>
-			<div className={classes("-banner")}>
-				<Button route="/" icon={<FiChevronLeft />} iconPosition="left">
-					Go Back
-				</Button>
-			</div>
+			<div className={classes("-banner")} />
 			<div className={classes("-card")}>
 				<div className={classes("-card__left")}>
 					<div className={classes("-card__content")}>

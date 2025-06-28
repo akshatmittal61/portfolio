@@ -1,7 +1,7 @@
 import { stylesConfig } from "@/utils";
 import Link from "next/link";
 import React, { forwardRef } from "react";
-import { BUTON_SIZES } from "./assets";
+import { BUTON_SIZES, BUTTON_THEMES } from "./assets";
 import styles from "./styles.module.scss";
 import { IButtonProps } from "./types";
 
@@ -40,6 +40,7 @@ const ButtonComponent: React.ForwardRefRenderFunction<
 	{
 		children,
 		className,
+		theme = "filled",
 		size = "medium",
 		loading = false,
 		icon,
@@ -54,6 +55,7 @@ const ButtonComponent: React.ForwardRefRenderFunction<
 				classNames(
 					"btn",
 					BUTON_SIZES[size],
+					BUTTON_THEMES[theme],
 					{ "btn--loading": loading },
 					{ "btn--disabled": props.disabled || loading }
 				),

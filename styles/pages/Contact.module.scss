@@ -22,6 +22,10 @@
 		left: 0;
 		z-index: -1;
 		border-radius: 0 0 var(--border-radius) var(--border-radius);
+
+		@include responsive(phone) {
+			height: calc(15vh + 8rem);
+		}
 	}
 
 	&-card {
@@ -36,6 +40,13 @@
 		transform: translateY(calc(12.5vh + 8rem));
 		background-color: var(--theme-bg);
 		@include shadow(4);
+
+		@include responsive(phone) {
+			width: 95%;
+			padding: 24px;
+			transform: translateY(calc(7.5vh + 8rem));
+			flex-direction: column;
+		}
 
 		&__content {
 			width: 100%;
@@ -55,11 +66,20 @@
 			align-items: flex-start;
 			flex-direction: column;
 			gap: 12rem;
+
+			@include responsive(phone) {
+				width: 100%;
+				gap: 24px;
+			}
 		}
 
 		&__right {
 			width: 60%;
 			gap: 24px;
+
+			@include responsive(phone) {
+				width: 100%;
+			}
 		}
 	}
 
@@ -134,5 +154,10 @@
 		justify-content: flex-start;
 		align-items: center;
 		gap: 24px;
+
+		@include responsive(phone) {
+			gap: 12px;
+			justify-content: center;
+		}
 	}
 }

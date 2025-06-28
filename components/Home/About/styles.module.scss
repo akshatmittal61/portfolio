@@ -19,7 +19,6 @@
 
 	@include responsive(phone) {
 		flex-direction: column-reverse;
-		padding: 0;
 		gap: 0;
 	}
 
@@ -38,6 +37,10 @@
 		background-position-x: right;
 		background-position-y: center;
 
+		@include responsive(phone) {
+			padding: 24px;
+		}
+
 		@include _theme(light) {
 			background-image:
 				linear-gradient(
@@ -47,6 +50,10 @@
 					transparent 55%
 				),
 				url("/images/akshat-athena.png");
+
+			@include responsive(phone) {
+				background: rgba(255, 255, 255, 0.9);
+			}
 		}
 
 		@include _theme(dark) {
@@ -58,6 +65,10 @@
 					transparent 55%
 				),
 				url("/images/akshat-athena.png");
+
+			@include responsive(phone) {
+				background: rgba(0, 0, 0, 0.9);
+			}
 		}
 	}
 }

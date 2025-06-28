@@ -21,6 +21,7 @@
 
 	@include responsive(tablet) {
 		padding: 0 5%;
+		scroll-snap-align: unset;
 	}
 
 	@include responsive(phone) {
@@ -29,7 +30,7 @@
 		justify-content: center;
 		padding: 0 2.5% 48px 2.5%;
 		background-size: cover;
-		background-color: var(--semantic-primary-background-weak);
+		background-color: var(--theme-bg);
 	}
 
 	&-graphic {

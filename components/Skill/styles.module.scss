@@ -14,6 +14,7 @@
 	@include typography($size: md);
 
 	@include responsive(phone) {
+		padding: 4px 8px;
 		@include typography($size: sm);
 	}
 

@@ -25,6 +25,20 @@
 		background-position-x: right;
 		background-position-y: center;
 		text-align: right;
+
+		@include responsive(phone) {
+			padding: 24px;
+			align-items: flex-start;
+			text-align: left;
+
+			@include _theme(light) {
+				background: rgba(255, 255, 255, 0.95);
+			}
+
+			@include _theme(dark) {
+				background: rgba(0, 0, 0, 0.95);
+			}
+		}
 	}
 
 	&-skills {
@@ -38,8 +52,9 @@
 
 		@include responsive(phone) {
 			padding-right: 0;
-			justify-content: space-evenly;
-			gap: 12px;
+			padding-left: unset;
+			justify-content: center;
+			gap: 8px;
 		}
 	}
 
@@ -50,6 +65,10 @@
 		&:nth-child(4n + 3) {
 			.project-card {
 				aspect-ratio: 2 / 2;
+
+				@include responsive(phone) {
+					aspect-ratio: 3 / 2;
+				}
 			}
 		}
 

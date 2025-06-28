@@ -1,6 +1,7 @@
 import { SkillPill } from "@/components/Skill";
 import { useStore } from "@/context";
 import { projects, skills } from "@/data";
+import { useDevice } from "@/hooks";
 import { Responsive } from "@/layouts";
 import { Typography } from "@/library";
 import { stylesConfig } from "@/utils";
@@ -12,19 +13,26 @@ const classes = stylesConfig(styles, "home-projects");
 
 export const HomeProjects: React.FC = () => {
 	const { theme } = useStore();
+	const { device } = useDevice();
 	const currBg = "/images/developer.png";
+	const getContainerStyles = () => {
+		if (device === "mobile") {
+			return undefined;
+		}
+		if (theme === "light") {
+			return {
+				backgroundImage: `linear-gradient(105deg, transparent 0%, transparent 45%, rgba(255, 255, 255, 0.95) 45%), url("${currBg}")`,
+			};
+		} else {
+			return {
+				backgroundImage: `linear-gradient(105deg, transparent 0%, transparent 45%, rgba(0, 0, 0, 0.95) 45%), url("${currBg}")`,
+			};
+		}
+	};
 
 	return (
 		<section id="projects" className={classes("")}>
-			<div
-				className={classes("-container")}
-				style={{
-					backgroundImage:
-						theme === "light"
-							? `linear-gradient(105deg, transparent 0%, transparent 45%, rgba(255, 255, 255, 0.95) 45%), url("${currBg}")`
-							: `linear-gradient(105deg, transparent 0%, transparent 45%, rgba(0, 0, 0, 0.95) 45%), url("${currBg}")`,
-				}}
-			>
+			<div className={classes("-container")} style={getContainerStyles()}>
 				<Typography
 					id="intro-title"
 					as="h1"

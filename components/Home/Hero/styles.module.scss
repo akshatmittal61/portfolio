@@ -10,11 +10,19 @@
 	padding: 0 2rem;
 	scroll-snap-align: start;
 
+	@include responsive(phone) {
+		padding: 10rem 0 0 0;
+	}
+
 	&-name {
 		font-size: 7rem;
 		font-weight: 800;
 		line-height: 120%;
 		letter-spacing: 0.25rem;
+
+		@include responsive(phone) {
+			font-size: 3rem;
+		}
 	}
 
 	&-about {
@@ -22,7 +30,13 @@
 		line-height: 150%;
 		font-size: 2.25rem;
 		margin: 1.5rem 0;
+
+		@include responsive(phone) {
+			width: 95%;
+			font-size: 1.5rem;
+		}
 	}
+
 	&-actions {
 		display: flex;
 		justify-content: flex-start;
