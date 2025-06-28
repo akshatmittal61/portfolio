@@ -1,9 +1,10 @@
+import { socials } from "@/constants";
 import { navigation } from "@/constants/navigation";
 import { stylesConfig } from "@/utils";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { useRouter } from "next/router";
 
 const classes = stylesConfig(styles, "navigation");
 
@@ -69,6 +70,24 @@ export const Navigation: React.FC = () => {
 								<span
 									className={classes("-nav-item__arrow")}
 								></span>
+							</li>
+						))}
+					</ul>
+					<ul className={classes("-socials")}>
+						{socials.map((social) => (
+							<li key={`navigation-social-${social.platform}`}>
+								<a
+									href={social.link}
+									target="_blank"
+									rel="noreferrer"
+									className={classes("-socials__link")}
+								>
+									{social.icon}
+									<span className="dispn">
+										{social.platform}
+										{social.link}
+									</span>
+								</a>
 							</li>
 						))}
 					</ul>
