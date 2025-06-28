@@ -8,11 +8,13 @@
 	gap: 6px;
 	padding: 6px 12px;
 	border-radius: 500px 500px 2px 500px;
-	background-color: rgba(255, 255, 255, 0.1);
+	// background-color: rgba(255, 255, 255, 0.1);
+	background-color: var(--back-shadow-light);
 	color: var(--theme-white);
 	@include typography($size: md);
 
 	@include responsive(phone) {
+		padding: 4px 8px;
 		@include typography($size: sm);
 	}
 

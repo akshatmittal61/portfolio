@@ -1,4 +1,4 @@
-import Typography from "@/library/Typography";
+import { Typography } from "@/library";
 import styles from "@/styles/pages/Empty.module.scss";
 import { stylesConfig } from "@/utils/functions";
 import { useRouter } from "next/router";
@@ -12,7 +12,6 @@ const PageNotFound: React.FC = () => {
 
 	useEffect(() => {
 		const interval = setInterval(() => {
-			console.log(countDown);
 			if (countDown === 0) {
 				router.push("/");
 			} else {
@@ -29,7 +28,7 @@ const PageNotFound: React.FC = () => {
 			<Typography size="head-1" weight="medium">
 				Ooops... Radar not found
 			</Typography>
-			<Typography size="lg">
+			<Typography size="xl">
 				Landed on the wrong planet?
 				<br />
 				Let&apos;s get you back to the right realm...

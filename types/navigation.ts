@@ -1,5 +1,8 @@
-export interface INavigation {
-	icon: any;
+import React from "react";
+
+export type Navigation = {
+	id: string;
 	title: string;
-	path: string;
-}
+	route: string;
+	icon: React.ReactNode;
+};

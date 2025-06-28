@@ -1,0 +1,74 @@
+@import "@/styles/config/mixins";
+@import "@/styles/config/typography";
+
+.home-about {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	gap: 24px;
+	padding: 24px 0;
+	scroll-snap-align: start;
+
+	@include responsive(tablet) {
+		flex-direction: column-reverse;
+		padding: 0;
+		gap: 0;
+	}
+
+	@include responsive(phone) {
+		flex-direction: column-reverse;
+		gap: 0;
+	}
+
+	&-container {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 36px;
+		padding: 48px 36px;
+		padding: 96px 50% 96px 56px;
+		border-radius: var(--border-radius);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position-x: right;
+		background-position-y: center;
+
+		@include responsive(phone) {
+			padding: 24px;
+		}
+
+		@include _theme(light) {
+			background-image:
+				linear-gradient(
+					105deg,
+					rgba(255, 255, 255, 0.9) 0%,
+					rgba(255, 255, 255, 0.9) 55%,
+					transparent 55%
+				),
+				url("/images/akshat-athena.png");
+
+			@include responsive(phone) {
+				background: rgba(255, 255, 255, 0.9);
+			}
+		}
+
+		@include _theme(dark) {
+			background-image:
+				linear-gradient(
+					105deg,
+					rgba(0, 0, 0, 0.9) 0%,
+					rgba(0, 0, 0, 0.9) 55%,
+					transparent 55%
+				),
+				url("/images/akshat-athena.png");
+
+			@include responsive(phone) {
+				background: rgba(0, 0, 0, 0.9);
+			}
+		}
+	}
+}

@@ -3,221 +3,288 @@
 .home-projects {
 	width: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: flex-start;
-	flex-direction: column;
+	position: relative;
 	gap: 24px;
-	padding: 48px 5%;
-
-	@include responsive(tablet) {
-		padding: 16px 0;
-		align-items: center;
-		text-align: center;
-	}
-
-	@include responsive(phone) {
-		padding: 16px 0;
-		align-items: center;
-		text-align: center;
-	}
-
-	&-title {
-		display: inline-flex;
-		justify-content: flex-start;
-		align-items: center;
-		gap: 16px;
-
-		svg {
-			width: 32px;
-			height: 32px;
-		}
-	}
-
-	&-description {
-		width: 80%;
-
-		a {
-			text-decoration: underline;
-		}
-	}
+	flex-direction: column;
+	padding: 48px 0;
+	scroll-snap-align: start;
 
 	&-container {
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		align-items: center;
+		align-items: flex-end;
+		flex-direction: column;
+		gap: 24px;
+		padding: 96px 56px 96px 50%;
+		border-radius: var(--border-radius);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position-x: right;
+		background-position-y: center;
+		text-align: right;
 
 		@include responsive(phone) {
-			justify-content: center;
-			flex-direction: column;
+			padding: 24px;
+			align-items: flex-start;
+			text-align: left;
+
+			@include _theme(light) {
+				background: rgba(255, 255, 255, 0.95);
+			}
+
+			@include _theme(dark) {
+				background: rgba(0, 0, 0, 0.95);
+			}
 		}
 	}
 
-	&-card {
-		width: calc(100% - 24px);
-		// aspect-ratio: 1200 / 630;
-		background-color: var(--semantic-primary-background-medium);
-		flex: 0 0 auto;
+	&-skills {
+		width: 100%;
 		display: flex;
-		justify-content: space-between;
-		align-items: stretch;
-		flex-direction: column;
-		padding: 8px;
-		gap: 8px;
-		margin: 12px;
-		border-radius: var(--border-radius);
-		position: relative;
-		overflow: hidden;
+		justify-content: flex-end;
+		align-items: center;
+		flex-flow: row wrap;
+		gap: 16px;
+		padding-left: 48px;
 
 		@include responsive(phone) {
-			max-width: unset;
-			width: 100%;
-			padding: 4px;
-			gap: 4px;
-		}
-
-		&-graphic {
-			width: 100%;
-			aspect-ratio: 1200 / 630;
-			flex: 0 1 auto;
-			border-radius: inherit;
-			overflow: hidden;
-			display: flex;
+			padding-right: 0;
+			padding-left: unset;
 			justify-content: center;
-			align-items: center;
+			gap: 8px;
+		}
+	}
 
-			a {
-				width: 100%;
-				height: 100%;
-			}
+	&-card-container {
+		padding: 16px;
 
-			img {
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
+		&:nth-child(4n + 2),
+		&:nth-child(4n + 3) {
+			.project-card {
+				aspect-ratio: 2 / 2;
+
+				@include responsive(phone) {
+					aspect-ratio: 3 / 2;
+				}
 			}
 		}
 
-		&:hover &-graphic {
-			img {
-				transform: scale(1.05);
+		&:nth-child(4n),
+		&:nth-child(4n + 1) {
+			.project-card {
+				aspect-ratio: 3 / 2;
 			}
 		}
+	}
+}
 
-		&-content {
-			width: 100%;
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			flex-direction: column;
-			padding: 24px 16px;
+.project-card {
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-blend-mode: darken;
+	background-color: rgba(0, 0, 0, 0);
+	padding: 8px;
+	gap: 8px;
+	border-radius: var(--border-radius);
+	position: relative;
+	overflow: hidden;
+
+	width: 100%;
+	height: 100%;
+
+	&-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 5;
+		width: 100%;
+		font-size: 1rem;
+		padding: 2rem;
+		opacity: 0;
+		transform: translate(-50%, -50%) scale(0);
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: 16px;
+
+		p {
+			width: 70%;
+			margin: 0 auto;
+		}
+	}
+
+	&-title {
+		position: relative;
+
+		&::before {
+			content: "";
 			position: absolute;
-			bottom: 0;
+			width: 100%;
+			height: 30%;
+			top: 70%;
 			left: 0;
-			transform: translateY(100%);
-			background-image: linear-gradient(
-				180deg,
-				hsla(0, 0%, 100%, 0),
-				rgba(0, 0, 0, 0.8) 65%
-			);
+			transform: translate(0, -20%) skew(-30deg);
+			z-index: -1;
 
-			@include responsive(phone) {
-				position: relative;
-				transform: unset;
-				background-image: none;
-				padding: 0;
+			@include _theme(light) {
+				background-color: var(--b-light-brown);
 			}
 
-			&__header {
-				width: 100%;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				overflow: hidden;
-				padding: 0 24px;
+			@include _theme(dark) {
+				background-color: var(--b-dark-slate);
+			}
+		}
+	}
 
-				@include responsive(phone) {
-					height: 48px;
-					padding: 8px 12px;
+	&-image {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+		border-radius: inherit;
+		transition:
+			filter 0.25s ease-in-out,
+			transform 0.25s ease-in-out;
+	}
+
+	&-actions {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 12px;
+	}
+
+	&-frame {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		--w: 1px;
+		--l: 40%;
+		--d: 0rem;
+		--c: transparent;
+
+		&--border {
+			position: absolute;
+			width: 7.5rem;
+			height: 7.5rem;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				background-color: var(--c);
+			}
+
+			&::before {
+				width: var(--l);
+				height: var(--w);
+			}
+
+			&::after {
+				width: var(--w);
+				height: var(--l);
+			}
+
+			&_1 {
+				top: var(--d);
+				left: var(--d);
+
+				&::before {
+					top: 0;
+					left: 0;
+				}
+
+				&::after {
+					top: 0;
+					left: 0;
 				}
 			}
 
-			&__body {
-				width: 100%;
-				padding: 16px;
-				display: flex;
+			&_2 {
+				top: var(--d);
+				right: var(--d);
+
+				&::before {
+					top: 0;
+					right: 0;
+				}
+
+				&::after {
+					top: 0;
+					right: 0;
+				}
 			}
 
-			&__skills {
-				width: 100%;
-				display: flex;
-				justify-content: flex-start;
-				align-items: center;
-				flex-flow: row wrap;
-				gap: 16px;
-				padding-right: 48px;
+			&_3 {
+				bottom: var(--d);
+				left: var(--d);
 
-				@include responsive(phone) {
-					padding-right: 0;
-					justify-content: space-evenly;
-					gap: 12px;
+				&::before {
+					bottom: 0;
+					left: 0;
+				}
+
+				&::after {
+					bottom: 0;
+					left: 0;
+				}
+			}
+
+			&_4 {
+				bottom: var(--d);
+				right: var(--d);
+
+				&::before {
+					bottom: 0;
+					right: 0;
+				}
+
+				&::after {
+					bottom: 0;
+					right: 0;
 				}
 			}
 		}
+	}
 
-		&--featured &-content {
-			&__body {
-				display: flex;
-			}
+	&:hover &-frame {
+		--w: 1px;
+		--l: 40%;
+		--d: 1rem;
+		--c: var(--white);
+
+		@include _theme(light) {
+			background-color: rgba(255, 255, 255, 0.8);
 		}
 
-		&:hover &-content {
-			transform: translateY(0);
+		@include _theme(dark) {
+			background-color: rgba(0, 0, 0, 0.8);
 		}
+	}
 
-		&-left {
-			height: 100%;
-			display: flex;
-			justify-content: flex-start;
-			align-items: center;
-			gap: 24px;
+	&:hover &-image {
+		filter: grayscale(1) opacity(0.3);
+		transform: scale(0.75);
+	}
 
-			@include responsive(phone) {
-				gap: 16px;
-			}
-
-			img {
-				object-fit: contain;
-				width: auto;
-				height: 32px;
-
-				@include responsive(phone) {
-					height: 24px;
-				}
-			}
-		}
-
-		&-right {
-			display: flex;
-			justify-content: flex-end;
-			align-items: center;
-			gap: 24px;
-
-			@include responsive(phone) {
-				gap: 16px;
-			}
-
-			a {
-				width: 24px;
-				height: 24px;
-				border-radius: 500px;
-				padding: 2px;
-
-				svg {
-					width: 100%;
-					height: 100%;
-				}
-			}
-		}
+	&:hover &-content {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
 	}
 }

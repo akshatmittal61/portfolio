@@ -1,8 +1,10 @@
-// $name: name of the font family (var(--font-poppins), var(--font-montserrat))
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+// $family: name of the font family (var(--font-poppins), var(--font-montserrat))
 // $size: size of the font (xxs, xs, sm, md, lg, xl, xxl, xxxl)
 // $weight: weight of the font (light, regular, medium, semi-bold, bold)
 
-$font-families: ("poppins", "montserrat");
+$font-families: ("poppins", "montserrat", "alice", "google-sans");
 
 $font-sizes: (
 	"xxs",
@@ -16,19 +18,10 @@ $font-sizes: (
 	"xxxl",
 	"head-1",
 	"head-2",
-	"head-3",
-	"head-4"
+	"head-3"
 );
 
-$font-weights: (
-	"extra-light",
-	"light",
-	"regular",
-	"medium",
-	"semi-bold",
-	"bold",
-	"extra-bold"
-);
+$font-weights: ("light", "regular", "medium", "semi-bold", "bold");
 
 @mixin typography($family: "Poppins", $size: "md", $weight: "regular") {
 	// font families
@@ -37,6 +30,17 @@ $font-weights: (
 		font-family: var(--font-montserrat);
 	} @else if $family == "Poppins" or $family == "poppins" or $family == "p" {
 		font-family: var(--font-poppins);
+	} @else if $family == "Alice" or $family == "alice" or $family == "a" {
+		font-family: var(--font-alice);
+	} @else if
+		$family ==
+		"Google Sans" or
+		$family ==
+		"google-sans" or
+		$family ==
+		"gs"
+	{
+		font-family: var(--font-google-sans);
 	} @else {
 		font-family: var(--font-poppins);
 	}

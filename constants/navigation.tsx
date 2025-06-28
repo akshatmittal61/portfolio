@@ -1,22 +1,35 @@
-import { INavigation } from "@/types/navigation";
-import { Briefcase, Command, Home } from "react-feather";
+import { Navigation } from "@/types";
+import { FiBook, FiCodesandbox, FiHome, FiRss, FiSend } from "react-icons/fi";
 
-const navigation: INavigation[] = [
+export const navigation: Array<Navigation> = [
 	{
-		icon: <Home />,
+		id: "home",
 		title: "Home",
-		path: "#",
+		route: "/",
+		icon: <FiHome />,
 	},
 	{
-		icon: <Briefcase />,
-		title: "Work",
-		path: "#work",
+		id: "about",
+		title: "About",
+		route: "/about",
+		icon: <FiBook />,
 	},
 	{
-		icon: <Command />,
+		id: "projects",
 		title: "Projects",
-		path: "#projects",
+		route: "/projects",
+		icon: <FiCodesandbox />,
+	},
+	{
+		id: "blog",
+		title: "Blog",
+		route: "/blog",
+		icon: <FiRss />,
+	},
+	{
+		id: "contact",
+		title: "Get in Touch",
+		route: "/contact",
+		icon: <FiSend />,
 	},
 ];
-
-export default navigation;

@@ -1,111 +1,110 @@
-import {
-	JavaScript,
-	MongoDB,
-	MySQL,
-	NextJS,
-	NodeJS,
-	Python,
-	ReactIcon,
-	Sass,
-	TailwindCSS,
-	TypeScript,
-} from "@/assets";
-import { ISkill } from "@/types/skills";
+import { SkillIcon } from "@/assets";
+import { ISkill } from "@/types";
 
-const skills: ISkill[] = [
-	{
-		id: 1,
-		name: "CSS/SASS",
-		logo: <Sass />,
-	},
-	{
-		id: 2,
-		name: "JavaScript",
-		logo: <JavaScript />,
-	},
-	{
-		id: 3,
-		name: "TypeScript",
-		logo: <TypeScript />,
-	},
+export const frontend: ISkill[] = [
 	{
 		id: 4,
 		name: "React",
-		logo: <ReactIcon />,
+		logo: <SkillIcon.ReactIcon />,
 	},
 	{
 		id: 5,
 		name: "Next.js",
-		logo: <NextJS />,
+		logo: <SkillIcon.NextJS />,
 	},
+	{
+		id: 1,
+		name: "Tailwind CSS",
+		logo: <SkillIcon.TailwindCSS />,
+	},
+	{
+		id: 1,
+		name: "CSS/SASS",
+		logo: <SkillIcon.Sass />,
+	},
+];
+
+export const backend: Array<ISkill> = [
 	{
 		id: 6,
 		name: "Node.js",
-		logo: <NodeJS />,
+		logo: <SkillIcon.NodeJS />,
 	},
 	{
-		id: 7,
-		name: "MongoDB",
-		logo: <MongoDB />,
+		id: 6,
+		name: "Express.js",
+		logo: <SkillIcon.Express />,
+	},
+	{
+		id: 6,
+		name: "Spring Boot",
+		logo: <SkillIcon.Spring />,
+	},
+];
+
+export const database: Array<ISkill> = [
+	{
+		id: 6,
+		name: "Mongo DB",
+		logo: <SkillIcon.MongoDB />,
+	},
+	{
+		id: 6,
+		name: "PostgreSQL",
+		logo: <SkillIcon.PostgreSQL />,
 	},
 	{
 		id: 8,
 		name: "MySql",
-		logo: <MySQL />,
+		logo: <SkillIcon.MySQL />,
 	},
 ];
 
-export const mySkills: ISkill[] = [
-	{
-		id: 1,
-		name: "CSS/SASS",
-		logo: <Sass />,
-	},
+export const languages: Array<ISkill> = [
 	{
 		id: 2,
-		name: "TailwindCSS",
-		logo: <TailwindCSS />,
+		name: "JavaScript",
+		logo: <SkillIcon.JavaScript />,
 	},
 	{
 		id: 3,
-		name: "JavaScript",
-		logo: <JavaScript />,
-	},
-	{
-		id: 4,
 		name: "TypeScript",
-		logo: <TypeScript />,
-	},
-	{
-		id: 5,
-		name: "React",
-		logo: <ReactIcon />,
-	},
-	{
-		id: 6,
-		name: "Next.js",
-		logo: <NextJS />,
+		logo: <SkillIcon.TypeScript />,
 	},
 	{
 		id: 7,
-		name: "Node.js",
-		logo: <NodeJS />,
-	},
-	{
-		id: 8,
-		name: "MongoDB",
-		logo: <MongoDB />,
+		name: "Python",
+		logo: <SkillIcon.Python />,
 	},
 	{
 		id: 9,
-		name: "MySql",
-		logo: <MySQL />,
-	},
-	{
-		id: 10,
-		name: "Python",
-		logo: <Python />,
+		name: "Java",
+		logo: <SkillIcon.Java />,
 	},
 ];
 
-export default skills;
+export const infra: Array<ISkill> = [
+	{
+		id: 6,
+		name: "Docker",
+		logo: <SkillIcon.Docker />,
+	},
+	{
+		id: 6,
+		name: "AWS",
+		logo: <SkillIcon.Aws />,
+	},
+	{
+		id: 6,
+		name: "GCP",
+		logo: <SkillIcon.Gcp />,
+	},
+];
+
+export const skills = {
+	frontend,
+	backend,
+	database,
+	languages,
+	infra,
+};

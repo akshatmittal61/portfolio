@@ -1,19 +1,21 @@
-import React from "react";
-import Image from "next/image";
-import socials from "@/constants/socials";
-import Typography from "@/library/Typography";
-import { stylesConfig } from "@/utils/functions";
-import styles from "./styles.module.scss";
 import { Dinasour, Waves } from "@/assets";
+import { socials } from "@/constants";
+import { useStore } from "@/context";
+import { Typography } from "@/library";
+import { stylesConfig } from "@/utils/functions";
+import Image from "next/image";
+import React from "react";
+import styles from "./styles.module.scss";
 
 const classes = stylesConfig(styles, "footer");
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
+	const { theme } = useStore();
 	const dinasourAltText =
 		"Apart from coding and reading, I have a secret talent - an unbeatable Chrome Dino game score of 21000! If you dare challenge me, prepare for an epic gaming showdown.";
 	return (
 		<footer className={classes("")}>
-			<Dinasour className={classes("-graphic")} />
+			<Dinasour theme={theme} className={classes("-graphic")} />
 			<a
 				href="chrome://dino"
 				target="_blank"
@@ -57,9 +59,7 @@ const Footer: React.FC = () => {
 					className={classes("-logo")}
 				/>
 			</div>
-			<Waves className={classes("-waves")} />
+			<Waves theme={theme} className={classes("-waves")} />
 		</footer>
 	);
 };
-
-export default Footer;

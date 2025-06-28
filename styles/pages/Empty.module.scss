@@ -7,11 +7,11 @@
 	flex-direction: column;
 	gap: 36px;
 	text-align: center;
-	color: var(--base-neutral-900);
+	scroll-snap-align: start;
 
 	&-loader {
 		$size: 128px;
-		$color-1: #263038;
+		$color-1: var(--theme-fg);
 		$color-2: #ff3d00;
 		transform: rotateZ(45deg);
 		perspective: 1000px;

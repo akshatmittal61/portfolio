@@ -1,111 +1,278 @@
 @import "@/styles/config/mixins";
+@import "@/styles/config/animations";
 
 .navigation {
-	width: 56px;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	flex-direction: column;
-	gap: 12px;
+	min-height: unset;
 	position: fixed;
-	top: 24px;
-	left: 20px;
-	z-index: 20;
-	padding: 8px 4px;
-	border-radius: 500px;
-	background-color: var(--semantic-primary-background-weak);
-	box-shadow: var(--shadow-m);
+	top: 0;
+	right: 0;
+	z-index: 60;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--theme-bg);
 
-	@include responsive(phone) {
-		width: calc(100% - 32px);
-		height: 56px;
-		top: unset;
-		bottom: 12px;
-		left: 50%;
-		transform: translateX(-50%);
-		overflow: hidden;
-		flex-direction: row;
-		overflow-x: auto;
+	&-trigger {
+		@include init-button;
+		border-radius: 500px;
+		width: 40px;
+		height: 40px;
+		position: fixed;
+		top: 50%;
+		right: 1rem;
+		z-index: 65;
+		cursor: pointer;
 		padding: 8px;
+		transform: translateY(-50%);
+
+		span {
+			width: 100%;
+			height: 2px;
+			position: relative;
+
+			&::before,
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 500px;
+				background-color: var(--theme-fg);
+			}
+
+			&::before {
+				top: -9.3px;
+				transform: rotate(-60deg);
+			}
+
+			&::after {
+				top: 9.3px;
+				transform: rotate(60deg);
+			}
+		}
+
+		&:hover {
+			span {
+				&::before {
+					top: -8px;
+					transform: rotate(-45deg);
+				}
+
+				&::after {
+					top: 8px;
+					transform: rotate(45deg);
+				}
+			}
+		}
+
+		&--opened,
+		&--opened:hover {
+			span {
+				background-color: transparent;
+
+				&::before {
+					top: 0;
+					transform: rotate(45deg);
+					background-color: var(--theme-fg);
+				}
+
+				&::after {
+					top: 0;
+					transform: rotate(-45deg);
+					background-color: var(--theme-fg);
+				}
+			}
+		}
 	}
 
-	&-list {
-		list-style: none;
+	&--closed {
+		transform: translateX(100%);
+		opacity: 0;
+	}
 
-		&:first-child {
+	&--opened {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&-nav {
+		width: 100%;
+		height: 80%;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 0 15%;
+
+		&-list {
+			height: 100%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: flex-start;
+			flex-flow: column;
+			list-style: none;
+
 			@include responsive(phone) {
-				display: none;
+				justify-content: flex-start;
+				gap: 24px;
 			}
 		}
 
 		&-item {
-			display: flex;
+			--s: 50px;
+			--x: calc(var(--s) / 3);
+			font-size: 5rem;
+			font-weight: 200;
+			line-height: 120%;
+			letter-spacing: 0.25rem;
+			position: relative;
 
-			&:nth-child(n + 4) {
-				display: none;
+			@include responsive(phone) {
+				font-size: 3rem;
+			}
+
+			&::before {
+				content: attr(data-index);
+				position: absolute;
+				left: -5rem;
+				top: 50%;
+				transform: translateY(-50%) rotate(-90deg);
+				font-size: 1rem;
 
 				@include responsive(phone) {
-					display: flex;
+					left: -3rem;
 				}
 			}
 
-			&:last-child {
-				display: flex;
+			&__arrow {
+				width: calc(var(--x) * 2);
+				height: 1px;
+				background-color: var(--theme-fg);
+				margin-left: 1rem;
+				position: absolute;
+				left: 110%;
+				top: 50%;
+				transform: translateY(-50%);
+
+				@include responsive(phone) {
+					left: 100%;
+				}
+
+				&::before,
+				&::after {
+					content: "";
+					width: calc(var(--x) * 1.414);
+					height: 1px;
+					background-color: inherit;
+					position: absolute;
+					right: calc(-1 * var(--x) * 0.236);
+				}
+
+				&::before {
+					// transform: translatey(-$x/2 + 0.5px) rotate(45deg);
+					transform: translateY(calc(-1 * var(--x) / 2 + 0.5px))
+						rotate(45deg);
+				}
+
+				&::after {
+					// transform: translatey($x/2 - 0.5px) rotate(-45deg);
+					transform: translateY(calc(var(--x) / 2 - 0.5px))
+						rotate(-45deg);
+				}
 			}
 
-			&--active {
+			&__link {
+				all: unset;
+				display: inline-flex;
+				justify-content: flex-start;
+				align-items: center;
+				gap: 2rem;
+
 				svg {
-					transform: rotateZ(-180deg);
+					font-size: 2.5rem;
+					stroke-width: 1px;
+				}
+			}
+
+			a:hover + span {
+				// width: $x*4;
+				width: calc(var(--x) * 4);
+
+				@include _theme(light) {
+					background-color: var(--b-dark-brown);
+				}
+
+				@include _theme(dark) {
+					background-color: var(--b-light-slate);
 				}
 			}
 		}
+	}
 
-		&--expanded &-item {
-			display: flex;
+	&-socials {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 32px;
+		list-style: none;
+		position: absolute;
+		bottom: 32px;
+		right: 32px;
 
-			&:last-child {
-				@include responsive(phone) {
-					display: none;
-				}
-			}
+		@include responsive(tablet) {
+			gap: 20px;
 		}
 
 		@include responsive(phone) {
-			display: flex;
-			justify-content: flex-start;
+			justify-content: center;
+			gap: 16px;
+			right: 50%;
+			transform: translateX(50%);
+		}
+
+		a {
+			width: 30px;
+			height: 30px;
+			display: inline-flex;
+			justify-content: center;
 			align-items: center;
-			flex-direction: row;
-			gap: 12px;
-		}
-	}
+			color: var(--color-theme-light-slate);
 
-	a,
-	button {
-		@include init-button;
-		width: 48px;
-		height: 48px;
-		border-radius: 500px;
-		padding: 8px;
+			@include responsive(tablet) {
+				width: 24px;
+				height: 24px;
+			}
 
-		&:hover {
-			background-color: var(--base-neutral-500-10);
-		}
+			@include responsive(phone) {
+				width: 24px;
+				height: 24px;
+			}
 
-		svg {
-			stroke: var(--semantic-primary-text-medium);
-		}
-	}
+			svg {
+				width: 30px;
+				height: 30px;
 
-	&-divider {
-		width: calc(100% - 12px);
-		height: 1px;
-		background-color: var(--semantic-neutral-alpha-strong);
-		opacity: 0.35;
+				@include responsive(tablet) {
+					width: 24px;
+					height: 24px;
+				}
 
-		@include responsive(phone) {
-			width: 1px;
-			height: calc(100% - 12px);
-			display: none;
+				@include responsive(phone) {
+					width: 24px;
+					height: 24px;
+				}
+			}
+
+			&:hover {
+				color: var(--color-theme-green);
+				transform: translateY(-2px);
+			}
+
+			&:after {
+				all: unset;
+			}
 		}
 	}
 }

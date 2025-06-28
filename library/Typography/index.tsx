@@ -1,13 +1,13 @@
-import React from "react";
-import { TypographyProps } from "./types";
 import { stylesConfig } from "@/utils/functions";
+import React from "react";
 import styles from "./styles.module.scss";
+import { TypographyProps } from "./types";
 
 const classes = stylesConfig(styles, "typography");
 
-const Typography: React.FC<TypographyProps> = ({
+export const Typography: React.FC<TypographyProps> = ({
 	children,
-	family = "poppins",
+	family = "google-sans",
 	size = "md",
 	weight = "regular",
 	as = "span",
@@ -27,5 +27,3 @@ const Typography: React.FC<TypographyProps> = ({
 		</Component>
 	);
 };
-
-export default Typography;

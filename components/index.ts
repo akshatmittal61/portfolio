@@ -1,2 +1,7 @@
-export { default as Footer } from "./Footer";
-export { default as Navigation } from "./Navigation";
+export * from "./Footer";
+export * from "./Home";
+export * from "./Navigation";
+export * from "./Skill";
+export * from "./Theme";
+export * from "./Work";
+export * from "./Wrapper";
