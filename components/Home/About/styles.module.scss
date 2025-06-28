@@ -9,6 +9,7 @@
 	position: relative;
 	gap: 24px;
 	padding: 24px 0;
+	scroll-snap-align: start;
 
 	@include responsive(tablet) {
 		flex-direction: column-reverse;

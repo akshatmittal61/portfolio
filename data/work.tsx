@@ -1,11 +1,11 @@
 import { IWork } from "@/types";
 
-export const workExperience: IWork[] = [
+export const work: IWork[] = [
 	{
 		id: 7,
 		company: {
 			name: "Flipkart",
-			logo: "https://seeklogo.com/images/F/flipkart-logo-C9E637A758-seeklogo.com.png",
+			logo: "/images/work/flipkart.png",
 			link: "https://flipkart.com",
 		},
 		position: "Software Development Engineer",
@@ -19,7 +19,7 @@ export const workExperience: IWork[] = [
 		id: 6,
 		company: {
 			name: "MPL Gaming",
-			logo: "https://www.mpl.live/static/hamburger/mpl-logo.png",
+			logo: "/images/work/mpl.png",
 			link: "https://mpl.live",
 		},
 		position: "NodeJS Developer",
@@ -58,7 +58,7 @@ export const workExperience: IWork[] = [
 		id: 4,
 		company: {
 			name: "Opengig",
-			logo: "https://opengig.work/favicon.png",
+			logo: "/images/work/opengig.png",
 			link: "https://opengig.work",
 		},
 		position: "Software Developer",
@@ -140,5 +140,21 @@ export const workExperience: IWork[] = [
 		tags: ["figma", "html", "css", "javascript"],
 		background: "rgba(252, 0, 189, 0.20)",
 		theme: "#fc00bd",
+	},
+	{
+		id: 0,
+		company: {
+			name: "Indian Institute of Information Technology, Una",
+			logo: "/images/work/iiitu.png",
+			link: "https://www.iiitu.ac.in/",
+		},
+		position: "CSE Undergrad",
+		description:
+			"<ul><li>Designed Figma prototype and mock-ups with user design fine-tuned with UX principles.</li><li>Created and delivered 8 responsive pages with improved SEO optimization.</li></ul>",
+		startDate: "2020-12-02T00:00:00.000Z",
+		endDate: "2024-05-11T00:00:00.000Z",
+		tags: ["html", "css", "javascript", "typescript", "figma", "backend"],
+		background: "rgba(252, 0, 189, 0.20)",
+		theme: "#95763a",
 	},
 ];

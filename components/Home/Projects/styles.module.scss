@@ -2,6 +2,14 @@
 
 .home-projects {
 	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	position: relative;
+	gap: 24px;
+	flex-direction: column;
+	padding: 48px 0;
+	scroll-snap-align: start;
 
 	&-container {
 		width: 100%;
@@ -10,7 +18,6 @@
 		align-items: flex-end;
 		flex-direction: column;
 		gap: 24px;
-		margin: 48px 0;
 		padding: 96px 56px 96px 50%;
 		border-radius: var(--border-radius);
 		background-repeat: no-repeat;
@@ -66,7 +73,6 @@
 	background-repeat: no-repeat;
 	background-blend-mode: darken;
 	background-color: rgba(0, 0, 0, 0);
-	// color: var(--white);
 	padding: 8px;
 	gap: 8px;
 	border-radius: var(--border-radius);
@@ -129,6 +135,7 @@
 		top: 0;
 		left: 0;
 		object-fit: cover;
+		border-radius: inherit;
 		transition:
 			filter 0.25s ease-in-out,
 			transform 0.25s ease-in-out;

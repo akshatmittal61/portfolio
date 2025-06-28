@@ -1,4 +1,4 @@
-export * from "./experience";
+export * from "./work";
 export * from "./projects";
 export * from "./skills";
 export * from "./variables";

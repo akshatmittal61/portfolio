@@ -1,3 +1,5 @@
+import { WorkExperience } from "@/components";
+import { socials } from "@/constants";
 import { resumeUrl } from "@/data";
 import { Button, Typography } from "@/library";
 import styles from "@/styles/pages/About.module.scss";
@@ -51,6 +53,32 @@ const AboutPage: React.FC = () => {
 						size="large"
 					>
 						Resume
+					</Button>
+				</div>
+				<div className={classes("-content", "-content--work")}>
+					<Typography
+						id="intro-title"
+						as="h1"
+						size="head-2"
+						weight="semi-bold"
+						className={classes("-title")}
+					>
+						Where I work
+					</Typography>
+					<WorkExperience />
+					<Button
+						href={
+							socials.find(
+								(s) => s.platform.toLowerCase() === "linkedin"
+							)?.link
+						}
+						title="LinkedIn"
+						id="linkedin-link"
+						icon={<FiArrowUpRight />}
+						iconPosition="right"
+						size="large"
+					>
+						More on LinkedIn
 					</Button>
 				</div>
 			</main>
