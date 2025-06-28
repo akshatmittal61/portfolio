@@ -1,6 +1,6 @@
 import { SkillPill } from "@/components";
 import { resumeUrl, skills } from "@/data";
-import { Typography } from "@/library";
+import { Button, Typography } from "@/library";
 import { stylesConfig } from "@/utils";
 import React from "react";
 import { FiArrowUpRight } from "react-icons/fi";
@@ -42,24 +42,15 @@ export const HomeAbout: React.FC = () => {
 					architecture and backend services to pixel-perfect frontend
 					UIs.{" "}
 				</Typography>
-				<button
-					id="resume-button"
-					onClick={() => window.open("/resume", "_blank")}
-					className={classes("-button")}
+				<Button
+					href={resumeUrl}
+					title="Resume"
+					id="resume-link"
+					icon={<FiArrowUpRight />}
+					iconPosition="left"
 				>
-					<FiArrowUpRight />
 					Resume
-					<a
-						href={resumeUrl}
-						target="_blank"
-						rel="noreferrer"
-						title="Resume"
-						id="resume-link"
-						className="dispn"
-					>
-						{resumeUrl}
-					</a>
-				</button>
+				</Button>
 				<div className={classes("-skills")}>
 					{Object.values(skills)
 						.flat()
